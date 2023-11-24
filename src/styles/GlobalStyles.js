@@ -8,6 +8,6 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.COLORS.tints.tomato_100};
+    background-color: ${({ theme }) => theme.COLORS.dark.dark_400};
   }
 `;
