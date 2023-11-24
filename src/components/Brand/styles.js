@@ -9,5 +9,6 @@ export const BrandDiv = styled.div`
     font-family: "roboto", sans-serif;
     font-weight: bold;
     font-size: 42px;
+    color: #fff;
   }
 `;

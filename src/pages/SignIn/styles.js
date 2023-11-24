@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const MainDiv = styled.div`
+  height: 100vh;
+  color: ${({ theme }) => theme.COLORS.white.light_100};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 28em;
+`;
+
 export const StyledForm = styled.form`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_700};
   padding: 64px;

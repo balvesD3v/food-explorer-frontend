@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import { InputStyled } from "./styles";
 
-export const Input = () => {
-  return <InputStyled type="submit" value="Já tenho uma conta" />;
+export const Input = ({ title }) => {
+  return <InputStyled type="submit" value={title} />;
 };
