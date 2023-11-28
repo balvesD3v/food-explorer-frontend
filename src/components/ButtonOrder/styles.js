@@ -6,7 +6,11 @@ export const ButtonStyled = styled.button`
   padding: 12px 32px;
   border-radius: 5px;
   border: none;
-  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
 
   font-family: "Poppins";
   font-size: 14px;

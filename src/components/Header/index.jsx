@@ -1,16 +1,25 @@
-import { Brand } from "../Brand";
-import polygon from "../../assets/polygon.png";
-import { InputLabel } from "../InputLabel";
-import { FaSistrix } from "react-icons/fa6";
+/* eslint-disable react/prop-types */
+import { Seachbar } from "../SearchBar";
+import { ButtonOrder } from "../ButtonOrder";
+import polygon from "../../assets/Polygons/polygonColorful.png";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
+import { HeaderStyled, Brand } from "./styles";
 
-export const Header = () => {
+export const Header = ({ isAdmin }) => {
   return (
-    <div>
-      <Brand logo={polygon} title={"Food explorer"} />
-      <InputLabel
-        placeholder={"Busque por pratos ou ingredientes"}
-        icon={FaSistrix}
-      />
-    </div>
+    <HeaderStyled>
+      <Brand>
+        <img src={polygon} alt="polygon" />{" "}
+        <a href="" className="foodexplorer">
+          <span>Food explorer</span>
+          {isAdmin && <span className="admin">Admin</span>}
+        </a>
+      </Brand>
+      <Seachbar />
+      <ButtonOrder title={"Pedidos"} />
+      <a href="" className="signOut">
+        <FaArrowRightFromBracket className="arrowRight" />
+      </a>
+    </HeaderStyled>
   );
 };

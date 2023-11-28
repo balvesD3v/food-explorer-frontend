@@ -5,6 +5,9 @@ import { StyledForm, StyledInputField } from "./styles";
 import { InputLabel } from "../../components/InputLabel";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
+import { FaLock } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa6";
+import { FaRegEnvelope } from "react-icons/fa6";
 
 export const SignUp = () => {
   return (
@@ -18,15 +21,20 @@ export const SignUp = () => {
             <InputLabel
               label={"Seu nome"}
               placeholder={"Exemplo: Maria da Silva"}
+              icon={FaUser}
             />
             <InputLabel
-              label={"Email"}
+              label={"Seu email"}
               placeholder={"Exemplo: exemplo@exemplo.com.br"}
+              icon={FaRegEnvelope}
+              type={"email"}
             />
 
             <InputLabel
-              label={"Senha"}
+              label={"Sua senha"}
               placeholder={"No mínimo 6 caracteres"}
+              icon={FaLock}
+              type={"password"}
             />
 
             <Button title={"Criar conta"} />

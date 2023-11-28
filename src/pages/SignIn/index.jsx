@@ -5,7 +5,7 @@ import { StyledForm, StyledInputField } from "./styles";
 import { InputLabel } from "../../components/InputLabel";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { FaRegUser } from "react-icons/fa6";
+import { FaLock } from "react-icons/fa6";
 import { FaRegEnvelope } from "react-icons/fa6";
 
 export const SignIn = () => {
@@ -18,14 +18,16 @@ export const SignIn = () => {
           <h2>Faça login</h2>
           <StyledInputField>
             <InputLabel
-              label={"Seu nome"}
-              placeholder={"Exemplo: Maria da Silva"}
-              icon={FaRegUser}
-            />
-            <InputLabel
-              label={"Email"}
+              label={"Seu email"}
               placeholder={"Exemplo: exemplo@exemplo.com.br"}
               icon={FaRegEnvelope}
+              type={"email"}
+            />
+            <InputLabel
+              label={"Sua senha"}
+              placeholder={"No mínimo 6 caracteres"}
+              icon={FaLock}
+              type={"password"}
             />
 
             <Button title={"Entrar"} />
