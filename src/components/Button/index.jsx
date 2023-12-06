@@ -1,10 +1,16 @@
 /* eslint-disable react/prop-types */
 import { ButtonStyled } from "./styles";
 
-export const Button = ({ title, price }) => {
+export const Button = ({ title, price, isDelete }) => {
   return (
-    <ButtonStyled type="submit">
-      {title} {price && `- R$${price}`}{" "}
-    </ButtonStyled>
+    <a href="">
+      <ButtonStyled
+        isDelete={isDelete}
+        type="submit"
+        className={isDelete ? "button-add" : "button-delete"}
+      >
+        {title} {price && `- R$${price}`}{" "}
+      </ButtonStyled>
+    </a>
   );
 };

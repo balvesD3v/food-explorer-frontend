@@ -25,7 +25,6 @@ export const DivContent = styled.div`
 
 export const ContentStyled = styled.div`
   display: flex;
-  align-items: center;
   gap: 5em;
 
   .imagePhoto {
@@ -60,35 +59,15 @@ export const ContentStyled = styled.div`
       font-weight: 400;
       line-height: 140%; /* 33.6px */
     }
-
-    .buyDish {
-      display: flex;
-      gap: 1em;
-      align-items: center;
-      width: 18em;
-
-      .minusOrPlus {
-        background-color: transparent;
-      }
-
-      button {
-        border: none;
-        color: ${({ theme }) => theme.COLORS.white.light_300};
-      }
-
-      span {
-        color: ${({ theme }) => theme.COLORS.white.light_300};
-        font-family: Roboto;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 160%;
-      }
-    }
   }
 `;
 
 export const IngredientsStyled = styled.div`
   display: flex;
   gap: 0.75em;
+`;
+
+export const BuyDish = styled.div`
+  width: 100%;
+  display: flex;
 `;

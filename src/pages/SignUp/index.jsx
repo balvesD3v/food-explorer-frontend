@@ -1,6 +1,6 @@
 import { MainDiv } from "./styles";
 import { Brand } from "../../components/Brand";
-import polygon from "../../assets/polygon.png";
+import polygon from "../../assets/Polygons/polygonColorful.png";
 import { StyledForm, StyledInputField } from "./styles";
 import { InputLabel } from "../../components/InputLabel";
 import { Button } from "../../components/Button";

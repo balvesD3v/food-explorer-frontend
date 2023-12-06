@@ -8,6 +8,7 @@ export const DivStyled = styled.div`
     display: flex;
     justify-content: end;
     margin-top: 1em;
+    gap: 1em;
   }
 
   section {

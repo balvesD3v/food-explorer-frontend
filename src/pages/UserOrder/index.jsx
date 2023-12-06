@@ -1,10 +1,15 @@
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { Button } from "../../components/Button";
 import { Tags } from "../../components/Tags";
-import { DivContent, ContentStyled, IngredientsStyled } from "./styles";
-import { FaAngleLeft, FaPlus, FaMinus } from "react-icons/fa6";
+import {
+  DivContent,
+  ContentStyled,
+  IngredientsStyled,
+  BuyDish,
+} from "./styles";
+import { FaAngleLeft } from "react-icons/fa6";
 import plate from "../../assets/foods/Mask group-1.png";
+import { MinusPlus } from "../../components/MinusPlus";
 
 export const UserOrder = () => {
   return (
@@ -31,17 +36,9 @@ export const UserOrder = () => {
               <Tags titleTag={"Tomato"} />
             </IngredientsStyled>
 
-            <div className="buyDish">
-              <button className="minusOrPlus">
-                <FaMinus />
-              </button>
-              <span>01</span>
-              <button className="minusOrPlus">
-                <FaPlus />
-              </button>
-
-              <Button title={"incluir"} price={25.99} />
-            </div>
+            <BuyDish className="buyDish">
+              <MinusPlus />
+            </BuyDish>
           </div>
         </ContentStyled>
       </DivContent>

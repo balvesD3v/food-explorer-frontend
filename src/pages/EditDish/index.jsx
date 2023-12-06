@@ -9,7 +9,7 @@ import { InputPrice } from "../../components/InputPrice";
 import { IngredientTag } from "../../components/IngredientTag";
 import { Button } from "../../components/Button";
 
-export const NewDish = () => {
+export const EditDish = () => {
   return (
     <>
       <Header />
@@ -17,7 +17,7 @@ export const NewDish = () => {
         <a href="">
           <FaAngleLeft /> voltar
         </a>
-        <h1>Adicionar prato</h1>
+        <h1>Editar prato</h1>
         <section>
           <InputField>
             <SendImage />
@@ -48,6 +48,7 @@ export const NewDish = () => {
           </TextArea>
         </section>
         <div className="button-save">
+          <Button title={"Excluir Prato"} isDelete />
           <Button title={"Salvar Alterações"} />
         </div>
       </DivStyled>

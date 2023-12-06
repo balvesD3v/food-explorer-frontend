@@ -4,7 +4,7 @@ export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
   border-radius: 8px;
   height: 29em;
-  width: 19em;
+  max-width: 20em;
   margin-bottom: 20em;
   display: flex;
   flex-direction: column;

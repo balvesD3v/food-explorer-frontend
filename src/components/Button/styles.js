@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const ButtonStyled = styled.button`
-  background-color: ${({ theme }) => theme.COLORS.tints.tomato_100};
+  background-color: ${({ theme, isDelete }) =>
+    isDelete ? theme.COLORS.dark.dark_800 : theme.COLORS.tints.tomato_100};
+
   color: #fff;
   padding: 12px 32px;
   border-radius: 5px;
   border: none;
-  width: 15em;
+  width: 100%;
 
   font-family: "Poppins";
   font-size: 14px;

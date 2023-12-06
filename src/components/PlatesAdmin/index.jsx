@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-
+import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
 import plate from "../../assets/foods/Mask group-1.png";
 
@@ -26,7 +26,10 @@ export const PlatesAdmin = () => {
         </EditButton>
         <img src={plate} alt="Plate" />
         <DivInfo>
-          <h3>Salada Ravanello</h3>
+          <h3>
+            Salada Ravanello
+            <FaAngleRight />
+          </h3>
 
           <p>
             Rabanetes, folhas verdes e molho agridoce salpicados com gergelim

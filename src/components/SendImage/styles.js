@@ -23,6 +23,7 @@ export const DivStyled = styled.div`
     padding: 10px 15px;
     background-color: ${({ theme }) => theme.COLORS.dark.dark_800};
     align-items: center;
+    justify-content: center;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;

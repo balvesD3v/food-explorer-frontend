@@ -33,6 +33,7 @@ export const DivStyled = styled.div`
     background: transparent;
     border: none;
     outline: none;
+    text-align: center;
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.white.light_600};

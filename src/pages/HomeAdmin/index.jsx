@@ -37,6 +37,7 @@ export const HomeAdmin = () => {
           <Splide
             id="slide-container"
             options={{
+              type: "loop",
               rewind: true,
               rewindSpeed: 1000,
               perPage: 3,
@@ -45,21 +46,6 @@ export const HomeAdmin = () => {
               pagination: false,
             }}
           >
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
             <SplideSlide>
               <DivPlates>
                 <PlatesAdmin />
@@ -72,6 +58,7 @@ export const HomeAdmin = () => {
           <Splide
             id="slide-container"
             options={{
+              type: "loop",
               rewind: true,
               rewindSpeed: 1000,
               perPage: 3,
@@ -80,21 +67,6 @@ export const HomeAdmin = () => {
               pagination: false,
             }}
           >
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
             <SplideSlide>
               <DivPlates>
                 <PlatesAdmin />
@@ -107,6 +79,7 @@ export const HomeAdmin = () => {
           <Splide
             id="slide-container"
             options={{
+              type: "loop",
               rewind: true,
               rewindSpeed: 1000,
               perPage: 3,
@@ -115,21 +88,6 @@ export const HomeAdmin = () => {
               pagination: false,
             }}
           >
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
             <SplideSlide>
               <DivPlates>
                 <PlatesAdmin />
