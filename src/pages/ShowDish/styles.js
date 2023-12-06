@@ -25,7 +25,6 @@ export const DivContent = styled.div`
 
 export const ContentStyled = styled.div`
   display: flex;
-  align-items: center;
   gap: 5em;
 
   .imagePhoto {

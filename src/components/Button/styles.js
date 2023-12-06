@@ -6,7 +6,7 @@ export const ButtonStyled = styled.button`
   padding: 12px 32px;
   border-radius: 5px;
   border: none;
-  width: 100%;
+  width: 15em;
 
   font-family: "Poppins";
   font-size: 14px;

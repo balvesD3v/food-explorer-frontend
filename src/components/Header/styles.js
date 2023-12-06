@@ -35,13 +35,12 @@ export const Brand = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1em;
-  width: 20em;
 
   .foodexplorer {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    width: 15em;
+    width: 10em;
 
     .admin {
       color: ${({ theme }) => theme.COLORS.tints.cake_200};

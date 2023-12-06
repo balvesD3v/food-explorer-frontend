@@ -4,6 +4,7 @@ import { ButtonOrder } from "../ButtonOrder";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { HeaderStyled, Brand } from "./styles";
+import { Button } from "../Button";
 
 export const Header = ({ isAdmin }) => {
   return (
@@ -16,7 +17,11 @@ export const Header = ({ isAdmin }) => {
         </a>
       </Brand>
       <Seachbar />
-      <ButtonOrder title={"Pedidos"} />
+      {isAdmin ? (
+        <Button title={"Novo Prato"} />
+      ) : (
+        <ButtonOrder title={"Pedidos"} />
+      )}
       <a href="" className="signOut">
         <FaArrowRightFromBracket className="arrowRight" />
       </a>

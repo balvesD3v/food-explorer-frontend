@@ -9,7 +9,7 @@ import { Header } from "../../components/Header";
 import { Plates } from "../../components/Plates";
 import cookies from "../../assets/pngegg 1.png";
 
-export const UserHome = () => {
+export const HomeUser = () => {
   return (
     <div>
       <Header />

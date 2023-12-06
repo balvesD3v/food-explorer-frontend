@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const DivStyled = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
   padding: 0 10em;
 
   h2 {
@@ -34,9 +32,12 @@ export const BannerStyled = styled.div`
 
 export const Cookies = styled.div`
   margin-top: -9em;
+  width: 100%;
+  object-fit: cover;
 `;
 
 export const ContentDiv = styled.div`
+  width: 100%;
   h1 {
     font-family: Poppins;
     font-size: 40px;
@@ -58,6 +59,11 @@ export const ContentDiv = styled.div`
 
 export const DivPlates = styled.div`
   display: flex;
-  gap: 1.6875em;
   height: 33em;
+  padding: 2em;
+  justify-content: center;
+`;
+
+export const DishesSection = styled.section`
+  height: 100%;
 `;
