@@ -17,7 +17,7 @@ export const UserOrder = () => {
       <Header />
 
       <DivContent>
-        <a href="">
+        <a href="/">
           <FaAngleLeft /> voltar
         </a>
         <ContentStyled>

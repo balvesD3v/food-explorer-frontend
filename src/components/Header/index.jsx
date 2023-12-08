@@ -9,7 +9,7 @@ import { Button } from "../Button";
 export const Header = ({ isAdmin }) => {
   return (
     <HeaderStyled>
-      <Brand>
+      <Brand to={"/"}>
         <img src={polygon} alt="polygon" />{" "}
         <a href="" className="foodexplorer">
           <span>Food explorer</span>

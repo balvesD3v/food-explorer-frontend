@@ -7,7 +7,7 @@ export const PlatesAdmin = () => {
   return (
     <>
       <DivStyled>
-        <EditButton>
+        <EditButton to={"/edit"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"

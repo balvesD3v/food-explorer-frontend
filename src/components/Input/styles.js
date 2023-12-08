@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const DivStyled = styled(Link)`
+  text-align: center;
+`;
 
 export const InputStyled = styled.input`
   background-color: transparent;

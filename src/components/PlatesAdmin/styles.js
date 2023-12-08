@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
@@ -66,13 +67,12 @@ export const DivInfo = styled.div`
   }
 `;
 
-export const EditButton = styled.button`
+export const EditButton = styled(Link)`
   position: absolute;
   top: 30px;
   right: 30px;
   background-color: transparent;
   border: none;
-  color: #fff;
   cursor: pointer;
 
   svg {

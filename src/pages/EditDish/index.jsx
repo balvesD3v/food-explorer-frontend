@@ -14,7 +14,7 @@ export const EditDish = () => {
     <>
       <Header />
       <DivStyled>
-        <a href="">
+        <a href="/">
           <FaAngleLeft /> voltar
         </a>
         <h1>Editar prato</h1>

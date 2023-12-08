@@ -11,7 +11,7 @@ import { FaRegEnvelope } from "react-icons/fa6";
 export const SignIn = () => {
   return (
     <div>
-      <MainDiv>
+      <MainDiv className="main-div">
         <Brand logo={polygon} title={"Food Explorer"} />
 
         <StyledForm>
@@ -32,7 +32,7 @@ export const SignIn = () => {
 
             <Button title={"Entrar"} />
 
-            <Input title={"Criar uma conta"} />
+            <Input title={"Criar uma conta"} link={"/register"} />
           </StyledInputField>
         </StyledForm>
       </MainDiv>

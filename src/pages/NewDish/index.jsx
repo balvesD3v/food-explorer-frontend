@@ -14,7 +14,7 @@ export const NewDish = () => {
     <>
       <Header />
       <DivStyled>
-        <a href="">
+        <a href="/">
           <FaAngleLeft /> voltar
         </a>
         <h1>Adicionar prato</h1>

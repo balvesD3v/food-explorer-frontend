@@ -39,7 +39,7 @@ export const SignUp = () => {
 
             <Button title={"Criar conta"} />
 
-            <Input title={"Já tenho uma conta"} />
+            <Input title={"Já tenho uma conta"} link={"/"} />
           </StyledInputField>
         </StyledForm>
       </MainDiv>

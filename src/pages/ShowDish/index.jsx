@@ -12,7 +12,7 @@ export const ShowDish = () => {
       <Header />
 
       <DivContent>
-        <a href="">
+        <a href="/">
           <FaAngleLeft /> voltar
         </a>
         <ContentStyled>

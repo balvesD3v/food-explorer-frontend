@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
   flex-direction: column;
@@ -53,5 +54,13 @@ export const InputWrapper = styled.div`
   svg {
     position: absolute;
     left: 1rem;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+
+    input {
+      font-size: 1.1rem;
+    }
   }
 `;
