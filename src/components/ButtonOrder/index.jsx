@@ -5,9 +5,9 @@ import { FaReceipt } from "react-icons/fa6";
 export const ButtonOrder = ({ title }) => {
   return (
     <ButtonStyled type="submit">
-      <FaReceipt />
-      {title}
-      <p>(0)</p>
+      <FaReceipt className="receipt" />
+      <p className="text">{title}</p>
+      <p className="order">0</p>
     </ButtonStyled>
   );
 };

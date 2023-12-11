@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
   border-radius: 8px;
   height: 29em;
-  max-width: 20em;
+  width: 100%;
   margin-bottom: 20em;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,15 @@ export const DivStyled = styled.div`
   gap: 0.9375em;
 
   img {
-    width: 11em;
+    width: 10em;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+
+    img {
+      width: 5em;
+    }
   }
 `;
 
@@ -65,6 +74,22 @@ export const DivInfo = styled.div`
     font-weight: 400;
     line-height: 160%; /* 51.2px */
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    img {
+      width: 5em;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const EditButton = styled(Link)`
@@ -78,5 +103,12 @@ export const EditButton = styled(Link)`
   svg {
     width: 30px;
     height: 30px;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    svg {
+      width: 15px;
+      height: 15px;
+    }
   }
 `;

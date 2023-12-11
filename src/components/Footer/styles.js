@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
   display: flex;
@@ -23,6 +24,16 @@ export const LeftContainer = styled.div`
     font-weight: 700;
     line-height: normal;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    svg {
+      width: 15px;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
 `;
 export const RightContainer = styled.div`
   span {
@@ -32,5 +43,11 @@ export const RightContainer = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 22.4px */
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    span {
+      font-size: 0.8rem;
+    }
   }
 `;

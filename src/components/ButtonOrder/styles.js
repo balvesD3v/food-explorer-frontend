@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const ButtonStyled = styled.button`
   background-color: ${({ theme }) => theme.COLORS.tints.tomato_100};
@@ -22,5 +23,49 @@ export const ButtonStyled = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.COLORS.tints.tomato_300};
+  }
+
+  .order {
+    &:before {
+      content: "(";
+    }
+    &:after {
+      content: ")";
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    background-color: transparent;
+    padding: 0;
+
+    .receipt {
+      position: relative;
+      width: 15px;
+      height: 15px;
+    }
+
+    .text {
+      color: transparent;
+      display: none;
+    }
+
+    .order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      position: absolute;
+      border-radius: 50%;
+      font-size: 1rem;
+      height: 15px;
+      width: 15px;
+      background-color: ${({ theme }) => theme.COLORS.tints.tomato_100};
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
   }
 `;

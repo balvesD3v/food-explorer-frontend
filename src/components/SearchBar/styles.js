@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const SearchBar = styled.div`
   gap: 1em;
@@ -30,5 +31,9 @@ export const SearchBar = styled.div`
     font-weight: 400;
     line-height: 100%;
     color: ${({ theme }) => theme.COLORS.white.light_500};
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: none;
   }
 `;

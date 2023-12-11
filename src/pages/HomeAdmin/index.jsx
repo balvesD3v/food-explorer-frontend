@@ -15,7 +15,7 @@ import cookies from "../../assets/pngegg 1.png";
 
 export const HomeAdmin = () => {
   return (
-    <div>
+    <>
       <Header />
 
       <DivStyled>
@@ -37,16 +37,12 @@ export const HomeAdmin = () => {
           <Splide
             id="slide-container"
             options={{
-              type: "loop",
-              rewind: true,
-              rewindSpeed: 1000,
               perPage: 3,
               perMove: 1,
-              focus: "center",
               pagination: false,
             }}
           >
-            <SplideSlide>
+            <SplideSlide id="splide-slide">
               <DivPlates>
                 <PlatesAdmin />
               </DivPlates>
@@ -97,6 +93,6 @@ export const HomeAdmin = () => {
         </DishesSection>
       </DivStyled>
       <Footer />
-    </div>
+    </>
   );
 };

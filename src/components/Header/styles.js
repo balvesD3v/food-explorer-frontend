@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 import { Link } from "react-router-dom";
 
 export const HeaderStyled = styled.div`
@@ -16,7 +17,6 @@ export const HeaderStyled = styled.div`
     font-weight: 700;
     line-height: normal;
     color: ${({ theme }) => theme.COLORS.white.light_100};
-    width: 20rem;
   }
 
   .signOut {
@@ -27,6 +27,28 @@ export const HeaderStyled = styled.div`
       color: #fff;
       width: 25px;
       height: 25px;
+    }
+  }
+
+  .burger-bar {
+    display: none;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    gap: 3rem;
+
+    .signOut {
+      display: none;
+    }
+
+    .burger-bar {
+      display: block;
+      background-color: transparent;
+      color: #fff;
+      border: transparent;
+      svg {
+        height: 20px;
+      }
     }
   }
 `;
@@ -59,5 +81,27 @@ export const Brand = styled(Link)`
 
   img {
     width: 30px;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    .burger-bar {
+      display: block;
+      background-color: transparent;
+      color: #fff;
+      border: transparent;
+      svg {
+        height: 20px;
+      }
+    }
+
+    .foodexplorer {
+      span {
+        font-size: 1.5em;
+      }
+    }
+
+    img {
+      width: 1.5rem;
+    }
   }
 `;
