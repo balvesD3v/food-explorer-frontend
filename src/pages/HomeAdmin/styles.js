@@ -88,15 +88,19 @@ export const DivPlates = styled.div`
   height: 33em;
   padding: 2em;
   justify-content: center;
-  width: 100%;
+  width: 25em;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    height: 25em;
+    width: 15em;
+    padding: 0;
+  }
 `;
 
 export const DishesSection = styled.section`
+  padding: 0;
   h2 {
-    margin-bottom: -0.5em;
+    margin-bottom: 0em;
     font-size: 1.5rem;
-  }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
   }
 `;

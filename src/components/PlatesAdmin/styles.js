@@ -6,7 +6,7 @@ export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
   border-radius: 8px;
   height: 29em;
-  width: 100%;
+  width: 100em;
   margin-bottom: 20em;
   display: flex;
   flex-direction: column;
@@ -21,10 +21,12 @@ export const DivStyled = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    width: 100%;
+    width: 30em;
+    height: 20em;
+    margin-right: 3.5em;
 
     img {
-      width: 5em;
+      width: 8em;
     }
   }
 `;
@@ -79,7 +81,14 @@ export const DivInfo = styled.div`
     width: 100%;
 
     h3 {
-      font-size: 1rem;
+      font-size: 0.7rem;
+      .arrow-right {
+        width: 0.8em;
+      }
+    }
+
+    p {
+      display: none;
     }
 
     img {
@@ -106,6 +115,8 @@ export const EditButton = styled(Link)`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    top: 10px;
+    right: 10px;
     svg {
       width: 15px;
       height: 15px;

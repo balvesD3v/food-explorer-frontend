@@ -28,7 +28,7 @@ export const PlatesAdmin = () => {
         <DivInfo>
           <h3>
             Salada Ravanello
-            <FaAngleRight />
+            <FaAngleRight className="arrow-right" />
           </h3>
 
           <p>
