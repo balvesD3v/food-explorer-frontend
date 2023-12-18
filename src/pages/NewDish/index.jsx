@@ -1,6 +1,5 @@
 import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
 import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer/index";
 import { FaAngleLeft } from "react-icons/fa6";
 import { SendImage } from "../../components/SendImage";
 import { InputName } from "../../components/InputName";
@@ -8,6 +7,7 @@ import { Select } from "../../components/Select";
 import { InputPrice } from "../../components/InputPrice";
 import { IngredientTag } from "../../components/IngredientTag";
 import { Button } from "../../components/Button";
+import { Detailfooter } from "../../components/Detailfooter";
 
 export const NewDish = () => {
   return (
@@ -51,7 +51,7 @@ export const NewDish = () => {
           <Button title={"Salvar Alterações"} />
         </div>
       </DivStyled>
-      <Footer />
+      <Detailfooter />
     </>
   );
 };

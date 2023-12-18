@@ -1,6 +1,6 @@
 import { LeftContainer, RightContainer, DivStyled } from "./styles";
 
-export const Footer = () => {
+export const Detailfooter = () => {
   return (
     <DivStyled>
       <LeftContainer>

@@ -9,9 +9,9 @@ import {
   DishesSection,
 } from "./styles";
 import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer/index";
 import { PlatesAdmin } from "../../components/PlatesAdmin";
 import cookies from "../../assets/pngegg 1.png";
+import { Detailfooter } from "../../components/DetailFooter";
 
 export const HomeAdmin = () => {
   return (
@@ -101,7 +101,7 @@ export const HomeAdmin = () => {
           </Splide>
         </DishesSection>
       </DivStyled>
-      <Footer />
+      <Detailfooter />
     </>
   );
 };
