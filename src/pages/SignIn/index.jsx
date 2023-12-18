@@ -2,11 +2,10 @@ import { MainDiv } from "./styles";
 import { Brand } from "../../components/Brand";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { StyledForm, StyledInputField } from "./styles";
-import { InputLabel } from "../../components/InputLabel";
+import { Inputlabel } from "../../components/Inputlabel";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { FaLock } from "react-icons/fa6";
-import { FaRegEnvelope } from "react-icons/fa6";
+import { FaLock, FaRegEnvelope } from "react-icons/fa6";
 
 export const SignIn = () => {
   return (
@@ -17,13 +16,13 @@ export const SignIn = () => {
         <StyledForm>
           <h2>Faça login</h2>
           <StyledInputField>
-            <InputLabel
+            <Inputlabel
               label={"Seu email"}
               placeholder={"Exemplo: exemplo@exemplo.com.br"}
               icon={FaRegEnvelope}
               type={"email"}
             />
-            <InputLabel
+            <Inputlabel
               label={"Sua senha"}
               placeholder={"No mínimo 6 caracteres"}
               icon={FaLock}

@@ -9,7 +9,7 @@ import {
   DishesSection,
 } from "./styles";
 import { Header } from "../../components/Header";
-import { PlatesAdmin } from "../../components/PlatesAdmin";
+import { Platesadmin } from "../../components/Platesadmin";
 import cookies from "../../assets/pngegg 1.png";
 import { Detailfooter } from "../../components/Detailfooter";
 
@@ -50,7 +50,7 @@ export const HomeAdmin = () => {
           >
             <SplideSlide id="splide-slide">
               <DivPlates>
-                <PlatesAdmin />
+                <Platesadmin />
               </DivPlates>
             </SplideSlide>
           </Splide>
@@ -72,7 +72,7 @@ export const HomeAdmin = () => {
           >
             <SplideSlide>
               <DivPlates>
-                <PlatesAdmin />
+                <Platesadmin />
               </DivPlates>
             </SplideSlide>
           </Splide>
@@ -95,7 +95,7 @@ export const HomeAdmin = () => {
           >
             <SplideSlide>
               <DivPlates>
-                <PlatesAdmin />
+                <Platesadmin />
               </DivPlates>
             </SplideSlide>
           </Splide>

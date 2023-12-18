@@ -9,7 +9,7 @@ import {
 } from "./styles";
 import { FaAngleLeft } from "react-icons/fa6";
 import plate from "../../assets/foods/Mask group-1.png";
-import { MinusPlus } from "../../components/MinusPlus";
+import { Minusplus } from "../../components/Minusplus";
 
 export const UserOrder = () => {
   return (
@@ -37,7 +37,7 @@ export const UserOrder = () => {
             </IngredientsStyled>
 
             <BuyDish className="buyDish">
-              <MinusPlus />
+              <Minusplus />
             </BuyDish>
           </div>
         </ContentStyled>

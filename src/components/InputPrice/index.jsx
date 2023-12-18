@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export const InputPrice = () => {
+export const Inputprice = () => {
   return (
     <DivStyled>
       <label htmlFor="">Preço</label>

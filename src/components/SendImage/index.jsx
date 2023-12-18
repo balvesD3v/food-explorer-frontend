@@ -1,7 +1,7 @@
 import { DivStyled } from "./styles";
 import { MdOutlineFileUpload } from "react-icons/md";
 
-export const SendImage = () => {
+export const Sendimage = () => {
   return (
     <DivStyled>
       <span> Imagem do prato </span>

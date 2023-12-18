@@ -2,11 +2,11 @@ import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
 import { Header } from "../../components/Header";
 import { Detailfooter } from "../../components/Detailfooter";
 import { FaAngleLeft } from "react-icons/fa6";
-import { SendImage } from "../../components/SendImage";
-import { InputName } from "../../components/InputName";
+import { Sendimage } from "../../components/Sendimage";
+import { Inputname } from "../../components/Inputname";
 import { Select } from "../../components/Select";
-import { InputPrice } from "../../components/InputPrice";
-import { IngredientTag } from "../../components/IngredientTag";
+import { Inputprice } from "../../components/Inputprice";
+import { Ingredienttag } from "../../components/Ingredienttag";
 import { Button } from "../../components/Button";
 
 export const EditDish = () => {
@@ -20,20 +20,20 @@ export const EditDish = () => {
         <h1>Editar prato</h1>
         <section>
           <InputField>
-            <SendImage />
-            <InputName />
+            <Sendimage />
+            <Inputname />
             <Select />
           </InputField>
           <InputField>
             <IngredientsField>
               <span>Ingredientes</span>
               <div className="tags">
-                <IngredientTag value="Pão naan" />
-                <IngredientTag isNew placeholder="Adicionar" />
+                <Ingredienttag value="Pão naan" />
+                <Ingredienttag isNew placeholder="Adicionar" />
               </div>
             </IngredientsField>
             <div className="price">
-              <InputPrice />
+              <Inputprice />
             </div>
           </InputField>
           <TextArea>

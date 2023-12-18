@@ -2,7 +2,7 @@
 
 import { DivStyled, InputWrapper } from "./styles";
 
-export const InputLabel = ({ icon: Icon, label, placeholder, type }) => {
+export const Inputlabel = ({ icon: Icon, label, placeholder, type }) => {
   return (
     <DivStyled>
       {label && <label>{label}</label>}

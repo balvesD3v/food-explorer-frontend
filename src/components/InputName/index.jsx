@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export const InputName = () => {
+export const Inputname = () => {
   return (
     <DivStyled>
       <label htmlFor="" id="name">
