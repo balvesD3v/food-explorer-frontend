@@ -7,7 +7,7 @@ import { Select } from "../../components/Select";
 import { InputPrice } from "../../components/InputPrice";
 import { IngredientTag } from "../../components/IngredientTag";
 import { Button } from "../../components/Button";
-import { Detailfooter } from "../../components/DetailFooter";
+import { Detailfooter } from "../../components/Detailfooter";
 
 export const NewDish = () => {
   return (

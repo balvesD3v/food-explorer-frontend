@@ -11,7 +11,7 @@ import {
 import { Header } from "../../components/Header";
 import { PlatesAdmin } from "../../components/PlatesAdmin";
 import cookies from "../../assets/pngegg 1.png";
-import { Detailfooter } from "../../components/DetailFooter";
+import { Detailfooter } from "../../components/Detailfooter";
 
 export const HomeAdmin = () => {
   return (
