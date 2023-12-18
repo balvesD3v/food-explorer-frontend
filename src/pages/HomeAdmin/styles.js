@@ -4,7 +4,6 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const DivStyled = styled.div`
   height: 100%;
   padding: 0 10em;
-  background-color: red;
 
   h2 {
     font-family: Poppins;

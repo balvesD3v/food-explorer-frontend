@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
   display: flex;
@@ -57,5 +58,9 @@ export const DivStyled = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: 24px; /* 171.429% */
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
   }
 `;

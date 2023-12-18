@@ -1,4 +1,4 @@
-import { DivStyled } from "./Styles";
+import { DivStyled } from "./styles";
 
 export const InputPrice = () => {
   return (

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
   display: flex;
@@ -32,6 +33,10 @@ export const DivStyled = styled.div`
     transition: 250ms ease-in-out;
     border: none;
 
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      width: 100%;
+    }
+
     &:focus-within {
       box-shadow: 0 0 0 3px ${({ theme }) => theme.COLORS.tints.cake_100};
     }
@@ -39,11 +44,6 @@ export const DivStyled = styled.div`
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
-    }
-
-    /* Firefox */
-    &[type="number"] {
-      -moz-appearance: textfield;
     }
   }
 `;

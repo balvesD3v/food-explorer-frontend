@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
-  height: 100vh;
-  padding: 2em 8em;
+  height: 100%;
+  padding: 2em 2em;
 
   .button-save {
     display: flex;
@@ -39,6 +40,15 @@ export const DivStyled = styled.div`
     line-height: 140%;
     margin-bottom: 0.5em;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    a {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const InputField = styled.div`
@@ -54,6 +64,11 @@ export const InputField = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 100%; /* 16px */
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -117,6 +132,12 @@ export const TextArea = styled.div`
 
     &:focus-within {
       box-shadow: 0 0 0 3px ${({ theme }) => theme.COLORS.tints.cake_100};
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      &::placeholder {
+        font-size: 1rem;
+      }
     }
   }
 `;

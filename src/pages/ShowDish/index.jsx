@@ -4,6 +4,7 @@ import { Button } from "../../components/Button";
 import { Tags } from "../../components/Tags";
 import { DivContent, ContentStyled, IngredientsStyled } from "./styles";
 import { FaAngleLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import plate from "../../assets/foods/Mask group-1.png";
 
 export const ShowDish = () => {
@@ -12,9 +13,9 @@ export const ShowDish = () => {
       <Header />
 
       <DivContent>
-        <a href="/">
+        <Link to="/" className="linkto">
           <FaAngleLeft /> voltar
-        </a>
+        </Link>
         <ContentStyled>
           <div className="imagePhoto">
             <img src={plate} alt="" />

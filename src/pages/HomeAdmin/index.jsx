@@ -53,21 +53,6 @@ export const HomeAdmin = () => {
                 <PlatesAdmin />
               </DivPlates>
             </SplideSlide>
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
           </Splide>
 
           <h2>Sobremesas</h2>
@@ -76,6 +61,7 @@ export const HomeAdmin = () => {
             id="slide-container"
             options={{
               perMove: 1,
+              arrows: false,
               pagination: false,
               breakpoints: {
                 320: {
@@ -96,6 +82,7 @@ export const HomeAdmin = () => {
           <Splide
             id="slide-container"
             options={{
+              arrows: false,
               perPage: 3,
               perMove: 1,
               pagination: false,

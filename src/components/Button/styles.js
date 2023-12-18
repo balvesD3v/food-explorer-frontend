@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const ButtonStyled = styled(Link)`
   background-color: ${({ theme, isDelete }) =>
@@ -10,22 +11,25 @@ export const ButtonStyled = styled(Link)`
 
   text-decoration: none;
   color: #fff;
-  padding: 12px 32px;
+  padding: 12px 10px;
   border-radius: 5px;
   border: none;
-
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
   transition: 100ms linear;
+  font-family: "Poppins";
 
   && {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.COLORS.tints.tomato_300};
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+    && {
+      font-size: 1rem;
+    }
   }
 `;
