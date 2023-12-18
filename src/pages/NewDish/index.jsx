@@ -1,6 +1,6 @@
 import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
 import { Header } from "../../components/Header";
-import Footer from "../../components/Footer";
+import { Footer } from "../../components/Footer";
 import { FaAngleLeft } from "react-icons/fa6";
 import { SendImage } from "../../components/SendImage";
 import { InputName } from "../../components/InputName";
