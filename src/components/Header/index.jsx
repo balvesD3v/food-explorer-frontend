@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Seachbar } from "../SearchBar";
-import { ButtonOrder } from "../ButtonOrder";
+import { Seachbar } from "../Searchbar";
+import { Buttonorder } from "../Buttonorder";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket, FaBars } from "react-icons/fa6";
 import { HeaderStyled, Brand } from "./styles";
@@ -23,7 +23,7 @@ export const Header = ({ isAdmin }) => {
       {isAdmin ? (
         <Button title={"Novo Prato"} />
       ) : (
-        <ButtonOrder title={"Pedidos"} />
+        <Buttonorder title={"Pedidos"} />
       )}
       <a href="" className="signOut">
         <FaArrowRightFromBracket className="arrowRight" />
