@@ -9,7 +9,7 @@ import {
   DishesSection,
 } from "./styles";
 import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
+import Footer from "../../components/Footer";
 import { PlatesAdmin } from "../../components/PlatesAdmin";
 import cookies from "../../assets/pngegg 1.png";
 
