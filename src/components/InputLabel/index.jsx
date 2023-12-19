@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { DivStyled, InputWrapper } from "./styles";
 
 function Inputlabel({ icon: Icon, label, placeholder, type }) {
