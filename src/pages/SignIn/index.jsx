@@ -1,11 +1,11 @@
-import Inputlabel from "./../../components/Inputlabel";
 import Brand from "../../components/Brand";
+import Inputlabel from "./../../components/Inputlabel";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { MainDiv } from "./styles";
-import { StyledForm, StyledInputField } from "./styles";
-import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaLock, FaRegEnvelope } from "react-icons/fa6";
+import polygon from "../../assets/Polygons/polygonColorful.png";
+import { StyledForm, StyledInputField } from "./styles";
+import { MainDiv } from "./styles";
 
 export function SignIn() {
   return (
