@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { DivStyled } from "./styles";
 
-export function Tags({ titleTag }) {
+function Tags({ titleTag }) {
   return (
     <DivStyled>
       <span>{titleTag}</span>
     </DivStyled>
   );
 }
+
+export default Tags;

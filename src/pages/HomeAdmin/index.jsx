@@ -13,7 +13,7 @@ import Platesadmin from "../../components/Platesadmin";
 import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
 
-export function HomeAdmin() {
+function HomeAdmin() {
   return (
     <>
       <Header />
@@ -105,3 +105,5 @@ export function HomeAdmin() {
     </>
   );
 }
+
+export default HomeAdmin;

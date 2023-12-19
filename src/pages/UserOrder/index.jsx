@@ -11,7 +11,7 @@ import {
 import { FaAngleLeft } from "react-icons/fa6";
 import plate from "../../assets/foods/Mask group-1.png";
 
-export function UserOrder() {
+function UserOrder() {
   return (
     <>
       <Header />
@@ -47,3 +47,5 @@ export function UserOrder() {
     </>
   );
 }
+
+export default UserOrder;

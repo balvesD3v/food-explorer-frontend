@@ -9,7 +9,7 @@ import Ingredienttag from "../../components/Ingredienttag";
 import Button from "../../components/Button";
 import { FaAngleLeft } from "react-icons/fa6";
 
-export function EditDish() {
+function EditDish() {
   return (
     <>
       <Header />
@@ -56,3 +56,5 @@ export function EditDish() {
     </>
   );
 }
+
+export default EditDish;

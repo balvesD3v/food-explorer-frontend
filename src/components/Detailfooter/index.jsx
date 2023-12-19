@@ -1,6 +1,6 @@
 import { LeftContainer, RightContainer, DivStyled } from "./styles";
 
-export function Detailfooter() {
+function Detailfooter() {
   return (
     <DivStyled>
       <LeftContainer>
@@ -24,3 +24,5 @@ export function Detailfooter() {
     </DivStyled>
   );
 }
+
+export default Detailfooter;

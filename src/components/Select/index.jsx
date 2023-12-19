@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export function Select() {
+function Select() {
   return (
     <DivStyled>
       <label htmlFor="">Categoria</label>
@@ -15,3 +15,5 @@ export function Select() {
     </DivStyled>
   );
 }
+
+export default Select;

@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 
-import { HomeAdmin } from "../pages/HomeAdmin";
-import { HomeUser } from "../pages/HomeUser";
-import { UserOrder } from "../pages/UserOrder";
-import { NewDish } from "../pages/NewDish";
-import { EditDish } from "../pages/EditDish";
-import { ShowDish } from "../pages/ShowDish";
+import HomeAdmin from "../pages/HomeAdmin";
+import HomeUser from "../pages/HomeUser";
+import UserOrder from "../pages/UserOrder";
+import NewDish from "../pages/NewDish";
+import EditDish from "../pages/EditDish";
+import ShowDish from "../pages/ShowDish";
 
 export function AppRoutes() {
   return (

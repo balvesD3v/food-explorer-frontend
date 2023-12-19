@@ -7,7 +7,7 @@ import polygon from "../../assets/Polygons/polygonColorful.png";
 import { StyledForm, StyledInputField } from "./styles";
 import { MainDiv } from "./styles";
 
-export function SignIn() {
+function SignIn() {
   return (
     <div>
       <MainDiv className="main-div">
@@ -38,3 +38,5 @@ export function SignIn() {
     </div>
   );
 }
+
+export default SignIn;

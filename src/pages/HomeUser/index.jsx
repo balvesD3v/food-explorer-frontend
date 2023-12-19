@@ -13,7 +13,7 @@ import Plates from "../../components/Plates";
 import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
 
-export function HomeUser() {
+function HomeUser() {
   return (
     <>
       <Header />
@@ -105,3 +105,5 @@ export function HomeUser() {
     </>
   );
 }
+
+export default HomeUser;

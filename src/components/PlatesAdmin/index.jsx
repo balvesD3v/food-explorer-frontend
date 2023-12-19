@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
 import plate from "../../assets/foods/Mask group-1.png";
 
-export function Platesadmin() {
+function Platesadmin() {
   return (
     <>
       <DivStyled>
@@ -40,3 +40,5 @@ export function Platesadmin() {
     </>
   );
 }
+
+export default Platesadmin;

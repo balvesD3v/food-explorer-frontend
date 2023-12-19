@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { BrandDiv } from "./styles";
 
-export function Brand({ logo, title }) {
+function Brand({ logo, title }) {
   return (
     <BrandDiv>
       {logo && <img src={logo} alt="Food Explorer polygon" />}
@@ -9,3 +9,5 @@ export function Brand({ logo, title }) {
     </BrandDiv>
   );
 }
+
+export default Brand;

@@ -7,7 +7,7 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { FaLock, FaUser, FaRegEnvelope } from "react-icons/fa6";
 
-export function SignUp() {
+function SignUp() {
   return (
     <div>
       <MainDiv>
@@ -44,3 +44,5 @@ export function SignUp() {
     </div>
   );
 }
+
+export default SignUp;

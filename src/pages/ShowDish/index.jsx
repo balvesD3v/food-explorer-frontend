@@ -7,7 +7,7 @@ import { FaAngleLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import plate from "../../assets/foods/Mask group-1.png";
 
-export function ShowDish() {
+function ShowDish() {
   return (
     <>
       <Header />
@@ -43,3 +43,5 @@ export function ShowDish() {
     </>
   );
 }
+
+export default ShowDish;

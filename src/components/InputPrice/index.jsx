@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export function Inputprice() {
+function Inputprice() {
   return (
     <DivStyled>
       <label htmlFor="">Preço</label>
@@ -16,3 +16,5 @@ export function Inputprice() {
     </DivStyled>
   );
 }
+
+export default Inputprice;

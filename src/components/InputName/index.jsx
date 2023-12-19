@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export function Inputname() {
+function Inputname() {
   return (
     <DivStyled>
       <label htmlFor="" id="name">
@@ -10,3 +10,5 @@ export function Inputname() {
     </DivStyled>
   );
 }
+
+export default Inputname;

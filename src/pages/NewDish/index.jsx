@@ -9,7 +9,7 @@ import Ingredienttag from "../../components/Ingredienttag";
 import Button from "../../components/Button";
 import Detailfooter from "../../components/Detailfooter";
 
-export function NewDish() {
+function NewDish() {
   return (
     <>
       <Header />
@@ -55,3 +55,5 @@ export function NewDish() {
     </>
   );
 }
+
+export default NewDish;

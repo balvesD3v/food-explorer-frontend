@@ -1,7 +1,7 @@
 import { DivStyled } from "./styles";
 import { MdOutlineFileUpload } from "react-icons/md";
 
-export function Sendimage() {
+function Sendimage() {
   return (
     <DivStyled>
       <span> Imagem do prato </span>
@@ -13,3 +13,5 @@ export function Sendimage() {
     </DivStyled>
   );
 }
+
+export default Sendimage;

@@ -6,7 +6,7 @@ import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket, FaBars } from "react-icons/fa6";
 import { HeaderStyled, Brand } from "./styles";
 
-export function Header({ isAdmin }) {
+function Header({ isAdmin }) {
   return (
     <HeaderStyled>
       <button className="burger-bar">
@@ -31,3 +31,4 @@ export function Header({ isAdmin }) {
     </HeaderStyled>
   );
 }
+export default Header;
