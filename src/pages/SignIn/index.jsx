@@ -2,10 +2,10 @@ import { MainDiv } from "./styles";
 import { Brand } from "../../components/Brand";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { StyledForm, StyledInputField } from "./styles";
-import { Inputlabel } from "../../components/Inputlabel";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { FaLock, FaRegEnvelope } from "react-icons/fa6";
+import { Inputlabel } from "./../../components/Inputlabel";
 
 export const SignIn = () => {
   return (
