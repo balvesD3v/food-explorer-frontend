@@ -2,7 +2,7 @@ import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
 import { Header } from "../../components/Header";
 import { Detailfooter } from "../../components/Detailfooter";
 import { FaAngleLeft } from "react-icons/fa6";
-import { Sendimage } from "../../components/Sendimage";
+import Sendimage from "../../components/Sendimage";
 import { Inputname } from "../../components/Inputname";
 import { Select } from "../../components/Select";
 import { Inputprice } from "../../components/Inputprice";
