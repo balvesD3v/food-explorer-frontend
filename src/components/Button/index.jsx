@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ButtonStyled } from "./styles";
 
-export const Button = ({ title, price, isDelete, link }) => {
+export function Button({ title, price, isDelete, link }) {
   return (
     <ButtonStyled
       to={link}
@@ -12,4 +12,4 @@ export const Button = ({ title, price, isDelete, link }) => {
       {title} {price && `- R$${price}`}{" "}
     </ButtonStyled>
   );
-};
+}

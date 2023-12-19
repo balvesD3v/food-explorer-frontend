@@ -7,9 +7,9 @@ import {
 } from "./styles";
 import plate from "../../assets/foods/Mask group-1.png";
 import { FaAngleRight, FaPlus, FaRegHeart, FaMinus } from "react-icons/fa6";
-import { Button } from "../Button";
+import Button from "../Button";
 
-export const Plates = () => {
+export function Plates() {
   return (
     <>
       <DivStyled>
@@ -41,4 +41,4 @@ export const Plates = () => {
       </DivStyled>
     </>
   );
-};
+}

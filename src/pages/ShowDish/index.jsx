@@ -1,13 +1,13 @@
-import { Header } from "../../components/Header";
-import { Detailfooter } from "../../components/Detailfooter";
-import { Button } from "../../components/Button";
-import { Tags } from "../../components/Tags";
+import Header from "../../components/Header";
+import Detailfooter from "../../components/Detailfooter";
+import Button from "../../components/Button";
+import Tags from "../../components/Tags";
 import { DivContent, ContentStyled, IngredientsStyled } from "./styles";
 import { FaAngleLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import plate from "../../assets/foods/Mask group-1.png";
 
-export const ShowDish = () => {
+export function ShowDish() {
   return (
     <>
       <Header />
@@ -42,4 +42,4 @@ export const ShowDish = () => {
       <Detailfooter />
     </>
   );
-};
+}

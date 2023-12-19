@@ -1,6 +1,7 @@
-import { Header } from "../../components/Header";
-import { Detailfooter } from "../../components/Detailfooter";
-import { Tags } from "../../components/Tags";
+import Header from "../../components/Header";
+import Detailfooter from "../../components/Detailfooter";
+import Tags from "../../components/Tags";
+import Minusplus from "../../components/Minusplus";
 import {
   DivContent,
   ContentStyled,
@@ -9,9 +10,8 @@ import {
 } from "./styles";
 import { FaAngleLeft } from "react-icons/fa6";
 import plate from "../../assets/foods/Mask group-1.png";
-import { Minusplus } from "../../components/Minusplus";
 
-export const UserOrder = () => {
+export function UserOrder() {
   return (
     <>
       <Header />
@@ -46,4 +46,4 @@ export const UserOrder = () => {
       <Detailfooter />
     </>
   );
-};
+}

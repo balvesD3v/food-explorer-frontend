@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-import { Seachbar } from "../Searchbar";
-import { Buttonorder } from "../Buttonorder";
+import Seachbar from "../Searchbar";
+import Buttonorder from "../Buttonorder";
+import Button from "../Button";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket, FaBars } from "react-icons/fa6";
 import { HeaderStyled, Brand } from "./styles";
-import { Button } from "../Button";
 
-export const Header = ({ isAdmin }) => {
+export function Header({ isAdmin }) {
   return (
     <HeaderStyled>
       <button className="burger-bar">
@@ -30,4 +30,4 @@ export const Header = ({ isAdmin }) => {
       </a>
     </HeaderStyled>
   );
-};
+}

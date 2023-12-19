@@ -8,12 +8,12 @@ import {
   DivPlates,
   DishesSection,
 } from "./styles";
-import { Header } from "../../components/Header";
-import { Plates } from "../../components/Plates";
+import Header from "../../components/Header";
+import Plates from "../../components/Plates";
 import cookies from "../../assets/pngegg 1.png";
-import { Detailfooter } from "../../components/Detailfooter";
+import Detailfooter from "../../components/Detailfooter";
 
-export const HomeUser = () => {
+export function HomeUser() {
   return (
     <>
       <Header />
@@ -104,4 +104,4 @@ export const HomeUser = () => {
       <Detailfooter />
     </>
   );
-};
+}

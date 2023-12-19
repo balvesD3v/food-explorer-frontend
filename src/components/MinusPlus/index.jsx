@@ -1,8 +1,8 @@
 import { DivStyled, ButtonStyled } from "./styles";
 import { FaPlus, FaMinus } from "react-icons/fa6";
-import { Button } from "../../components/Button";
+import Button from "../../components/Button";
 
-export const Minusplus = () => {
+export function Minusplus() {
   return (
     <>
       <DivStyled>
@@ -21,4 +21,4 @@ export const Minusplus = () => {
       </ButtonStyled>
     </>
   );
-};
+}

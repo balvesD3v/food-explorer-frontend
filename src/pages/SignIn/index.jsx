@@ -1,13 +1,13 @@
+import Inputlabel from "./../../components/Inputlabel";
+import Brand from "../../components/Brand";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 import { MainDiv } from "./styles";
-import { Brand } from "../../components/Brand";
-import polygon from "../../assets/Polygons/polygonColorful.png";
 import { StyledForm, StyledInputField } from "./styles";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaLock, FaRegEnvelope } from "react-icons/fa6";
-import { Inputlabel } from "./../../components/Inputlabel";
 
-export const SignIn = () => {
+export function SignIn() {
   return (
     <div>
       <MainDiv className="main-div">
@@ -37,4 +37,4 @@ export const SignIn = () => {
       </MainDiv>
     </div>
   );
-};
+}

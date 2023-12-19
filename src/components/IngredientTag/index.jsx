@@ -2,7 +2,7 @@
 import { FiPlus, FiX } from "react-icons/fi";
 import { DivStyled } from "./styles";
 
-export const Ingredienttag = ({ isNew, value, onClick, ...rest }) => {
+export function Ingredienttag({ isNew, value, onClick, ...rest }) {
   return (
     <DivStyled isNew={isNew}>
       <input type="text" value={value} readOnly={!isNew} {...rest} />
@@ -16,4 +16,4 @@ export const Ingredienttag = ({ isNew, value, onClick, ...rest }) => {
       </button>
     </DivStyled>
   );
-};
+}

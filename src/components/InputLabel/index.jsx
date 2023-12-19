@@ -2,7 +2,7 @@
 
 import { DivStyled, InputWrapper } from "./styles";
 
-export const Inputlabel = ({ icon: Icon, label, placeholder, type }) => {
+export function Inputlabel({ icon: Icon, label, placeholder, type }) {
   return (
     <DivStyled>
       {label && <label>{label}</label>}
@@ -12,4 +12,4 @@ export const Inputlabel = ({ icon: Icon, label, placeholder, type }) => {
       </InputWrapper>
     </DivStyled>
   );
-};
+}

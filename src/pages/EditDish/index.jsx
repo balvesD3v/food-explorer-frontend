@@ -1,15 +1,15 @@
 import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
-import { Header } from "../../components/Header";
-import { Detailfooter } from "../../components/Detailfooter";
-import { FaAngleLeft } from "react-icons/fa6";
+import Header from "../../components/Header";
+import Detailfooter from "../../components/Detailfooter";
 import Sendimage from "../../components/Sendimage";
-import { Inputname } from "../../components/Inputname";
-import { Select } from "../../components/Select";
-import { Inputprice } from "../../components/Inputprice";
-import { Ingredienttag } from "../../components/Ingredienttag";
-import { Button } from "../../components/Button";
+import Inputname from "../../components/Inputname";
+import Select from "../../components/Select";
+import Inputprice from "../../components/Inputprice";
+import Ingredienttag from "../../components/Ingredienttag";
+import Button from "../../components/Button";
+import { FaAngleLeft } from "react-icons/fa6";
 
-export const EditDish = () => {
+export function EditDish() {
   return (
     <>
       <Header />
@@ -55,4 +55,4 @@ export const EditDish = () => {
       <Detailfooter />
     </>
   );
-};
+}

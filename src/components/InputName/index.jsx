@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export const Inputname = () => {
+export function Inputname() {
   return (
     <DivStyled>
       <label htmlFor="" id="name">
@@ -9,4 +9,4 @@ export const Inputname = () => {
       <input type="text" id="name" placeholder="Ex.: Salada Ceasar" />
     </DivStyled>
   );
-};
+}

@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-export const Select = () => {
+export function Select() {
   return (
     <DivStyled>
       <label htmlFor="">Categoria</label>
@@ -14,4 +14,4 @@ export const Select = () => {
       </select>
     </DivStyled>
   );
-};
+}
