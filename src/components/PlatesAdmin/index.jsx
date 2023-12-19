@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
 import plate from "../../assets/foods/Mask group-1.png";
 
-export const Platesadmin = () => {
+export function Platesadmin() {
   return (
     <>
       <DivStyled>
@@ -39,4 +39,4 @@ export const Platesadmin = () => {
       </DivStyled>
     </>
   );
-};
+}
