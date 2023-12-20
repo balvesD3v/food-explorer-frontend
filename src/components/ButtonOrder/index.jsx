@@ -2,7 +2,7 @@
 import { ButtonStyled } from "./styles";
 import { FaReceipt } from "react-icons/fa6";
 
-function Buttonorder({ title }) {
+function ButtonOrder({ title }) {
   return (
     <ButtonStyled type="submit">
       <FaReceipt className="receipt" />
@@ -11,4 +11,4 @@ function Buttonorder({ title }) {
     </ButtonStyled>
   );
 }
-export default Buttonorder;
+export default ButtonOrder;

@@ -1,5 +1,5 @@
 import Brand from "../../components/Brand";
-import Inputlabel from "../../components/Inputlabel";
+import InputLabel from "../../components/InputLabel";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { FaLock, FaRegEnvelope } from "react-icons/fa6";
@@ -16,13 +16,13 @@ function SignIn() {
         <StyledForm>
           <h2>Faça login</h2>
           <StyledInputField>
-            <Inputlabel
+            <InputLabel
               label={"Seu email"}
               placeholder={"Exemplo: exemplo@exemplo.com.br"}
               icon={FaRegEnvelope}
               type={"email"}
             />
-            <Inputlabel
+            <InputLabel
               label={"Sua senha"}
               placeholder={"No mínimo 6 caracteres"}
               icon={FaLock}

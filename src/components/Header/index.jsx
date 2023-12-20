@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import Seachbar from "../Searchbar";
-import Buttonorder from "../Buttonorder";
+import SeachBar from "../SeachBar";
+import ButtonOrder from "../ButtonOrder";
 import Button from "../Button";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket, FaBars } from "react-icons/fa6";
@@ -19,11 +19,11 @@ function Header({ isAdmin }) {
           {isAdmin && <span className="admin">Admin</span>}
         </a>
       </Brand>
-      <Seachbar />
+      <SeachBar />
       {isAdmin ? (
         <Button title={"Novo Prato"} />
       ) : (
-        <Buttonorder title={"Pedidos"} />
+        <ButtonOrder title={"Pedidos"} />
       )}
       <a href="" className="signOut">
         <FaArrowRightFromBracket className="arrowRight" />

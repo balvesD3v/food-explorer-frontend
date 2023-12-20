@@ -2,7 +2,7 @@ import { MainDiv } from "./styles";
 import Brand from "../../components/Brand";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { StyledForm, StyledInputField } from "./styles";
-import Inputlabel from "../../components/Inputlabel";
+import InputLabel from "../../components/InputLabel";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { FaLock, FaUser, FaRegEnvelope } from "react-icons/fa6";
@@ -16,19 +16,19 @@ function SignUp() {
         <StyledForm>
           <h2>Crie sua conta</h2>
           <StyledInputField>
-            <Inputlabel
+            <InputLabel
               label={"Seu nome"}
               placeholder={"Exemplo: Maria da Silva"}
               icon={FaUser}
             />
-            <Inputlabel
+            <InputLabel
               label={"Seu email"}
               placeholder={"Exemplo: exemplo@exemplo.com.br"}
               icon={FaRegEnvelope}
               type={"email"}
             />
 
-            <Inputlabel
+            <InputLabel
               label={"Sua senha"}
               placeholder={"No mínimo 6 caracteres"}
               icon={FaLock}

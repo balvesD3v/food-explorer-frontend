@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Detailfooter from "../../components/Detailfooter";
 import Tags from "../../components/Tags";
-import Minusplus from "../../components/Minusplus";
+import MinusPlus from "../../components/MinusPlus";
 import {
   DivContent,
   ContentStyled,
@@ -37,7 +37,7 @@ function UserOrder() {
             </IngredientsStyled>
 
             <BuyDish className="buyDish">
-              <Minusplus />
+              <MinusPlus />
             </BuyDish>
           </div>
         </ContentStyled>

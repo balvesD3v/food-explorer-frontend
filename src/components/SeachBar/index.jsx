@@ -1,6 +1,6 @@
 import { SearchBar } from "./styles";
 
-function Seachbar() {
+function SeachBar() {
   return (
     <SearchBar>
       <input type="text" placeholder="Busque por pratos ou ingredientes" />
@@ -8,4 +8,4 @@ function Seachbar() {
   );
 }
 
-export default Seachbar;
+export default SeachBar;

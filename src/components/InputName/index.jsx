@@ -1,6 +1,6 @@
 import { DivStyled } from "./styles";
 
-function Inputname() {
+function InputName() {
   return (
     <DivStyled>
       <label htmlFor="" id="name">
@@ -11,4 +11,4 @@ function Inputname() {
   );
 }
 
-export default Inputname;
+export default InputName;
