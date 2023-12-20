@@ -29,6 +29,7 @@ export const DivContent = styled.div`
     height: calc(100vh - 29vh);
 
     .linkto {
+      z-index: 99;
       margin-left: 2em;
       margin-bottom: -5em;
       margin-top: -5em;
