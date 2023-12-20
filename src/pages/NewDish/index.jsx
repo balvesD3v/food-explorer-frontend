@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import SendImage from "../../components/SendImage";
 import InputName from "../../components/InputName";
 import Select from "../../components/Select";
-import Inputprice from "../../components/Inputprice";
+import InputPrice from "../../components/InputPrice";
 import IngredientTag from "../../components/IngredientTag";
 import Button from "../../components/Button";
 import Detailfooter from "../../components/Detailfooter";
@@ -33,7 +33,7 @@ function NewDish() {
               </div>
             </IngredientsField>
             <div className="price">
-              <Inputprice />
+              <InputPrice />
             </div>
           </InputField>
           <TextArea>
