@@ -1,5 +1,5 @@
 import Brand from "../../components/Brand";
-import Inputlabel from "./../../components/Inputlabel";
+import Inputlabel from "../../components/Inputlabel";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { FaLock, FaRegEnvelope } from "react-icons/fa6";
