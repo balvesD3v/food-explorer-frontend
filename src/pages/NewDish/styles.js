@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
-  height: 100%;
   padding: 2em 2em;
+  height: calc(100vh - 18.5vh);
 
   .button-save {
     display: flex;
@@ -41,6 +41,8 @@ export const DivStyled = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    height: 100vh;
+
     a {
       font-size: 1rem;
     }

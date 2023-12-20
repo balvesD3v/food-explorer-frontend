@@ -4,9 +4,9 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const DivContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   padding: 2em 7.625em;
-  height: 100vh;
+  height: calc(100vh - 27vh);
+  margin-top: 5em;
 
   a {
     color: ${({ theme }) => theme.COLORS.white.light_300};
@@ -25,6 +25,8 @@ export const DivContent = styled.div`
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     padding: 1em;
+    margin-top: 10em;
+    height: calc(100vh - 29vh);
 
     .linkto {
       margin-left: 2em;
@@ -50,6 +52,7 @@ export const ContentStyled = styled.div`
     }
 
     @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      margin-top: 10em;
       img {
         width: 15em;
       }
