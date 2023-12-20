@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
@@ -6,6 +7,7 @@ export const DivStyled = styled.div`
   height: 29em;
   width: 19em;
   margin-bottom: 20em;
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +16,18 @@ export const DivStyled = styled.div`
   gap: 0.9375em;
 
   img {
-    width: 11em;
+    width: 10em;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 30em;
+    height: 23em;
+
+    margin-right: 3.5em;
+
+    img {
+      width: 8em;
+    }
   }
 `;
 
@@ -63,11 +76,41 @@ export const DivInfo = styled.div`
     font-weight: 400;
     line-height: 160%; /* 51.2px */
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+
+    h3 {
+      font-size: 0.7rem;
+      .arrow-right {
+        width: 0.8em;
+      }
+    }
+
+    p {
+      display: none;
+    }
+
+    img {
+      width: 5em;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const DivButton = styled.div`
   display: flex;
   gap: 1em;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const LikeButton = styled.button`
@@ -82,6 +125,16 @@ export const LikeButton = styled.button`
   svg {
     width: 30px;
     height: 30px;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    top: 10px;
+    right: 10px;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
   }
 `;
 
@@ -105,5 +158,11 @@ export const ButtonStyled = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: 160%;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    span {
+      font-size: 1rem;
+    }
   }
 `;

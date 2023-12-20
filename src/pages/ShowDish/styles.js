@@ -33,6 +33,7 @@ export const DivContent = styled.div`
       margin-bottom: -5em;
       margin-top: -5em;
       font-size: 1rem;
+      z-index: 99;
     }
   }
 `;

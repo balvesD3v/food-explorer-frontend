@@ -8,6 +8,7 @@ export const DivStyled = styled.div`
   height: 29em;
   width: 100em;
   margin-bottom: 20em;
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
