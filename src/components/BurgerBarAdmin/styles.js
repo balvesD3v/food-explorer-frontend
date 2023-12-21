@@ -6,6 +6,7 @@ export const StyledBurgerBar = styled.div`
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     display: block;
     position: relative;
+    margin-left: 2em;
 
     .menu-toggle {
       color: #fff;

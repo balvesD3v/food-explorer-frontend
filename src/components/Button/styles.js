@@ -11,7 +11,7 @@ export const ButtonStyled = styled(Link)`
 
   text-decoration: none;
   color: #fff;
-  padding: 12px 10px;
+  padding: 12px 3em;
   border-radius: 5px;
   border: none;
   transition: 100ms linear;

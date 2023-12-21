@@ -3,7 +3,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const SearchBar = styled.div`
   gap: 1em;
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
 

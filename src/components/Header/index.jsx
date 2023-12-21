@@ -2,7 +2,7 @@
 import SeachBar from "../SeachBar";
 import ButtonOrder from "../ButtonOrder";
 import Button from "../Button";
-import BurgerBarAdmin from "../BurgerBarAdmin";
+import BurgerBar from "../BurgerBar";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { HeaderStyled, Brand } from "./styles";
@@ -10,7 +10,7 @@ import { HeaderStyled, Brand } from "./styles";
 function Header({ isAdmin }) {
   return (
     <HeaderStyled>
-      <BurgerBarAdmin />
+      <BurgerBar />
       <Brand to={"/"}>
         <img src={polygon} alt="polygon" />{" "}
         <a href="" className="foodexplorer">

@@ -4,7 +4,7 @@ import Button from "../Button";
 import BurgerBarAdmin from "../BurgerBarAdmin";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
-import { HeaderStyled, Brand } from "./styles";
+import { HeaderStyled, Brand, MobileStyled } from "./styles";
 
 function HeaderAdmin() {
   return (
@@ -13,13 +13,16 @@ function HeaderAdmin() {
       <Brand to={"/"}>
         <img src={polygon} alt="polygon" />{" "}
         <a href="" className="foodexplorer">
-          <span>Food explorer</span>
-          <span className="admin">Admin</span>
+          <span className="food-explorer-title">Food explorer</span>
+          <span className="admin">admin</span>
         </a>
       </Brand>
+
       <SeachBar />
 
-      <Button title={"Novo Prato"} />
+      <MobileStyled>
+        <Button title={"Novo Prato"} />
+      </MobileStyled>
 
       <a href="" className="signOut">
         <FaArrowRightFromBracket className="arrowRight" />

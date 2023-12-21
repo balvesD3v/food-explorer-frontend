@@ -61,6 +61,7 @@ export const Brand = styled(Link)`
   text-decoration: none;
 
   .foodexplorer {
+    margin-top: 1em;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -70,6 +71,7 @@ export const Brand = styled(Link)`
       color: ${({ theme }) => theme.COLORS.tints.cake_200};
       text-align: end;
       width: 12em;
+
       /* Roboto/Smallest regular */
       font-family: Roboto;
       font-size: 12px;
@@ -84,24 +86,35 @@ export const Brand = styled(Link)`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    .menu-toggle {
-      display: block;
-      background-color: transparent;
-      color: #fff;
-      border: transparent;
-      svg {
-        height: 20px;
-      }
-    }
-
     .foodexplorer {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+
       span {
         font-size: 1.5em;
+      }
+
+      .food-explorer-title {
+        width: 100%;
+        margin-right: 2px;
+      }
+
+      .admin {
+        text-align: start;
+        width: 10em;
       }
     }
 
     img {
       width: 1.5rem;
     }
+  }
+`;
+
+export const MobileStyled = styled.div`
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: none;
   }
 `;
