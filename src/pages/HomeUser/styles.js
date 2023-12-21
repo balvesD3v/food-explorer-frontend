@@ -85,9 +85,9 @@ export const ContentDiv = styled.div`
 export const DivPlates = styled.div`
   display: flex;
   height: 33em;
+  width: 100vw;
   padding: 2em;
-  justify-content: center;
-  width: 25em;
+  gap: 1em;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     height: 25em;

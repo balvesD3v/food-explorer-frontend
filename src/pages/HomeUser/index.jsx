@@ -37,8 +37,9 @@ function HomeUser() {
           <Splide
             id="slide-container"
             options={{
-              perPage: 3,
-              perMove: 1,
+              type: "loop",
+              perPage: 4,
+              perMove: 3,
               arrows: false,
               pagination: false,
               breakpoints: {
@@ -60,7 +61,9 @@ function HomeUser() {
           <Splide
             id="slide-container"
             options={{
-              perMove: 1,
+              type: "loop",
+              perPage: 4,
+              perMove: 3,
               arrows: false,
               pagination: false,
               breakpoints: {
@@ -70,7 +73,7 @@ function HomeUser() {
               },
             }}
           >
-            <SplideSlide>
+            <SplideSlide id="splide-slide">
               <DivPlates>
                 <Plates />
               </DivPlates>
@@ -82,9 +85,10 @@ function HomeUser() {
           <Splide
             id="slide-container"
             options={{
+              type: "loop",
+              perPage: 4,
+              perMove: 3,
               arrows: false,
-              perPage: 3,
-              perMove: 1,
               pagination: false,
               breakpoints: {
                 320: {
@@ -93,7 +97,7 @@ function HomeUser() {
               },
             }}
           >
-            <SplideSlide>
+            <SplideSlide id="splide-slide">
               <DivPlates>
                 <Plates />
               </DivPlates>

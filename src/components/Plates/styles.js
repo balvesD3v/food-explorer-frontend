@@ -5,7 +5,7 @@ export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
   border-radius: 8px;
   height: 29em;
-  width: 19em;
+  width: 21em;
   margin-bottom: 20em;
   margin-top: 1em;
   display: flex;

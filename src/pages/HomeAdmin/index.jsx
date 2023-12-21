@@ -8,7 +8,7 @@ import {
   DivPlates,
   DishesSection,
 } from "./styles";
-import Header from "../../components/Header";
+import HeaderAdmin from "../../components/HeaderAdmin";
 import PlatesAdmin from "../../components/PlatesAdmin";
 import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
@@ -16,7 +16,7 @@ import Detailfooter from "../../components/Detailfooter";
 function HomeAdmin() {
   return (
     <>
-      <Header />
+      <HeaderAdmin />
 
       <DivStyled>
         <BannerStyled>
@@ -37,8 +37,32 @@ function HomeAdmin() {
           <Splide
             id="slide-container"
             options={{
-              perPage: 3,
-              perMove: 1,
+              type: "loop",
+              perPage: 4,
+              perMove: 3,
+              arrows: false,
+              pagination: false,
+              breakpoints: {
+                320: {
+                  perPage: 2,
+                },
+              },
+            }}
+          >
+            <SplideSlide id="splide-slide">
+              <DivPlates>
+                <PlatesAdmin />
+              </DivPlates>
+            </SplideSlide>
+          </Splide>
+          <h2>Sobremesas</h2>
+
+          <Splide
+            id="slide-container"
+            options={{
+              type: "loop",
+              perPage: 4,
+              perMove: 3,
               arrows: false,
               pagination: false,
               breakpoints: {
@@ -55,36 +79,15 @@ function HomeAdmin() {
             </SplideSlide>
           </Splide>
 
-          <h2>Sobremesas</h2>
-
-          <Splide
-            id="slide-container"
-            options={{
-              perMove: 1,
-              arrows: false,
-              pagination: false,
-              breakpoints: {
-                320: {
-                  perPage: 2,
-                },
-              },
-            }}
-          >
-            <SplideSlide>
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-          </Splide>
-
           <h2>Bebidas</h2>
 
           <Splide
             id="slide-container"
             options={{
+              type: "loop",
+              perPage: 4,
+              perMove: 3,
               arrows: false,
-              perPage: 3,
-              perMove: 1,
               pagination: false,
               breakpoints: {
                 320: {
@@ -93,7 +96,7 @@ function HomeAdmin() {
               },
             }}
           >
-            <SplideSlide>
+            <SplideSlide id="splide-slide">
               <DivPlates>
                 <PlatesAdmin />
               </DivPlates>

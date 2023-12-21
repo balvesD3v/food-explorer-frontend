@@ -1,5 +1,5 @@
 import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
-import Header from "../../components/Header";
+import HeaderAdmin from "../../components/HeaderAdmin";
 import Detailfooter from "../../components/Detailfooter";
 import SendImage from "../../components/SendImage";
 import InputName from "../../components/InputName";
@@ -12,7 +12,7 @@ import { FaAngleLeft } from "react-icons/fa6";
 function EditDish() {
   return (
     <>
-      <Header />
+      <HeaderAdmin />
       <DivStyled>
         <a href="/">
           <FaAngleLeft /> voltar
