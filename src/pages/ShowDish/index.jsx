@@ -30,6 +30,10 @@ function ShowDish() {
             <IngredientsStyled>
               <Tags titleTag={"Alface"} />
               <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
             </IngredientsStyled>
 
             <div className="buyDish">

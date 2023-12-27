@@ -26,14 +26,18 @@ export const DivContent = styled.div`
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     padding: 1em;
     margin-top: 10em;
-    height: calc(100vh - 29vh);
+    height: 100%;
 
     .linkto {
+      margin-bottom: -3em;
+      margin-top: -4em;
+      color: var(--Light-Light-300, #e1e1e6);
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 33.6px */
       z-index: 99;
-      margin-left: 2em;
-      margin-bottom: -5em;
-      margin-top: -5em;
-      font-size: 1rem;
     }
   }
 `;
@@ -115,6 +119,11 @@ export const ContentStyled = styled.div`
 export const IngredientsStyled = styled.div`
   display: flex;
   gap: 0.75em;
+  flex-wrap: wrap;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    justify-content: center;
+  }
 `;
 
 export const BuyDish = styled.div`

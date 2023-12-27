@@ -35,6 +35,10 @@ function UserOrder() {
             <IngredientsStyled>
               <Tags titleTag={"Alface"} />
               <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
+              <Tags titleTag={"Tomato"} />
             </IngredientsStyled>
 
             <BuyDish className="buyDish">

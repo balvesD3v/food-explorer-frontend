@@ -55,7 +55,7 @@ export const ButtonStyled = styled.button`
       justify-content: center;
       position: absolute;
       top: 15px;
-      right: 25px;
+      right: 80px;
       position: absolute;
       border-radius: 50%;
       font-size: 1rem;
@@ -65,6 +65,16 @@ export const ButtonStyled = styled.button`
       &:before,
       &:after {
         content: none;
+      }
+    }
+    @media (max-width: 320px) {
+      .order {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 15px;
+        right: 25px;
       }
     }
   }

@@ -38,13 +38,18 @@ function HomeAdmin() {
             id="slide-container"
             options={{
               type: "loop",
-              perPage: 4,
-              perMove: 3,
+              perPage: 3,
+              focus: "center",
               arrows: false,
-              pagination: false,
               breakpoints: {
                 320: {
                   perPage: 2,
+                  gap: "50px",
+                },
+                425: {
+                  perPage: 2,
+                  padding: "30px",
+                  gap: "-30px",
                 },
               },
             }}
@@ -61,13 +66,18 @@ function HomeAdmin() {
             id="slide-container"
             options={{
               type: "loop",
-              perPage: 4,
-              perMove: 3,
+              perPage: 3,
+              focus: "center",
               arrows: false,
-              pagination: false,
               breakpoints: {
                 320: {
                   perPage: 2,
+                  gap: "50px",
+                },
+                425: {
+                  perPage: 2,
+                  padding: "30px",
+                  gap: "-30px",
                 },
               },
             }}
@@ -85,13 +95,18 @@ function HomeAdmin() {
             id="slide-container"
             options={{
               type: "loop",
-              perPage: 4,
-              perMove: 3,
+              perPage: 3,
+              focus: "center",
               arrows: false,
-              pagination: false,
               breakpoints: {
                 320: {
                   perPage: 2,
+                  gap: "50px",
+                },
+                425: {
+                  perPage: 2,
+                  padding: "30px",
+                  gap: "-30px",
                 },
               },
             }}
