@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { MainDiv } from "./styles";
 import Brand from "../../components/Brand";
 import polygon from "../../assets/Polygons/polygonColorful.png";
@@ -8,6 +10,14 @@ import Input from "../../components/Input";
 import { FaLock, FaUser, FaRegEnvelope } from "react-icons/fa6";
 
 function SignUp() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = () => {
+    console.log(name, email, password);
+  };
+
   return (
     <div>
       <MainDiv>
@@ -20,12 +30,15 @@ function SignUp() {
               label={"Seu nome"}
               placeholder={"Exemplo: Maria da Silva"}
               icon={FaUser}
+              type={"text"}
+              onChange={(e) => setName(e.target.value)}
             />
             <InputLabel
               label={"Seu email"}
               placeholder={"Exemplo: exemplo@exemplo.com.br"}
               icon={FaRegEnvelope}
               type={"email"}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <InputLabel
@@ -33,9 +46,10 @@ function SignUp() {
               placeholder={"No mínimo 6 caracteres"}
               icon={FaLock}
               type={"password"}
+              onChange={(e) => setPassword(e.target.value)}
             />
 
-            <Button title={"Criar conta"} />
+            <Button title={"Criar conta"} onClick={handleSignUp} />
 
             <Input title={"Já tenho uma conta"} link={"/"} />
           </StyledInputField>

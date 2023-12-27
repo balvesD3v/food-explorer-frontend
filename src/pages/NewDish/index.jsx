@@ -28,7 +28,6 @@ function NewDish() {
             <IngredientsField>
               <span>Ingredientes</span>
               <div className="tags">
-                <IngredientTag value="Pão naan" />
                 <IngredientTag isNew placeholder="Adicionar" />
               </div>
             </IngredientsField>

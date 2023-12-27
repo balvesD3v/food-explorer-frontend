@@ -38,24 +38,18 @@ function HomeUser() {
             id="slide-container"
             options={{
               type: "loop",
-              perPage: 3,
-              focus: "center",
               arrows: false,
+              focus: "center",
               breakpoints: {
                 320: {
-                  perPage: 2,
-                  gap: "60px",
-                },
-                425: {
-                  perPage: 2,
-                  padding: "30px",
-                  gap: "-30px",
+                  perPage: 1,
                 },
               },
             }}
           >
             <SplideSlide id="splide-slide">
               <DivPlates>
+                <Plates />
                 <Plates />
               </DivPlates>
             </SplideSlide>
@@ -67,24 +61,21 @@ function HomeUser() {
             id="slide-container"
             options={{
               type: "loop",
-              perPage: 3,
-              focus: "center",
               arrows: false,
+              focus: "center",
               breakpoints: {
                 320: {
-                  perPage: 2,
-                  gap: "60px",
+                  gap: "120px",
                 },
                 425: {
-                  perPage: 2,
                   padding: "30px",
-                  gap: "-30px",
                 },
               },
             }}
           >
             <SplideSlide id="splide-slide">
               <DivPlates>
+                <Plates />
                 <Plates />
               </DivPlates>
             </SplideSlide>
@@ -96,24 +87,21 @@ function HomeUser() {
             id="slide-container"
             options={{
               type: "loop",
-              perPage: 3,
-              focus: "center",
               arrows: false,
+              focus: "center",
               breakpoints: {
                 320: {
-                  perPage: 2,
-                  gap: "60px",
+                  gap: "120px",
                 },
                 425: {
-                  perPage: 2,
                   padding: "30px",
-                  gap: "-30px",
                 },
               },
             }}
           >
             <SplideSlide id="splide-slide">
               <DivPlates>
+                <Plates />
                 <Plates />
               </DivPlates>
             </SplideSlide>
