@@ -14,7 +14,7 @@ function EditDish() {
     <>
       <HeaderAdmin />
       <DivStyled>
-        <a href="/">
+        <a href="/" className="linkto">
           <FaAngleLeft /> voltar
         </a>
         <h1>Editar prato</h1>

@@ -11,6 +11,18 @@ export const DivStyled = styled.div`
     margin-top: 1em;
   }
 
+  .linkto {
+    margin-bottom: 1em;
+    margin-top: -0.5em;
+    color: var(--Light-Light-300, #e1e1e6);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 33.6px */
+    z-index: 99;
+  }
+
   section {
     display: flex;
     flex-direction: column;
@@ -41,7 +53,7 @@ export const DivStyled = styled.div`
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    height: 100vh;
+    height: 100%;
 
     a {
       font-size: 1rem;
