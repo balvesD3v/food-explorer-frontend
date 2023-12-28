@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { MainDiv } from "./styles";
@@ -67,7 +67,6 @@ function SignUp() {
             />
 
             <Button title={"Criar conta"} onClick={handleSignUp} />
-            <ToastContainer theme="colored" />
 
             <Input title={"Já tenho uma conta"} link={"/"} />
           </StyledInputField>

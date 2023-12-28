@@ -1,4 +1,5 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 
 import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "styled-components";
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <GlobalStyles />
       <AuthProvider>
         <Routes />
+        <ToastContainer theme="colored" />
       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>

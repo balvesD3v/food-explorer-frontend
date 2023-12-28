@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
 import { api } from "../services/api";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AuthContext = createContext({});
 
@@ -16,9 +18,9 @@ function AuthProvider({ children }) {
       setData({ user, token });
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message);
+        toast.error(error.response.data.message);
       } else {
-        alert("Não foi possível entrar.");
+        toast.error("Não foi possível entrar.");
       }
     }
   }
