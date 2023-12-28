@@ -15,6 +15,7 @@ export const MainDiv = styled.div`
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     height: 100%;
     flex-direction: column;
+    margin-top: 4em;
   }
 `;
 

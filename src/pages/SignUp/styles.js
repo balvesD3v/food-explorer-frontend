@@ -13,6 +13,7 @@ export const MainDiv = styled.div`
   gap: 28em;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    margin-top: -3em;
     flex-direction: column;
   }
 `;
