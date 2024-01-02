@@ -1,12 +1,10 @@
 import { DivStyled } from "./styles";
 
-function InputName() {
+function InputName({ ...rest }) {
   return (
     <DivStyled>
-      <label htmlFor="" id="name">
-        Nome
-      </label>
-      <input type="text" id="name" placeholder="Ex.: Salada Ceasar" />
+      <label htmlFor="name">Nome</label>
+      <input type="text" id="name" placeholder="Ex.: Salada Ceasar" {...rest} />
     </DivStyled>
   );
 }

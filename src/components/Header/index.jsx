@@ -5,8 +5,11 @@ import BurgerBar from "../BurgerBar";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { HeaderStyled, Brand } from "./styles";
+import { useAuth } from "../../hooks/auth";
 
 function Header() {
+  const { signOut } = useAuth();
+
   return (
     <HeaderStyled>
       <BurgerBar />
@@ -18,7 +21,7 @@ function Header() {
       </Brand>
       <SeachBar />
       <ButtonOrder title={"Pedidos"} />
-      <a href="" className="signOut">
+      <a href="" className="signOut" onClick={signOut}>
         <FaArrowRightFromBracket className="arrowRight" />
       </a>
     </HeaderStyled>

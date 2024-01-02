@@ -2,13 +2,14 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import SeachBarMobile from "../SeachBarMobile";
 import { StyledBurgerBar } from "./styles";
+import { useAuth } from "../../hooks/auth";
 
 const BurgerBar = () => {
+  const { signOut } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
-    console.log("111");
   };
 
   return (
@@ -37,7 +38,7 @@ const BurgerBar = () => {
         <div className="menu-inside-content">
           <SeachBarMobile />
           <p>Novo prato</p>
-          <p>Sair</p>
+          <p onClick={signOut}>Sair</p>
         </div>
       </div>
     </StyledBurgerBar>

@@ -5,8 +5,11 @@ import BurgerBarAdmin from "../BurgerBarAdmin";
 import polygon from "../../assets/Polygons/polygonColorful.png";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { HeaderStyled, Brand, MobileStyled } from "./styles";
+import { useAuth } from "../../hooks/auth";
 
 function HeaderAdmin() {
+  const { signOut } = useAuth();
+
   return (
     <HeaderStyled>
       <BurgerBarAdmin />
@@ -24,7 +27,7 @@ function HeaderAdmin() {
         <Button title={"Novo Prato"} />
       </MobileStyled>
 
-      <a href="" className="signOut">
+      <a href="" className="signOut" onClick={signOut}>
         <FaArrowRightFromBracket className="arrowRight" />
       </a>
     </HeaderStyled>

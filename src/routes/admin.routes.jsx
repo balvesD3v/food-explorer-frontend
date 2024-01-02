@@ -7,7 +7,7 @@ import NewDish from "../pages/NewDish";
 import EditDish from "../pages/EditDish";
 import ShowDish from "../pages/ShowDish";
 
-export function AppRoutes() {
+export function AdminRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomeAdmin />} />
