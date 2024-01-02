@@ -8,8 +8,47 @@ import InputPrice from "../../components/InputPrice";
 import IngredientTag from "../../components/IngredientTag";
 import Button from "../../components/Button";
 import Detailfooter from "../../components/Detailfooter";
+import { toast } from "react-toastify";
+import { api } from "../../services/api";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewDish() {
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+  const [price, setPrice] = useState("");
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
+
+  function handleAddTag() {
+    setTags((prevState) => [...prevState, newTag]);
+    setNewTag("");
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+  }
+
+  async function handleNewDish() {
+    try {
+      await api.post("/dishes", {
+        title,
+        description,
+        price,
+        tags,
+      });
+
+      toast.success("Prato criado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      console.error("Erro ao criar o prato:", error);
+      toast.error("Erro ao criar o prato. Tente novamente mais tarde.");
+    }
+  }
+
   return (
     <>
       <HeaderAdmin />
@@ -21,18 +60,33 @@ function NewDish() {
         <section>
           <InputField>
             <SendImage />
-            <InputName />
+            <InputName onChange={(e) => setTitle(e.target.value)} />
             <Select />
           </InputField>
           <InputField>
             <IngredientsField>
               <span>Ingredientes</span>
               <div className="tags">
-                <IngredientTag isNew placeholder="Adicionar" />
+                {tags.map((tag, index) => (
+                  <IngredientTag
+                    key={String(index)}
+                    value={tag}
+                    onClick={() => {
+                      handleRemoveTag(tag);
+                    }}
+                  />
+                ))}
+                <IngredientTag
+                  isNew
+                  placeholder="Adicionar"
+                  onChange={(e) => setNewTag(e.target.value)}
+                  value={newTag}
+                  onClick={handleAddTag}
+                />
               </div>
             </IngredientsField>
             <div className="price">
-              <InputPrice />
+              <InputPrice onChange={(e) => setPrice(e.target.value)} />
             </div>
           </InputField>
           <TextArea>
@@ -43,11 +97,12 @@ function NewDish() {
               cols="30"
               rows="8"
               placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </TextArea>
         </section>
         <div className="button-save">
-          <Button title={"Salvar Alterações"} />
+          <Button title={"Salvar Alterações"} onClick={handleNewDish} />
         </div>
       </DivStyled>
       <Detailfooter />

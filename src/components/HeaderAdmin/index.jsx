@@ -24,10 +24,10 @@ function HeaderAdmin() {
       <SeachBar />
 
       <MobileStyled>
-        <Button title={"Novo Prato"} />
+        <Button title={"Novo Prato"} link={"new"} />
       </MobileStyled>
 
-      <a href="" className="signOut" onClick={signOut}>
+      <a href="/" className="signOut" onClick={signOut}>
         <FaArrowRightFromBracket className="arrowRight" />
       </a>
     </HeaderStyled>

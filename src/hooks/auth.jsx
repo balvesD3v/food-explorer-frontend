@@ -15,7 +15,7 @@ function AuthProvider({ children }) {
       const { user, token } = response.data;
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
-      localStorage.setItem("@foodexplorer:token", JSON.stringify(user));
+      localStorage.setItem("@foodexplorer:token", JSON.stringify(token));
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       setData({ user, token });
@@ -29,8 +29,8 @@ function AuthProvider({ children }) {
   }
 
   async function signOut() {
-    const user = localStorage.removeItem("@foodexplorer:user");
-    const token = localStorage.removeItem("@foodexplorer:token");
+    localStorage.removeItem("@foodexplorer:user");
+    localStorage.removeItem("@foodexplorer:token");
 
     setData({});
   }

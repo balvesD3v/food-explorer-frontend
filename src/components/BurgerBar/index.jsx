@@ -37,7 +37,7 @@ const BurgerBar = () => {
         </div>
         <div className="menu-inside-content">
           <SeachBarMobile />
-          <p onClick={signOut}>Sair</p>
+          <a onClick={signOut}>Sair</a>
         </div>
       </div>
     </StyledBurgerBar>

@@ -57,7 +57,12 @@ export const StyledBurgerBar = styled.div`
     .menu-inside-content {
       padding: 2em 1em;
 
-      p {
+      .menu-link {
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
         color: var(--Light-Light-300, #e1e1e6);
         font-family: Poppins;
         font-size: 24px;
@@ -65,6 +70,7 @@ export const StyledBurgerBar = styled.div`
         font-weight: 300;
         line-height: 140%; /* 33.6px */
         margin-bottom: 1em;
+        text-decoration: none;
 
         border-bottom: #192227 1px solid;
       }

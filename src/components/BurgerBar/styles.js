@@ -56,7 +56,8 @@ export const StyledBurgerBar = styled.div`
     .menu-inside-content {
       padding: 2em 1em;
 
-      p {
+      p,
+      a {
         color: var(--Light-Light-300, #e1e1e6);
         font-family: Poppins;
         font-size: 24px;
