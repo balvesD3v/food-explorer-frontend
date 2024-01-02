@@ -14,31 +14,31 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function NewDish() {
-  const [tags, setTags] = useState([]);
-  const [newTag, setNewTag] = useState("");
+  const [ingredients, setIngredients] = useState([]);
+  const [newIngredients, setNewIngredients] = useState("");
   const [price, setPrice] = useState("");
 
-  const [title, setTitle] = useState("");
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
   const navigate = useNavigate();
 
   function handleAddTag() {
-    setTags((prevState) => [...prevState, newTag]);
-    setNewTag("");
+    setIngredients((prevState) => [...prevState, newIngredients]);
+    setNewIngredients("");
   }
 
   function handleRemoveTag(deleted) {
-    setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+    setIngredients((prevState) => prevState.filter((tag) => tag !== deleted));
   }
 
   async function handleNewDish() {
     try {
       await api.post("/dishes", {
-        title,
+        name,
         description,
+        ingredients,
         price,
-        tags,
       });
 
       toast.success("Prato criado com sucesso!");
@@ -60,14 +60,14 @@ function NewDish() {
         <section>
           <InputField>
             <SendImage />
-            <InputName onChange={(e) => setTitle(e.target.value)} />
+            <InputName onChange={(e) => setName(e.target.value)} />
             <Select />
           </InputField>
           <InputField>
             <IngredientsField>
               <span>Ingredientes</span>
               <div className="tags">
-                {tags.map((tag, index) => (
+                {ingredients.map((tag, index) => (
                   <IngredientTag
                     key={String(index)}
                     value={tag}
@@ -79,8 +79,8 @@ function NewDish() {
                 <IngredientTag
                   isNew
                   placeholder="Adicionar"
-                  onChange={(e) => setNewTag(e.target.value)}
-                  value={newTag}
+                  onChange={(e) => setNewIngredients(e.target.value)}
+                  value={newIngredients}
                   onClick={handleAddTag}
                 />
               </div>
