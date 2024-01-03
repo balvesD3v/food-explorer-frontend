@@ -10,14 +10,13 @@ import Button from "../../components/Button";
 import Detailfooter from "../../components/Detailfooter";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function NewDish() {
   const [ingredients, setIngredients] = useState([]);
   const [newIngredients, setNewIngredients] = useState("");
   const [price, setPrice] = useState("");
-
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -33,21 +32,20 @@ function NewDish() {
   }
 
   async function handleNewDish() {
-    try {
-      await api.post("/dishes", {
-        name,
-        description,
-        ingredients,
-        price,
-      });
+    await api.post("/dishes", {
+      name,
+      description,
+      ingredients,
+      price,
+    });
 
-      toast.success("Prato criado com sucesso!");
-      navigate("/");
-    } catch (error) {
-      console.error("Erro ao criar o prato:", error);
-      toast.error("Erro ao criar o prato. Tente novamente mais tarde.");
-    }
+    toast.success("Prato criado com sucesso!");
+    navigate("/");
   }
+
+  useEffect(() => {
+    api.get("/dishes").then((response) => console.log(response.data));
+  }, []);
 
   return (
     <>
