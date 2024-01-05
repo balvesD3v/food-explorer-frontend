@@ -12,14 +12,18 @@ import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
 
 function NewDish() {
+  const { updateImageDish } = useAuth();
+
   const [newIngredients, setNewIngredients] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
   const [categories, setCategories] = useState("");
+  const [imageFile, setImageFile] = useState(null);
 
   const navigate = useNavigate();
 
@@ -33,17 +37,41 @@ function NewDish() {
   }
 
   async function handleNewDish() {
+    if (!name) {
+      return toast.error("Digite o título da nota");
+    }
+
+    if (!categories) {
+      return toast.error("Escolha uma categoria para o prato");
+    }
+
+    if (!price) {
+      return toast.error("Digite um preço para o prato");
+    }
+
+    if (!description) {
+      return toast.error("Escreva uma descrição para o prato");
+    }
+
+    if (newIngredients) {
+      return toast.error(
+        "Você deixou um ingrediente no campo para adicionar, mas não adicionou."
+      );
+    }
+
     try {
-      await api.post("/dishes", {
+      const { data } = await api.post("/dishes", {
         name,
         description,
         ingredients,
-        categories,
         price,
+        categories,
       });
 
       toast.success("Prato criado com sucesso!");
       navigate("/");
+
+      await updateImageDish({ data, imageFile });
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);
@@ -51,6 +79,11 @@ function NewDish() {
         toast.error("Não foi possível entrar.");
       }
     }
+  }
+
+  async function handleChangeImage(event) {
+    const file = event.target.files[0];
+    setImageFile(file);
   }
 
   return (
@@ -63,7 +96,7 @@ function NewDish() {
         <h1>Adicionar prato</h1>
         <section>
           <InputField>
-            <SendImage />
+            <SendImage onChange={handleChangeImage} />
             <InputName onChange={(e) => setName(e.target.value)} />
             <Select onChange={(e) => setCategories(e.target.value)} />
           </InputField>

@@ -51,6 +51,27 @@ function AuthProvider({ children }) {
     }
   }
 
+  async function updateImageDish({ data, imageFile }) {
+    try {
+      if (imageFile) {
+        const fileUploadImage = new FormData();
+        fileUploadImage.append("image", imageFile);
+        const response = await api.patch(
+          `dishes/${data[0]}/image`,
+          fileUploadImage
+        );
+
+        data.image = response.data.image;
+      }
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("err.");
+      }
+    }
+  }
+
   useEffect(() => {
     const user = localStorage.getItem("@foodexplorer:user");
 
@@ -63,7 +84,13 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ signIn, signOut, updateProfile, user: data.user }}
+      value={{
+        signIn,
+        signOut,
+        updateProfile,
+        updateImageDish,
+        user: data.user,
+      }}
     >
       {children}
     </AuthContext.Provider>

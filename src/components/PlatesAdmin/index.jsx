@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
-import plate from "../../assets/foods/Mask group-1.png";
 
-function PlatesAdmin() {
+function PlatesAdmin({ name, description, price, image }) {
   return (
     <>
       <DivStyled>
@@ -22,19 +22,17 @@ function PlatesAdmin() {
               stroke-linecap="round"
               stroke-linejoin="round"
             />
-          </svg>{" "}
+          </svg>
         </EditButton>
-        <img src={plate} alt="Plate" />
+        <img src={image} alt="Plate" />
         <DivInfo>
           <h3>
-            Salada Ravanello
+            {name}
             <FaAngleRight className="arrow-right" />
           </h3>
 
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim
-          </p>
-          <span>R$ 49,97</span>
+          <p>{description}</p>
+          <span>{price}</span>
         </DivInfo>
       </DivStyled>
     </>
