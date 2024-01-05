@@ -35,6 +35,22 @@ function AuthProvider({ children }) {
     setData({});
   }
 
+  async function updateProfile({ user }) {
+    try {
+      await api.put("/users", user);
+      localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+
+      setData({ user, token: data.token });
+      toast.success("Perfil atualizado");
+    } catch (error) {
+      if (error.response) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Não foi possível entrar.");
+      }
+    }
+  }
+
   useEffect(() => {
     const user = localStorage.getItem("@foodexplorer:user");
 
@@ -43,11 +59,12 @@ function AuthProvider({ children }) {
         user: JSON.parse(user),
       });
     }
-    console.log(user);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
+    <AuthContext.Provider
+      value={{ signIn, signOut, updateProfile, user: data.user }}
+    >
       {children}
     </AuthContext.Provider>
   );

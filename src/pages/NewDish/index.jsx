@@ -10,15 +10,16 @@ import Button from "../../components/Button";
 import Detailfooter from "../../components/Detailfooter";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function NewDish() {
-  const [ingredients, setIngredients] = useState([]);
   const [newIngredients, setNewIngredients] = useState("");
+  const [ingredients, setIngredients] = useState([]);
+  const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [categories, setCategories] = useState("");
 
   const navigate = useNavigate();
 
@@ -32,20 +33,25 @@ function NewDish() {
   }
 
   async function handleNewDish() {
-    await api.post("/dishes", {
-      name,
-      description,
-      ingredients,
-      price,
-    });
+    try {
+      await api.post("/dishes", {
+        name,
+        description,
+        ingredients,
+        categories,
+        price,
+      });
 
-    toast.success("Prato criado com sucesso!");
-    navigate("/");
+      toast.success("Prato criado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      if (error.response) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("Não foi possível entrar.");
+      }
+    }
   }
-
-  useEffect(() => {
-    api.get("/dishes").then((response) => console.log(response.data));
-  }, []);
 
   return (
     <>
@@ -59,7 +65,7 @@ function NewDish() {
           <InputField>
             <SendImage />
             <InputName onChange={(e) => setName(e.target.value)} />
-            <Select />
+            <Select onChange={(e) => setCategories(e.target.value)} />
           </InputField>
           <InputField>
             <IngredientsField>

@@ -1,10 +1,10 @@
 import { DivStyled } from "./styles";
 
-function Select() {
+function Select({ ...rest }) {
   return (
     <DivStyled>
       <label htmlFor="">Categoria</label>
-      <select name="" id="">
+      <select name="" id="" {...rest}>
         <option value="" selected disabled hidden>
           Selecione uma opção
         </option>
