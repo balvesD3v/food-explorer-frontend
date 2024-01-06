@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { api } from "../../services/api";
 import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
 import HeaderAdmin from "../../components/HeaderAdmin";
 import Detailfooter from "../../components/Detailfooter";
@@ -8,40 +11,54 @@ import InputPrice from "../../components/InputPrice";
 import IngredientTag from "../../components/IngredientTag";
 import Button from "../../components/Button";
 import { FaAngleLeft } from "react-icons/fa6";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../services/api";
-import { toast } from "react-toastify";
 
 function EditDish() {
-  const navigate = useNavigate();
-  const [tags, setTags] = useState([]);
-  const [newTag, setNewTag] = useState("");
-  const [price, setPrice] = useState("");
+  const { id } = useParams();
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [dishUpdated, setDishUpdated] = useState({
+    newNameDish: "",
+    newDescription: "",
+    newPrice: 0,
+  });
 
-  function handleAddTag() {
-    setTags((prevState) => [...prevState, newTag]);
-    setNewTag("");
+  const [dishData, setDishData] = useState({
+    name: "",
+    ingredients: [],
+    price: "",
+    description: "",
+    categories: "",
+  });
+
+  async function handleUpdateDish() {
+    await api.put(`/dishes/${id}`, dishUpdated);
   }
 
-  function handleRemoveTag(deleted) {
-    setTags((prevState) => prevState.filter((tag) => tag !== deleted));
-  }
+  useEffect(() => {
+    const fetchDishData = async () => {
+      try {
+        const response = await api.get(`/dishes/${id}`);
+        const { name, ingredients, price, description } = response.data;
+        console.log(response.data);
 
-  async function handleNewNote() {
-    await api.post("/dishes", {
-      title,
-      description,
-      price,
-      tags,
-    });
+        setDishUpdated({
+          newNameDish: name,
+          newDescription: description,
+          newPrice: price,
+        });
 
-    toast.success("Nota criada com sucesso!");
-    navigate("/");
-  }
+        setDishData({
+          name,
+          ingredients,
+          price,
+          description,
+          categories: "",
+        });
+      } catch (error) {
+        console.error("Erro ao buscar dados do prato:", error);
+      }
+    };
+    fetchDishData();
+  }, [id]);
 
   return (
     <>
@@ -54,50 +71,76 @@ function EditDish() {
         <section>
           <InputField>
             <SendImage />
-            <InputName onChange={(e) => setTitle(e.target.value)} />
-            <Select />
+            <InputName
+              value={dishData.name}
+              onChange={(e) => {
+                setDishUpdated((prevData) => ({
+                  ...prevData,
+                  newNameDish: e.target.value,
+                }));
+                setDishData((prevData) => ({
+                  ...prevData,
+                  name: e.target.value,
+                }));
+              }}
+            />
+            <Select
+              value={dishData.ingredients}
+              onChange={(e) => {
+                setDishData((prevData) => ({
+                  ...prevData,
+                  ingredients: e.target.value,
+                }));
+              }}
+            />
           </InputField>
           <InputField>
             <IngredientsField>
               <span>Ingredientes</span>
               <div className="tags">
-                {tags.map((tag, index) => (
-                  <IngredientTag
-                    key={String(index)}
-                    value={tag}
-                    onClick={() => {
-                      handleRemoveTag(tag);
-                    }}
-                  />
+                {dishData.ingredients.map((ingredient, index) => (
+                  <IngredientTag key={index} value={ingredient.name} />
                 ))}
-                <IngredientTag
-                  isNew
-                  placeholder="Adicionar"
-                  onChange={(e) => setNewTag(e.target.value)}
-                  value={newTag}
-                  onClick={handleAddTag}
-                />
+                <IngredientTag isNew placeholder="Adicionar" />
               </div>
             </IngredientsField>
             <div className="price">
-              <InputPrice onChange={(e) => setPrice(e.target.value)} />
+              <InputPrice
+                value={dishData.price}
+                onChange={(e) => {
+                  setDishUpdated((prevData) => ({
+                    ...prevData,
+                    newPrice: e.target.value,
+                  }));
+                  setDishData((prevData) => ({
+                    ...prevData,
+                    price: e.target.value,
+                  }));
+                }}
+              />
             </div>
           </InputField>
           <TextArea>
             <label htmlFor="">Descrição</label>
             <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="8"
+              value={dishData.description}
+              onChange={(e) => {
+                setDishUpdated((prevData) => ({
+                  ...prevData,
+                  newDescription: e.target.value,
+                }));
+                setDishData((prevData) => ({
+                  ...prevData,
+                  description: e.target.value,
+                }));
+              }}
               placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </TextArea>
         </section>
         <div className="button-save">
           <Button title={"Excluir Prato"} isDelete />
-          <Button title={"Salvar Alterações"} onClick={handleNewNote} />
+          <Button title={"Salvar Alterações"} onClick={handleUpdateDish} />
         </div>
       </DivStyled>
       <Detailfooter />

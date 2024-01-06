@@ -102,4 +102,23 @@ export const DishesSection = styled.section`
     margin-bottom: 0em;
     font-size: 1.5rem;
   }
+
+  .swiper {
+    width: 100%;
+    height: 35em;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50em;
+  }
+
+  .swiper-slide img {
+    display: block;
+    object-fit: cover;
+  }
 `;

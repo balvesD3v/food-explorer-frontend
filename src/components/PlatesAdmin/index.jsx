@@ -3,11 +3,11 @@
 import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
 
-function PlatesAdmin({ name, description, price, image }) {
+function PlatesAdmin({ id, name, description, price, image }) {
   return (
     <>
       <DivStyled>
-        <EditButton to={"/edit"}>
+        <EditButton to={`/edit/${id}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"

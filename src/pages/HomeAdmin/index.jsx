@@ -13,10 +13,11 @@ import Detailfooter from "../../components/Detailfooter";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
 function HomeAdmin() {
+  const [slidesPerView, setSlidePerView] = useState(4);
   const [dishes, setDishes] = useState([]);
-  const [image, setImage] = useState(null);
 
   useEffect(() => {
     async function fetchDishes() {
@@ -46,12 +47,18 @@ function HomeAdmin() {
         <DishesSection>
           <h2>Refeições</h2>
 
-          <Swiper>
+          <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
             <DivPlates>
               {dishes &&
                 dishes.map((dish) => (
                   <SwiperSlide key={dish.id}>
                     <PlatesAdmin
+                      id={dish.id}
                       image={dish.image}
                       name={dish.name}
                       description={dish.description}
@@ -63,7 +70,12 @@ function HomeAdmin() {
           </Swiper>
           <h2>Sobremesas</h2>
 
-          <Swiper>
+          <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
             <DivPlates>
               {dishes &&
                 dishes.map((dish) => (
@@ -81,7 +93,12 @@ function HomeAdmin() {
 
           <h2>Bebidas</h2>
 
-          <Swiper>
+          <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
             <DivPlates>
               {dishes &&
                 dishes.map((dish) => (
