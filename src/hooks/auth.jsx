@@ -8,7 +8,6 @@ export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
-  const [dish, setDish] = useState({});
 
   async function signIn({ email, password }) {
     try {
@@ -43,19 +42,6 @@ function AuthProvider({ children }) {
 
       setData({ user, token: data.token });
       toast.success("Perfil atualizado");
-    } catch (error) {
-      if (error.response) {
-        toast.error(error.response.data.message);
-      } else {
-        toast.error("Não foi possível entrar.");
-      }
-    }
-  }
-
-  async function updateDish({ dish }) {
-    try {
-      await api.put("/dishes", dish);
-      setDish(dish);
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);
@@ -103,7 +89,6 @@ function AuthProvider({ children }) {
         signOut,
         updateProfile,
         updateImageDish,
-        updateDish,
         user: data.user,
       }}
     >

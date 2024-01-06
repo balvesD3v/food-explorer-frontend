@@ -23,6 +23,7 @@ function HomeAdmin() {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data);
+      console.log(response.data);
     }
     fetchDishes();
   }, []);
@@ -46,7 +47,6 @@ function HomeAdmin() {
 
         <DishesSection>
           <h2>Refeições</h2>
-
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
@@ -55,21 +55,23 @@ function HomeAdmin() {
           >
             <DivPlates>
               {dishes &&
-                dishes.map((dish) => (
-                  <SwiperSlide key={dish.id}>
-                    <PlatesAdmin
-                      id={dish.id}
-                      image={dish.image}
-                      name={dish.name}
-                      description={dish.description}
-                      price={dish.price}
-                    />
-                  </SwiperSlide>
-                ))}
+                dishes
+                  .filter((dish) => dish.categories === "refeicoes")
+                  .map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <PlatesAdmin
+                        id={dish.id}
+                        image={dish.image}
+                        name={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                      />
+                    </SwiperSlide>
+                  ))}
             </DivPlates>
           </Swiper>
-          <h2>Sobremesas</h2>
 
+          <h2>Sobremesas</h2>
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
@@ -78,21 +80,23 @@ function HomeAdmin() {
           >
             <DivPlates>
               {dishes &&
-                dishes.map((dish) => (
-                  <SwiperSlide key={dish.id}>
-                    <PlatesAdmin
-                      image={dish.image}
-                      name={dish.name}
-                      description={dish.description}
-                      price={dish.price}
-                    />
-                  </SwiperSlide>
-                ))}
+                dishes
+                  .filter((dish) => dish.categories === "sobremesas")
+                  .map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <PlatesAdmin
+                        id={dish.id}
+                        image={dish.image}
+                        name={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                      />
+                    </SwiperSlide>
+                  ))}
             </DivPlates>
           </Swiper>
 
           <h2>Bebidas</h2>
-
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
@@ -101,16 +105,19 @@ function HomeAdmin() {
           >
             <DivPlates>
               {dishes &&
-                dishes.map((dish) => (
-                  <SwiperSlide key={dish.id}>
-                    <PlatesAdmin
-                      image={dish.image}
-                      name={dish.name}
-                      description={dish.description}
-                      price={dish.price}
-                    />
-                  </SwiperSlide>
-                ))}
+                dishes
+                  .filter((dish) => dish.categories === "bebidas")
+                  .map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <PlatesAdmin
+                        id={dish.id}
+                        image={dish.image}
+                        name={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                      />
+                    </SwiperSlide>
+                  ))}
             </DivPlates>
           </Swiper>
         </DishesSection>

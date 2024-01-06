@@ -49,6 +49,10 @@ function NewDish() {
       return toast.error("Digite um preço para o prato");
     }
 
+    if (price < 0) {
+      return toast.error("Digite um preço acima de 0");
+    }
+
     if (!description) {
       return toast.error("Escreva uma descrição para o prato");
     }
