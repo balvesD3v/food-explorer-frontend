@@ -1,5 +1,3 @@
-import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import {
   BannerStyled,
   DivStyled,
@@ -14,6 +12,7 @@ import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 function HomeAdmin() {
   const [dishes, setDishes] = useState([]);
@@ -27,15 +26,6 @@ function HomeAdmin() {
     fetchDishes();
   }, []);
 
-  useEffect(() => {
-    async function fecthImage() {
-      const response = await api.get("/image");
-      setImage(response.data);
-      console.log(response.data);
-    }
-
-    fecthImage();
-  });
   return (
     <>
       <HeaderAdmin />
@@ -56,75 +46,56 @@ function HomeAdmin() {
         <DishesSection>
           <h2>Refeições</h2>
 
-          <DivPlates>
-            {dishes &&
-              dishes.map((dish) => (
-                <PlatesAdmin
-                  key={dish.id}
-                  image={dish.image}
-                  name={dish.name}
-                  description={dish.description}
-                  price={dish.price}
-                />
-              ))}
-          </DivPlates>
+          <Swiper>
+            <DivPlates>
+              {dishes &&
+                dishes.map((dish) => (
+                  <SwiperSlide key={dish.id}>
+                    <PlatesAdmin
+                      image={dish.image}
+                      name={dish.name}
+                      description={dish.description}
+                      price={dish.price}
+                    />
+                  </SwiperSlide>
+                ))}
+            </DivPlates>
+          </Swiper>
           <h2>Sobremesas</h2>
 
-          <Splide
-            id="slide-container"
-            options={{
-              type: "loop",
-              perPage: 3,
-              focus: "center",
-              arrows: false,
-              breakpoints: {
-                320: {
-                  perPage: 2,
-                  gap: "50px",
-                },
-                425: {
-                  perPage: 2,
-                  padding: "30px",
-                  gap: "-30px",
-                },
-              },
-            }}
-          >
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-          </Splide>
+          <Swiper>
+            <DivPlates>
+              {dishes &&
+                dishes.map((dish) => (
+                  <SwiperSlide key={dish.id}>
+                    <PlatesAdmin
+                      image={dish.image}
+                      name={dish.name}
+                      description={dish.description}
+                      price={dish.price}
+                    />
+                  </SwiperSlide>
+                ))}
+            </DivPlates>
+          </Swiper>
 
           <h2>Bebidas</h2>
 
-          <Splide
-            id="slide-container"
-            options={{
-              type: "loop",
-              perPage: 3,
-              focus: "center",
-              arrows: false,
-              breakpoints: {
-                320: {
-                  perPage: 2,
-                  gap: "50px",
-                },
-                425: {
-                  perPage: 2,
-                  padding: "30px",
-                  gap: "-30px",
-                },
-              },
-            }}
-          >
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <PlatesAdmin />
-              </DivPlates>
-            </SplideSlide>
-          </Splide>
+          <Swiper>
+            <DivPlates>
+              {dishes &&
+                dishes.map((dish) => (
+                  <SwiperSlide key={dish.id}>
+                    <PlatesAdmin
+                      image={dish.image}
+                      name={dish.name}
+                      description={dish.description}
+                      price={dish.price}
+                    />
+                  </SwiperSlide>
+                ))}
+            </DivPlates>
+          </Swiper>
         </DishesSection>
       </DivStyled>
       <Detailfooter />

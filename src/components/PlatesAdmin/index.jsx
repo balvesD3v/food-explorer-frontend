@@ -24,7 +24,7 @@ function PlatesAdmin({ name, description, price, image }) {
             />
           </svg>
         </EditButton>
-        <img src={image} alt="Plate" />
+        <img src={`http://localhost:3000/files/${image}`} alt="Plate" />
         <DivInfo>
           <h3>
             {name}

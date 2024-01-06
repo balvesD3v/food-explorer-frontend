@@ -1,5 +1,3 @@
-import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import {
   BannerStyled,
   DivStyled,
@@ -12,8 +10,21 @@ import Header from "../../components/Header";
 import Plates from "../../components/Plates";
 import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
 function HomeUser() {
+  const [dishes, setDishes] = useState([]);
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get("/dishes");
+      setDishes(response.data);
+    }
+    fetchDishes();
+  }, []);
   return (
     <>
       <Header />
@@ -34,78 +45,37 @@ function HomeUser() {
         <DishesSection>
           <h2>Refeições</h2>
 
-          <Splide
-            id="slide-container"
-            options={{
-              type: "loop",
-              arrows: false,
-              focus: "center",
-              breakpoints: {
-                320: {
-                  perPage: 1,
-                },
-              },
-            }}
-          >
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <Plates />
-                <Plates />
-              </DivPlates>
-            </SplideSlide>
-          </Splide>
+          <Swiper>
+            <DivPlates>
+              <Swiper>
+                <DivPlates>
+                  {dishes &&
+                    dishes.map((dish) => (
+                      <SwiperSlide key={dish.id}>
+                        <Plates
+                          image={dish.image}
+                          name={dish.name}
+                          description={dish.description}
+                          price={dish.price}
+                        />
+                      </SwiperSlide>
+                    ))}
+                </DivPlates>
+              </Swiper>
+            </DivPlates>
+          </Swiper>
 
           <h2>Sobremesas</h2>
 
-          <Splide
-            id="slide-container"
-            options={{
-              type: "loop",
-              arrows: false,
-              focus: "center",
-              breakpoints: {
-                320: {
-                  gap: "120px",
-                },
-                425: {
-                  padding: "30px",
-                },
-              },
-            }}
-          >
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <Plates />
-                <Plates />
-              </DivPlates>
-            </SplideSlide>
-          </Splide>
+          <Swiper>
+            <DivPlates></DivPlates>
+          </Swiper>
 
           <h2>Bebidas</h2>
 
-          <Splide
-            id="slide-container"
-            options={{
-              type: "loop",
-              arrows: false,
-              focus: "center",
-              breakpoints: {
-                320: {
-                  gap: "120px",
-                },
-                425: {
-                  padding: "30px",
-                },
-              },
-            }}
-          >
-            <SplideSlide id="splide-slide">
-              <DivPlates>
-                <Plates />
-                <Plates />
-              </DivPlates>
-            </SplideSlide>
-          </Splide>
+          <Swiper>
+            <DivPlates></DivPlates>
+          </Swiper>
         </DishesSection>
       </DivStyled>
       <Detailfooter />
