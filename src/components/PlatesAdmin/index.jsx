@@ -2,8 +2,13 @@
 /* eslint-disable react/no-unknown-property */
 import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 function PlatesAdmin({ id, name, description, price, image }) {
+  const navigate = useNavigate();
+  function handleNavigate() {
+    navigate(`/show/${id}`);
+  }
   return (
     <>
       <DivStyled>
@@ -24,7 +29,11 @@ function PlatesAdmin({ id, name, description, price, image }) {
             />
           </svg>
         </EditButton>
-        <img src={`http://localhost:3000/files/${image}`} alt="Plate" />
+        <img
+          src={`http://localhost:3000/files/${image}`}
+          alt="Plate"
+          onClick={handleNavigate}
+        />
         <DivInfo>
           <h3>
             {name}
@@ -32,7 +41,7 @@ function PlatesAdmin({ id, name, description, price, image }) {
           </h3>
 
           <p>{description}</p>
-          <span>{price}</span>
+          <span>R${price}</span>
         </DivInfo>
       </DivStyled>
     </>

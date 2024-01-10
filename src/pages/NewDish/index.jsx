@@ -23,7 +23,7 @@ function NewDish() {
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
   const [categories, setCategories] = useState("");
-  const [imageFile, setImageFile] = useState(null);
+  const [imageFile, setImageFile] = useState("");
 
   const navigate = useNavigate();
 
@@ -73,9 +73,9 @@ function NewDish() {
       });
 
       toast.success("Prato criado com sucesso!");
-      navigate("/");
 
       await updateImageDish({ data, imageFile });
+      navigate("/");
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);

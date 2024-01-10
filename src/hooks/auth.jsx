@@ -11,16 +11,15 @@ function AuthProvider({ children }) {
 
   async function signIn({ email, password }) {
     try {
-      const response = await api.post(
-        "session",
-        { email, password },
-        { withCredentials: true }
-      );
-      const { user } = response.data;
+      const response = await api.post("session", { email, password });
+      const { user, token } = response.data;
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+      localStorage.setItem("@foodexplorer:token", token);
 
-      setData({ user });
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+      setData({ user, token });
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);
@@ -32,6 +31,7 @@ function AuthProvider({ children }) {
 
   async function signOut() {
     localStorage.removeItem("@foodexplorer:user");
+    localStorage.removeItem("@foodexplorer:token");
     setData({});
   }
 
@@ -57,7 +57,7 @@ function AuthProvider({ children }) {
         const fileUploadImage = new FormData();
         fileUploadImage.append("image", imageFile);
         const response = await api.patch(
-          `dishes/${data[0]}/image`,
+          `dishes/${data.dish_id}/image`,
           fileUploadImage
         );
 
@@ -74,9 +74,13 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const user = localStorage.getItem("@foodexplorer:user");
+    const token = localStorage.getItem("@foodexplorer:token");
 
-    if (user) {
+    if (user && token) {
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
       setData({
+        token,
         user: JSON.parse(user),
       });
     }

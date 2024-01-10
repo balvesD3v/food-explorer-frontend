@@ -2,15 +2,34 @@ import Header from "../../components/Header";
 import Detailfooter from "../../components/Detailfooter";
 import Button from "../../components/Button";
 import Tags from "../../components/Tags";
+import HeaderAdmin from "../../components/HeaderAdmin";
 import { DivContent, ContentStyled, IngredientsStyled } from "./styles";
 import { FaAngleLeft } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import plate from "../../assets/foods/Mask group-1.png";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
-function ShowDish() {
+function ShowDish({ name, description, image }) {
+  const { id } = useParams();
+  const [dishes, setDishes] = useState([]);
+
+  useEffect(() => {
+    async function fetchDishes() {
+      try {
+        const response = await api.get(`/dishes/${id}`);
+        setDishes(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar pratos:", error);
+      }
+    }
+    fetchDishes();
+  }, [id]);
+
+  console.log(dishes.image);
+
   return (
     <>
-      <Header />
+      <HeaderAdmin />
 
       <DivContent>
         <Link to="/" className="linkto">
@@ -18,26 +37,21 @@ function ShowDish() {
         </Link>
         <ContentStyled>
           <div className="imagePhoto">
-            <img src={plate} alt="" />
+            <img src={`http://localhost:3000/files/${dishes.image}`} alt="" />
           </div>
 
           <div className="InfoContent">
-            <h1>Salada Ravanello</h1>
-            <p>
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-              O pão naan dá um toque especial.
-            </p>
+            <h1>{dishes.name}</h1>
+            <p>{dishes.description}</p>
             <IngredientsStyled>
-              <Tags titleTag={"Alface"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
+              {dishes.ingredients &&
+                dishes.ingredients.map((ingredient, index) => (
+                  <Tags key={index} titleTag={ingredient.name} />
+                ))}
             </IngredientsStyled>
 
             <div className="buyDish">
-              <Button title={"Editar Prato"} />
+              <Button title={"Editar Prato"} link={`/edit/${id}`} />
             </div>
           </div>
         </ContentStyled>

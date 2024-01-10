@@ -19,6 +19,7 @@ export const DivStyled = styled.div`
 
   img {
     width: 10em;
+    cursor: pointer;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
