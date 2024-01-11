@@ -4,7 +4,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { DivInfo, DivStyled, EditButton } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-function PlatesAdmin({ id, name, description, price, image }) {
+function PlatesAdmin({ id, name, description, price, image, isFav }) {
   const navigate = useNavigate();
   function handleNavigate() {
     navigate(`/show/${id}`);

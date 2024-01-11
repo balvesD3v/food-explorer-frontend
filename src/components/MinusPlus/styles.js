@@ -13,6 +13,7 @@ export const DivStyled = styled.div`
 
   .minusOrPlus {
     background-color: transparent;
+    cursor: pointer;
   }
 
   button {

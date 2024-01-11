@@ -1,4 +1,3 @@
-import Header from "../../components/Header";
 import Detailfooter from "../../components/Detailfooter";
 import Button from "../../components/Button";
 import Tags from "../../components/Tags";

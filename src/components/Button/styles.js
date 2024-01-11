@@ -19,6 +19,7 @@ export const ButtonStyled = styled(Link)`
 
   && {
     font-size: 1rem;
+    font-weight: lighter;
   }
 
   &:hover {

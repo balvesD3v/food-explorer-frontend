@@ -11,12 +11,13 @@ import Plates from "../../components/Plates";
 import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
 function HomeUser() {
   const [dishes, setDishes] = useState([]);
-  const [image, setImage] = useState(null);
+  const [slidesPerView, setSlidePerView] = useState(4);
 
   useEffect(() => {
     async function fetchDishes() {
@@ -44,37 +45,81 @@ function HomeUser() {
 
         <DishesSection>
           <h2>Refeições</h2>
-
-          <Swiper>
+          <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            loop={true}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
             <DivPlates>
-              <Swiper>
-                <DivPlates>
-                  {dishes &&
-                    dishes.map((dish) => (
-                      <SwiperSlide key={dish.id}>
-                        <Plates
-                          image={dish.image}
-                          name={dish.name}
-                          description={dish.description}
-                          price={dish.price}
-                        />
-                      </SwiperSlide>
-                    ))}
-                </DivPlates>
-              </Swiper>
+              {dishes &&
+                dishes
+                  .filter((dish) => dish.categories === "refeicoes")
+                  .map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <Plates
+                        id={dish.id}
+                        image={dish.image}
+                        name={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                      />
+                    </SwiperSlide>
+                  ))}
             </DivPlates>
           </Swiper>
 
           <h2>Sobremesas</h2>
 
-          <Swiper>
-            <DivPlates></DivPlates>
+          <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            <DivPlates>
+              {dishes &&
+                dishes
+                  .filter((dish) => dish.categories === "sobremesas")
+                  .map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <Plates
+                        id={dish.id}
+                        image={dish.image}
+                        name={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                      />
+                    </SwiperSlide>
+                  ))}
+            </DivPlates>
           </Swiper>
 
           <h2>Bebidas</h2>
 
-          <Swiper>
-            <DivPlates></DivPlates>
+          <Swiper
+            slidesPerView={slidesPerView}
+            spaceBetween={30}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            <DivPlates>
+              {dishes &&
+                dishes
+                  .filter((dish) => dish.categories === "bebidas")
+                  .map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <Plates
+                        id={dish.id}
+                        image={dish.image}
+                        name={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                      />
+                    </SwiperSlide>
+                  ))}
+            </DivPlates>
           </Swiper>
         </DishesSection>
       </DivStyled>

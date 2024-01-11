@@ -8,11 +8,26 @@ import {
   IngredientsStyled,
   BuyDish,
 } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa6";
-import plate from "../../assets/foods/Mask group-1.png";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
-function UserOrder() {
+function UserOrder({ name, description, image }) {
+  const { id } = useParams();
+  const [dishes, setDishes] = useState([]);
+
+  useEffect(() => {
+    async function fetchDishes() {
+      try {
+        const response = await api.get(`/dishes/${id}`);
+        setDishes(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar pratos:", error);
+      }
+    }
+    fetchDishes();
+  }, [id]);
   return (
     <>
       <Header />
@@ -23,22 +38,17 @@ function UserOrder() {
         </Link>
         <ContentStyled>
           <div className="imagePhoto">
-            <img src={plate} alt="" />
+            <img src={`http://localhost:3000/files/${dishes.image}`} alt="" />
           </div>
 
           <div className="InfoContent">
-            <h1>Salada Ravanello</h1>
-            <p>
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-              O pão naan dá um toque especial.
-            </p>
+            <h1>{dishes.name}</h1>
+            <p>{dishes.description}</p>
             <IngredientsStyled>
-              <Tags titleTag={"Alface"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
-              <Tags titleTag={"Tomato"} />
+              {dishes.ingredients &&
+                dishes.ingredients.map((ingredient, index) => (
+                  <Tags key={index} titleTag={ingredient.name} />
+                ))}
             </IngredientsStyled>
 
             <BuyDish className="buyDish">

@@ -105,3 +105,19 @@ export const Brand = styled(Link)`
     }
   }
 `;
+
+export const Inputs = styled.div`
+  display: flex;
+  gap: 1.5rem;
+
+  input {
+    color: var(--Light-Light-300, #e1e1e6);
+    text-align: center;
+    /* Roboto/Small regular */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 16px */
+  }
+`;

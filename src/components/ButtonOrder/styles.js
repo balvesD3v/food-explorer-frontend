@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+import { Link } from "react-router-dom";
 
-export const ButtonStyled = styled.button`
+export const ButtonStyled = styled(Link)`
   background-color: ${({ theme }) => theme.COLORS.tints.tomato_100};
   color: #fff;
   padding: 12px 32px;
   border-radius: 5px;
   border: none;
+  text-decoration: none;
 
   display: flex;
   justify-content: center;

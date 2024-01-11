@@ -10,7 +10,7 @@ function Button({ title, price, isDelete, link, ...rest }) {
       className={isDelete ? "button-add" : "button-delete"}
       {...rest}
     >
-      {title} {price && `- R$${price}`}{" "}
+      {title} {price && `- R$ ${price}`}
     </ButtonStyled>
   );
 }

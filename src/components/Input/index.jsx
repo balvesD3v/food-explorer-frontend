@@ -4,7 +4,7 @@ import { InputStyled, DivStyled } from "./styles";
 function Input({ title, link }) {
   return (
     <DivStyled to={link}>
-      <InputStyled type="submit" value={title} />;
+      <InputStyled type="submit" value={title} />
     </DivStyled>
   );
 }

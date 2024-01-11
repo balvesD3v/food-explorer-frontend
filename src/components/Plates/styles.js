@@ -1,5 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+
+const heartBeat = keyframes`
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
 
 export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
@@ -17,6 +32,13 @@ export const DivStyled = styled.div`
 
   img {
     width: 10em;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+      transition: all 0.1s;
+      transform: scale(1.2);
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
@@ -123,8 +145,13 @@ export const LikeButton = styled.button`
   cursor: pointer;
 
   svg {
-    width: 30px;
-    height: 30px;
+    margin-right: 1em;
+  }
+
+  .isFav {
+    fill: #ff0000;
+    stroke: #ff0000;
+    animation: ${heartBeat} 1s ease;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
