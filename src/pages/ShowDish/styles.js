@@ -2,25 +2,32 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 2em 7.625em;
-  height: calc(100vh - 27vh);
-  margin-top: 5em;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 100px auto 80px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 
-  a {
-    color: ${({ theme }) => theme.COLORS.white.light_300};
-    display: flex;
-    align-items: center;
-    margin-bottom: 2em;
+  main {
+    padding: 3em 10em;
 
-    /* Poppins/300-bold */
-    font-family: Poppins;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 33.6px */
-    text-decoration: none;
+    a {
+      color: ${({ theme }) => theme.COLORS.white.light_300};
+      display: flex;
+      align-items: center;
+      margin-bottom: 2em;
+
+      /* Poppins/300-bold */
+      font-family: Poppins;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 33.6px */
+      text-decoration: none;
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {

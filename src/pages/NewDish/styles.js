@@ -2,8 +2,14 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
-  padding: 2em 2em;
-  height: calc(100vh - 18.5vh);
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 100px auto 80px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 
   .button-save {
     display: flex;
@@ -21,6 +27,10 @@ export const DivStyled = styled.div`
     font-weight: 500;
     line-height: 140%; /* 33.6px */
     z-index: 99;
+  }
+
+  main {
+    padding: 3em 10em;
   }
 
   section {
@@ -127,6 +137,7 @@ export const TextArea = styled.div`
 
   textarea {
     resize: none;
+    height: 200px;
     border-radius: 8px;
     background: ${({ theme }) => theme.COLORS.dark.dark_800};
     outline: none;

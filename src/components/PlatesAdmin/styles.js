@@ -6,13 +6,12 @@ export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
   border-radius: 8px;
   height: 29em;
-  width: 100em;
+  width: 21em;
   margin-bottom: 20em;
   margin-top: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 1.5em;
   position: relative;
   gap: 0.9375em;

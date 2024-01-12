@@ -1,37 +1,58 @@
-import { Container } from "./styles";
+import { Container, Table } from "./styles";
 import Header from "../../components/Header";
 import DetailFooter from "../../components/DetailFooter";
+import laranja from "../../assets/others/status/statusLaranja.svg";
+import verde from "../../assets/others/status/statusVerde.svg";
+import vermelho from "../../assets/others/status/statusVermelho.svg";
 
 function Historic() {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        <span>Histórico de pedidos</span>
-
-        <table>
+      <main>
+        <span className="historic">Histórico de pedidos</span>
+        <Table>
           <thead>
             <tr>
-              <th>
-                <span>Status</span>
-              </th>
+              <th>Status</th>
               <th>Código</th>
-              <th className="detail">Nome do Prato</th>
-              <th>Data e Hora</th>
+              <th>Detalhamento</th>
+              <th className="date">Data e Hora</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Ativo</td>
-              <td>001</td>
+              <td className="status">
+                <img src={vermelho} alt="" />
+                Pendente
+              </td>
+              <td className="code">001</td>
               <td>Massa Carbonara</td>
-              <td>2024-01-11 14:30:00</td>
+              <td className="hour">12/01 às 14:30</td>
+            </tr>
+            <tr>
+              <td className="status">
+                <img src={laranja} alt="" />
+                Pendente
+              </td>
+              <td className="code">001</td>
+              <td>Massa Carbonara</td>
+              <td className="hour">12/01 às 14:30</td>
+            </tr>
+            <tr>
+              <td className="status">
+                <img src={verde} alt="" />
+                Pendente
+              </td>
+              <td className="code">001</td>
+              <td>Massa Carbonara</td>
+              <td className="hour">12/01 às 14:30</td>
             </tr>
           </tbody>
-        </table>
-      </Container>
+        </Table>
+      </main>
       <DetailFooter />
-    </>
+    </Container>
   );
 }
 

@@ -2,55 +2,65 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivStyled = styled.div`
-  height: calc(100vh - 18.5vh);
-  padding: 2em 2em;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 100px auto 80px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 
-  .button-save {
-    display: flex;
-    justify-content: end;
-    margin-top: 1em;
-    gap: 1em;
-  }
+  main {
+    padding: 3em 10em;
 
-  .linkto {
-    margin-bottom: 1em;
-    margin-top: -0.5em;
-    color: var(--Light-Light-300, #e1e1e6);
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%; /* 33.6px */
-    z-index: 99;
-  }
+    .button-save {
+      display: flex;
+      justify-content: end;
+      margin-top: 1em;
+      gap: 1em;
+    }
 
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-  }
+    .linkto {
+      margin-bottom: 1em;
+      margin-top: -0.5em;
+      color: var(--Light-Light-300, #e1e1e6);
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 33.6px */
+      z-index: 99;
+    }
 
-  a {
-    display: flex;
-    align-items: center;
-    color: ${({ theme }) => theme.COLORS.white.light_300};
-    font-family: Poppins;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%;
-    text-decoration: none;
-    margin-bottom: 0.5em;
-  }
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
 
-  h1 {
-    color: ${({ theme }) => theme.COLORS.white.light_300};
-    font-family: Poppins;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%;
-    margin-bottom: 0.5em;
+    a {
+      display: flex;
+      align-items: center;
+      color: ${({ theme }) => theme.COLORS.white.light_300};
+      font-family: Poppins;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      text-decoration: none;
+      margin-bottom: 0.5em;
+    }
+
+    h1 {
+      color: ${({ theme }) => theme.COLORS.white.light_300};
+      font-family: Poppins;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+      margin-bottom: 0.5em;
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
@@ -128,6 +138,7 @@ export const TextArea = styled.div`
 
   textarea {
     resize: none;
+    height: 200px;
     border-radius: 8px;
     background: ${({ theme }) => theme.COLORS.dark.dark_800};
     outline: none;

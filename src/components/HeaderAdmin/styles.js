@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 import { Link } from "react-router-dom";
 
-export const HeaderStyled = styled.div`
+export const HeaderStyled = styled.header`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_600};
   display: flex;
+  grid-area: header;
   justify-content: center;
   align-items: center;
   padding: 1.4rem 10rem;

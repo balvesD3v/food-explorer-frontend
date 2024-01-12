@@ -27,10 +27,9 @@ function ShowDish({ name, description, image }) {
   console.log(dishes.image);
 
   return (
-    <>
+    <DivContent>
       <HeaderAdmin />
-
-      <DivContent>
+      <main>
         <Link to="/" className="linkto">
           <FaAngleLeft /> voltar
         </Link>
@@ -54,10 +53,9 @@ function ShowDish({ name, description, image }) {
             </div>
           </div>
         </ContentStyled>
-      </DivContent>
-
+      </main>
       <Detailfooter />
-    </>
+    </DivContent>
   );
 }
 

@@ -152,10 +152,9 @@ function EditDish() {
     fetchDishData();
   }, [id]);
   return (
-    <>
+    <DivStyled>
       <HeaderAdmin />
-
-      <DivStyled>
+      <main>
         <a href="/" className="linkto">
           <FaAngleLeft /> voltar
         </a>
@@ -255,10 +254,9 @@ function EditDish() {
           <Button title={"Excluir Prato"} isDelete onClick={handleDeleteDish} />
           <Button title={"Salvar Alterações"} onClick={handleUpdateDish} />
         </div>
-      </DivStyled>
-
+      </main>
       <Detailfooter />
-    </>
+    </DivStyled>
   );
 }
 

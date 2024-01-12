@@ -29,10 +29,10 @@ function UserOrder({ name, description, image }) {
     fetchDishes();
   }, [id]);
   return (
-    <>
+    <DivContent>
       <Header />
 
-      <DivContent>
+      <main>
         <Link to="/" className="linkto">
           <FaAngleLeft /> voltar
         </Link>
@@ -56,10 +56,9 @@ function UserOrder({ name, description, image }) {
             </BuyDish>
           </div>
         </ContentStyled>
-      </DivContent>
-
+      </main>
       <Detailfooter />
-    </>
+    </DivContent>
   );
 }
 

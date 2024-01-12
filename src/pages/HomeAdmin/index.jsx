@@ -49,6 +49,7 @@ function HomeAdmin() {
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
+            loop={true}
             modules={[Pagination]}
             className="mySwiper"
           >
@@ -74,6 +75,7 @@ function HomeAdmin() {
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
+            loop={true}
             modules={[Pagination]}
             className="mySwiper"
           >
@@ -99,6 +101,7 @@ function HomeAdmin() {
           <Swiper
             slidesPerView={slidesPerView}
             spaceBetween={30}
+            loop={true}
             modules={[Pagination]}
             className="mySwiper"
           >

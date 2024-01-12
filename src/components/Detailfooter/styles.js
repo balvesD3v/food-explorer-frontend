@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
-export const DivStyled = styled.div`
+export const DivStyled = styled.footer`
   display: flex;
+  grid-area: footer;
   justify-content: space-around;
   align-items: center;
   background-color: ${({ theme }) => theme.COLORS.dark.dark_600};

@@ -85,9 +85,9 @@ export const ContentDiv = styled.div`
 export const DivPlates = styled.div`
   display: flex;
   height: 33em;
+  width: 100vw;
   padding: 2em;
-  justify-content: center;
-  width: 25em;
+  gap: 1em;
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     height: 25em;
@@ -101,24 +101,5 @@ export const DishesSection = styled.section`
   h2 {
     margin-bottom: 0em;
     font-size: 1.5rem;
-  }
-
-  .swiper {
-    width: 100%;
-    height: 35em;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50em;
-  }
-
-  .swiper-slide img {
-    display: block;
-    object-fit: cover;
   }
 `;

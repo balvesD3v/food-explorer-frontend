@@ -23,7 +23,7 @@ function Header() {
       <SeachBar />
 
       <Inputs>
-        <Input title={"Meus favoritos"} />
+        <Input title={"Meus favoritos"} link={"/favorites"} />
         <Input title={"Histórico de pedidos"} link={"/historic"} />
       </Inputs>
 

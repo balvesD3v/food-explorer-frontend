@@ -91,9 +91,9 @@ function NewDish() {
   }
 
   return (
-    <>
+    <DivStyled>
       <HeaderAdmin />
-      <DivStyled>
+      <main>
         <a href="/" className="linkto">
           <FaAngleLeft /> voltar
         </a>
@@ -145,9 +145,9 @@ function NewDish() {
         <div className="button-save">
           <Button title={"Salvar Alterações"} onClick={handleNewDish} />
         </div>
-      </DivStyled>
+      </main>
       <Detailfooter />
-    </>
+    </DivStyled>
   );
 }
 

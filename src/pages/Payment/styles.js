@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100%;
-  padding: 0 10em;
-  margin-bottom: 8.2em;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 100px auto 80px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 `;
 
 export const MainContainer = styled.div`
-  padding: 3em 0;
+  padding: 3em 10em;
   display: flex;
   gap: 30%;
 `;
