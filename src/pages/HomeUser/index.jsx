@@ -3,7 +3,6 @@ import {
   DivStyled,
   Cookies,
   ContentDiv,
-  DivPlates,
   DishesSection,
 } from "./styles";
 import Header from "../../components/Header";
@@ -52,22 +51,20 @@ function HomeUser() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            <DivPlates>
-              {dishes &&
-                dishes
-                  .filter((dish) => dish.categories === "refeicoes")
-                  .map((dish) => (
-                    <SwiperSlide key={dish.id}>
-                      <Plates
-                        id={dish.id}
-                        image={dish.image}
-                        name={dish.name}
-                        description={dish.description}
-                        price={dish.price}
-                      />
-                    </SwiperSlide>
-                  ))}
-            </DivPlates>
+            {dishes &&
+              dishes
+                .filter((dish) => dish.categories === "refeicoes")
+                .map((dish) => (
+                  <SwiperSlide key={dish.id}>
+                    <Plates
+                      id={dish.id}
+                      image={dish.image}
+                      name={dish.name}
+                      description={dish.description}
+                      price={dish.price}
+                    />
+                  </SwiperSlide>
+                ))}
           </Swiper>
 
           <h2>Sobremesas</h2>
@@ -79,22 +76,20 @@ function HomeUser() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            <DivPlates>
-              {dishes &&
-                dishes
-                  .filter((dish) => dish.categories === "sobremesas")
-                  .map((dish) => (
-                    <SwiperSlide key={dish.id}>
-                      <Plates
-                        id={dish.id}
-                        image={dish.image}
-                        name={dish.name}
-                        description={dish.description}
-                        price={dish.price}
-                      />
-                    </SwiperSlide>
-                  ))}
-            </DivPlates>
+            {dishes &&
+              dishes
+                .filter((dish) => dish.categories === "sobremesas")
+                .map((dish) => (
+                  <SwiperSlide key={dish.id}>
+                    <Plates
+                      id={dish.id}
+                      image={dish.image}
+                      name={dish.name}
+                      description={dish.description}
+                      price={dish.price}
+                    />
+                  </SwiperSlide>
+                ))}
           </Swiper>
 
           <h2>Bebidas</h2>
@@ -106,22 +101,20 @@ function HomeUser() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            <DivPlates>
-              {dishes &&
-                dishes
-                  .filter((dish) => dish.categories === "bebidas")
-                  .map((dish) => (
-                    <SwiperSlide key={dish.id}>
-                      <Plates
-                        id={dish.id}
-                        image={dish.image}
-                        name={dish.name}
-                        description={dish.description}
-                        price={dish.price}
-                      />
-                    </SwiperSlide>
-                  ))}
-            </DivPlates>
+            {dishes &&
+              dishes
+                .filter((dish) => dish.categories === "bebidas")
+                .map((dish) => (
+                  <SwiperSlide key={dish.id}>
+                    <Plates
+                      id={dish.id}
+                      image={dish.image}
+                      name={dish.name}
+                      description={dish.description}
+                      price={dish.price}
+                    />
+                  </SwiperSlide>
+                ))}
           </Swiper>
         </DishesSection>
       </DivStyled>

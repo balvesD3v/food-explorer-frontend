@@ -26,11 +26,4 @@ export const ButtonStyled = styled(Link)`
     cursor: pointer;
     background-color: ${({ theme }) => theme.COLORS.tints.tomato_300};
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    width: 100%;
-    && {
-      font-size: 1rem;
-    }
-  }
 `;

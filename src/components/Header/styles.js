@@ -34,24 +34,6 @@ export const HeaderStyled = styled.header`
   .menu-toggle {
     display: none;
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    gap: 3rem;
-
-    .signOut {
-      display: none;
-    }
-
-    .menu-toggle {
-      display: block;
-      background-color: transparent;
-      color: #fff;
-      border: transparent;
-      svg {
-        height: 20px;
-      }
-    }
-  }
 `;
 
 export const Brand = styled(Link)`
@@ -82,28 +64,6 @@ export const Brand = styled(Link)`
 
   img {
     width: 30px;
-  }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    .menu-toggle {
-      display: block;
-      background-color: transparent;
-      color: #fff;
-      border: transparent;
-      svg {
-        height: 20px;
-      }
-    }
-
-    .foodexplorer {
-      span {
-        font-size: 1.5em;
-      }
-    }
-
-    img {
-      width: 1.5rem;
-    }
   }
 `;
 

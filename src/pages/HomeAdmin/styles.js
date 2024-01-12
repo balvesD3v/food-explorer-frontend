@@ -14,10 +14,6 @@ export const DivStyled = styled.div`
     color: ${({ theme }) => theme.COLORS.white.light_300};
     margin-bottom: 1.5em;
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    padding: 0 1em;
-  }
 `;
 
 export const BannerStyled = styled.div`
@@ -33,22 +29,11 @@ export const BannerStyled = styled.div`
     linear-gradient(180deg, #091e26 0%, #00131c 100%)
   );
   margin-bottom: 4em;
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    margin-top: 2em;
-  }
 `;
 
 export const Cookies = styled.div`
   margin-top: -9em;
   width: 100%;
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    margin-top: 0;
-    img {
-      width: 150px;
-    }
-  }
 `;
 
 export const ContentDiv = styled.div`
@@ -70,34 +55,12 @@ export const ContentDiv = styled.div`
     font-weight: 400;
     line-height: 100%;
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    h1 {
-      font-size: 1rem;
-    }
-
-    span {
-      font-size: 0.8rem;
-    }
-  }
-`;
-
-export const DivPlates = styled.div`
-  display: flex;
-  height: 33em;
-  width: 100vw;
-  padding: 2em;
-  gap: 1em;
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    height: 25em;
-    width: 15em;
-    padding: 0;
-  }
 `;
 
 export const DishesSection = styled.section`
   padding: 0;
+  margin-bottom: 2em;
+
   h2 {
     margin-bottom: 0em;
     font-size: 1.5rem;

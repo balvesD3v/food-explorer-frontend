@@ -1,14 +1,14 @@
 import { Container, MainContainer, MyFavorited } from "./styles.js";
-import Header from "../../components/Header";
+import HeaderAdmin from "../../components/HeaderAdmin";
 import DishFavorited from "../../components/DishFavorited/index.jsx";
 import Detailfooter from "../../components/Detailfooter/index.jsx";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api.js";
 
-function Favorites() {
+function FavoritesAdmin() {
   return (
     <Container>
-      <Header />
+      <HeaderAdmin />
       <MainContainer>
         <MyFavorited>
           <h2>Meu Pedido</h2>
@@ -25,4 +25,4 @@ function Favorites() {
   );
 }
 
-export default Favorites;
+export default FavoritesAdmin;

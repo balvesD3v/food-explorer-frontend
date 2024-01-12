@@ -11,11 +11,6 @@ export const MainDiv = styled.div`
   align-items: center;
 
   gap: 28em;
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    margin-top: -3em;
-    flex-direction: column;
-  }
 `;
 
 export const StyledForm = styled.form`
@@ -34,17 +29,6 @@ export const StyledForm = styled.form`
     font-weight: 500;
     line-height: 140%;
     margin-bottom: 32px;
-  }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    width: 100%;
-    background-color: transparent;
-    margin-top: -30em;
-    padding: 0 2rem;
-    overflow-y: hidden;
-    h2 {
-      color: transparent;
-    }
   }
 `;
 

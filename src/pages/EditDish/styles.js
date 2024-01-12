@@ -62,17 +62,6 @@ export const DivStyled = styled.div`
       margin-bottom: 0.5em;
     }
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    height: 100%;
-
-    a {
-      font-size: 1rem;
-    }
-    h1 {
-      font-size: 2rem;
-    }
-  }
 `;
 
 export const InputField = styled.div`
@@ -88,11 +77,6 @@ export const InputField = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 100%; /* 16px */
-  }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    display: flex;
-    flex-direction: column;
   }
 `;
 
@@ -157,12 +141,6 @@ export const TextArea = styled.div`
 
     &:focus-within {
       box-shadow: 0 0 0 3px ${({ theme }) => theme.COLORS.tints.cake_100};
-    }
-
-    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-      &::placeholder {
-        font-size: 1rem;
-      }
     }
   }
 `;

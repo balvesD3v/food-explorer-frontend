@@ -34,24 +34,6 @@ export const HeaderStyled = styled.header`
   .menu-toggle {
     display: none;
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    gap: 3rem;
-
-    .signOut {
-      display: none;
-    }
-
-    .menu-toggle {
-      display: block;
-      background-color: transparent;
-      color: #fff;
-      border: transparent;
-      svg {
-        height: 20px;
-      }
-    }
-  }
 `;
 
 export const Brand = styled(Link)`
@@ -85,37 +67,27 @@ export const Brand = styled(Link)`
   img {
     width: 30px;
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    .foodexplorer {
-      width: 100%;
-      flex-direction: row;
-      align-items: center;
-      margin-top: 0;
-
-      span {
-        font-size: 1.5em;
-      }
-
-      .food-explorer-title {
-        width: 100%;
-        margin-right: 2px;
-      }
-
-      .admin {
-        text-align: start;
-        width: 10em;
-      }
-    }
-
-    img {
-      width: 1.5rem;
-    }
-  }
 `;
 
 export const MobileStyled = styled.div`
+  width: 20%;
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     display: none;
+  }
+`;
+
+export const Inputs = styled.div`
+  display: flex;
+  gap: 1.5rem;
+
+  input {
+    color: var(--Light-Light-300, #e1e1e6);
+    text-align: center;
+    /* Roboto/Small regular */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 16px */
   }
 `;

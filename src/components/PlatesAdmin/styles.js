@@ -7,8 +7,8 @@ export const DivStyled = styled.div`
   border-radius: 8px;
   height: 29em;
   width: 21em;
-  margin-bottom: 20em;
   margin-top: 1em;
+  margin-bottom: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,16 +18,13 @@ export const DivStyled = styled.div`
 
   img {
     width: 10em;
+    margin-top: 3em;
     cursor: pointer;
-  }
+    transition: all 0.1s;
 
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    width: 30em;
-    height: 20em;
-    margin-right: 3.5em;
-
-    img {
-      width: 8em;
+    &:hover {
+      transition: all 0.1s;
+      transform: scale(1.2);
     }
   }
 `;
@@ -77,29 +74,6 @@ export const DivInfo = styled.div`
     font-weight: 400;
     line-height: 160%; /* 51.2px */
   }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    width: 100%;
-
-    h3 {
-      font-size: 0.7rem;
-      .arrow-right {
-        width: 0.8em;
-      }
-    }
-
-    p {
-      display: none;
-    }
-
-    img {
-      width: 5em;
-    }
-
-    span {
-      font-size: 1rem;
-    }
-  }
 `;
 
 export const EditButton = styled(Link)`
@@ -113,14 +87,5 @@ export const EditButton = styled(Link)`
   svg {
     width: 30px;
     height: 30px;
-  }
-
-  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-    top: 10px;
-    right: 10px;
-    svg {
-      width: 15px;
-      height: 15px;
-    }
   }
 `;
