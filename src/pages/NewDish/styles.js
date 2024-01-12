@@ -11,55 +11,55 @@ export const DivStyled = styled.div`
     "content"
     "footer";
 
-  .button-save {
-    display: flex;
-    justify-content: end;
-    margin-top: 1em;
-  }
-
-  .linkto {
-    margin-bottom: 1em;
-    margin-top: -0.5em;
-    color: var(--Light-Light-300, #e1e1e6);
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%; /* 33.6px */
-    z-index: 99;
-  }
-
   main {
     padding: 3em 10em;
-  }
 
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-  }
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
 
-  a {
-    display: flex;
-    align-items: center;
-    color: ${({ theme }) => theme.COLORS.white.light_300};
-    font-family: Poppins;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%;
-    text-decoration: none;
-    margin-bottom: 0.5em;
-  }
+    .button-save {
+      display: flex;
+      justify-content: end;
+      margin-top: 1em;
+    }
 
-  h1 {
-    color: ${({ theme }) => theme.COLORS.white.light_300};
-    font-family: Poppins;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%;
-    margin-bottom: 0.5em;
+    .linkto {
+      margin-bottom: 1em;
+      margin-top: -0.5em;
+      color: var(--Light-Light-300, #e1e1e6);
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 33.6px */
+      z-index: 99;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      color: ${({ theme }) => theme.COLORS.white.light_300};
+      font-family: Poppins;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      text-decoration: none;
+      margin-bottom: 0.5em;
+    }
+
+    h1 {
+      color: ${({ theme }) => theme.COLORS.white.light_300};
+      font-family: Poppins;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+      margin-bottom: 0.5em;
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
