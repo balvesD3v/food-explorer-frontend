@@ -1,17 +1,21 @@
 import React from "react";
-import prato from "../../assets/foods/Mask group-1.png";
 import { Container } from "./styles";
+import { useDish } from "../../hooks/dish";
 
-const OrderedDish = () => {
+const OrderedDish = ({ dishId, image, name, price, quantity }) => {
+  const { removeDish } = useDish();
+
   return (
     <Container>
-      <img src={prato} alt="" />
+      <img src={image} alt="" />
       <div className="dish">
         <div className="dish-info">
-          <h3>1x Salada Radish</h3>
-          <p>R$ 25,97</p>
+          <h3>
+            {quantity}x {name}
+          </h3>
+          <p>R$ {price}</p>
         </div>
-        <p>Excluir</p>
+        <p onClick={() => removeDish(dishId)}>Excluir</p>
       </div>
     </Container>
   );

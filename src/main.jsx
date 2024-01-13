@@ -7,6 +7,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import theme from "./styles/theme";
 import { Routes } from "./routes/index";
 import { AuthProvider } from "./hooks/auth";
+import { DishProvider } from "./hooks/dish";
 import { register } from "swiper/element/bundle";
 
 register();
@@ -19,10 +20,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AuthProvider>
-        <Routes />
-        <ToastContainer theme="colored" />
-      </AuthProvider>
+      <DishProvider>
+        <AuthProvider>
+          <Routes />
+          <ToastContainer theme="colored" />
+        </AuthProvider>
+      </DishProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

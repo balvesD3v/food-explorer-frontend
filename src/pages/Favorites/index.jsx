@@ -15,8 +15,6 @@ function Favorites() {
 
           <div className="my-dishes-favorited">
             <DishFavorited />
-            <DishFavorited />
-            <DishFavorited />
           </div>
         </MyFavorited>
       </MainContainer>

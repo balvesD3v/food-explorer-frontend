@@ -108,8 +108,8 @@ export const LikeButton = styled.button`
   }
 
   .isFav {
-    fill: #ff0000;
-    stroke: #ff0000;
+    fill: #fff;
+    stroke: #fff;
     animation: ${heartBeat} 1s ease;
   }
 `;

@@ -9,8 +9,9 @@ import { FaAngleRight, FaPlus, FaMinus } from "react-icons/fa6";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-function Plates({ id, name, description, price, image }) {
+function Plates({ id, name, description, price, image, onAddToOrder }) {
   const [value, setValue] = useState(1);
   const [isFavorited, setIsFavorited] = useState(false);
 
@@ -28,8 +29,18 @@ function Plates({ id, name, description, price, image }) {
     }
   }
 
-  function handleNavigate() {
-    navigate(`/userorder/${id}`);
+  function handleAddToOrder(event) {
+    event.preventDefault();
+    onAddToOrder({
+      id,
+      name,
+      description,
+      price,
+      image,
+      quantity: value,
+    });
+
+    toast.success("Prato adicionado ao carrinho!");
   }
 
   function handleFavorited() {
@@ -58,11 +69,7 @@ function Plates({ id, name, description, price, image }) {
             />
           </svg>{" "}
         </LikeButton>
-        <img
-          src={`http://localhost:3000/files/${image}`}
-          alt="Plate"
-          onClick={handleNavigate}
-        />
+        <img src={`http://localhost:3000/files/${image}`} alt="Plate" />
         <DivInfo>
           <h3>
             {name}
@@ -82,7 +89,7 @@ function Plates({ id, name, description, price, image }) {
               <FaPlus onClick={handleAddProduct} />
             </button>
           </ButtonStyled>
-          <Button title={"Incluir"} />
+          <Button title={"Incluir"} onClick={handleAddToOrder} />
         </DivButton>
       </DivStyled>
     </>

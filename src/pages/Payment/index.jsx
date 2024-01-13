@@ -15,13 +15,33 @@ import pixCard from "../../assets/others/layer1.svg";
 import actions from "../../assets/others/elements.svg";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api.js";
+import { useDish } from "../../hooks/dish.jsx";
 
 function Payment() {
+  const { selectedDishes } = useDish();
+  const [dishes, setDishes] = useState([]);
+
   const [paymentOption, setPaymentOption] = useState("pix");
+
+  const valorPedido = () => {
+    const total = selectedDishes.reduce(
+      (acc, dish) => acc + dish.price * dish.quantity,
+      0
+    );
+    return total.toFixed(2);
+  };
 
   const handlePaymentOptionClick = (option) => {
     setPaymentOption(option);
   };
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get("/dishes");
+      setDishes(response.data);
+    }
+    fetchDishes();
+  }, []);
 
   return (
     <Container>
@@ -31,11 +51,19 @@ function Payment() {
           <h2>Meu Pedido</h2>
 
           <div className="ordered">
-            <OrderedDish />
-            <OrderedDish />
+            {selectedDishes.map((dish) => (
+              <OrderedDish
+                key={dish.id}
+                dishId={dish.id}
+                image={`http://localhost:3000/files/${dish.image}`}
+                name={dish.name}
+                price={dish.price}
+                quantity={dish.quantity}
+              />
+            ))}
           </div>
 
-          <span className="total">Total: R$ 25,97</span>
+          <span className="total">Total: R$ {valorPedido()}</span>
         </MyOrder>
         <MyPayment>
           <h2>Pagamento</h2>

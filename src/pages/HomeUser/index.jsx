@@ -1,3 +1,9 @@
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { api } from "../../services/api";
+import { useDish } from "../../hooks/dish";
+
 import {
   BannerStyled,
   DivStyled,
@@ -5,16 +11,14 @@ import {
   ContentDiv,
   DishesSection,
 } from "./styles";
+
 import Header from "../../components/Header";
 import Plates from "../../components/Plates";
-import cookies from "../../assets/pngegg 1.png";
 import Detailfooter from "../../components/Detailfooter";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import cookies from "../../assets/pngegg 1.png";
 
 function HomeUser() {
+  const { addToSelectedDishes } = useDish();
   const [dishes, setDishes] = useState([]);
   const [slidesPerView, setSlidePerView] = useState(4);
 
@@ -62,6 +66,7 @@ function HomeUser() {
                       name={dish.name}
                       description={dish.description}
                       price={dish.price}
+                      onAddToOrder={(dishData) => addToSelectedDishes(dishData)}
                     />
                   </SwiperSlide>
                 ))}
