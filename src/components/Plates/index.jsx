@@ -29,6 +29,26 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
     }
   }
 
+  function handleNavigation() {
+    navigate(`/userorder/${id}`);
+  }
+
+  function handleFavorited() {
+    setIsFavorited(!isFavorited);
+
+    const storedFavoritedDishes =
+      JSON.parse(localStorage.getItem("favoritedDishes")) || [];
+
+    const updatedFavoritedDishes = isFavorited
+      ? storedFavoritedDishes.filter((dish) => dish.id !== id)
+      : [...storedFavoritedDishes, { id, name, description, price, image }];
+
+    localStorage.setItem(
+      "favoritedDishes",
+      JSON.stringify(updatedFavoritedDishes)
+    );
+  }
+
   function handleAddToOrder(event) {
     event.preventDefault();
     onAddToOrder({
@@ -43,14 +63,10 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
     toast.success("Prato adicionado ao carrinho!");
   }
 
-  function handleFavorited() {
-    setIsFavorited(!isFavorited);
-  }
-
   return (
     <>
       <DivStyled>
-        <LikeButton onClick={handleFavorited}>
+        <LikeButton onClick={handleFavorited} isFavorited={isFavorited}>
           <svg
             className={isFavorited ? "isFav" : ""}
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +85,11 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
             />
           </svg>{" "}
         </LikeButton>
-        <img src={`http://localhost:3000/files/${image}`} alt="Plate" />
+        <img
+          src={`http://localhost:3000/files/${image}`}
+          alt="Plate"
+          onClick={handleNavigation}
+        />
         <DivInfo>
           <h3>
             {name}

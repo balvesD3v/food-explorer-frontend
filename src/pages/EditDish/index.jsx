@@ -58,8 +58,6 @@ function EditDish() {
           (i) => i.name != ingredientToRemove.name
         ),
       }));
-
-      console.log("dishData", dishData, "addedingredientes", addedIngredients);
     }
   }
 

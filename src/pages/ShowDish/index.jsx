@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
-function ShowDish({ name, description, image }) {
+function ShowDish() {
   const { id } = useParams();
   const [dishes, setDishes] = useState([]);
 
@@ -23,8 +23,6 @@ function ShowDish({ name, description, image }) {
     }
     fetchDishes();
   }, [id]);
-
-  console.log(dishes.image);
 
   return (
     <DivContent>

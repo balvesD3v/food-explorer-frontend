@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivContent = styled.div`
   display: grid;
@@ -14,11 +13,14 @@ export const DivContent = styled.div`
   main {
     padding: 3em 10em;
 
+    .linkto {
+      margin-bottom: 2em;
+    }
+
     a {
       color: ${({ theme }) => theme.COLORS.white.light_300};
       display: flex;
       align-items: center;
-      margin-bottom: 2em;
 
       /* Poppins/300-bold */
       font-family: Poppins;
@@ -80,7 +82,25 @@ export const IngredientsStyled = styled.div`
   flex-wrap: wrap;
 `;
 
-export const BuyDish = styled.div`
-  width: 100%;
+export const ButtonStyled = styled.div`
   display: flex;
+  gap: 0.875em;
+  align-items: center;
+  color: #fff;
+
+  button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  span {
+    color: ${({ theme }) => theme.COLORS.white.light_300};
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+  }
 `;

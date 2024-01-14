@@ -92,6 +92,7 @@ function HomeUser() {
                       name={dish.name}
                       description={dish.description}
                       price={dish.price}
+                      onAddToOrder={(dishData) => addToSelectedDishes(dishData)}
                     />
                   </SwiperSlide>
                 ))}
@@ -117,6 +118,7 @@ function HomeUser() {
                       name={dish.name}
                       description={dish.description}
                       price={dish.price}
+                      onAddToOrder={(dishData) => addToSelectedDishes(dishData)}
                     />
                   </SwiperSlide>
                 ))}

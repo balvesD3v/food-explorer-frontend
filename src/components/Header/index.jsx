@@ -28,7 +28,7 @@ function Header() {
       </Inputs>
 
       <ButtonOrder title={"Pedidos"} />
-      <a href="" className="signOut" onClick={signOut}>
+      <a href="/" className="signOut" onClick={signOut}>
         <FaArrowRightFromBracket className="arrowRight" />
       </a>
     </HeaderStyled>

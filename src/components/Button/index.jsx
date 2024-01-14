@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { ButtonStyled } from "./styles";
 
-function Button({ title, price, isDelete, link, ...rest }) {
+function Button({ title, price, isDelete, link, onAddToOrder, ...rest }) {
   return (
     <ButtonStyled
       to={link}

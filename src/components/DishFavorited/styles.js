@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+export const ButtonStyled = styled.button`
+  color: var(--Tints-Tomato-400, #ab4d55);
+
+  /* Roboto/Smallest regular */
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 19.2px */
+
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
+`;
+
 export const Container = styled.div`
   margin: 2em 5em 3em 0;
   display: flex;
@@ -23,17 +39,6 @@ export const Container = styled.div`
       font-style: normal;
       font-weight: 500;
       line-height: 160%; /* 32px */
-    }
-
-    p {
-      color: var(--Light-Light-400, #c4c4cc);
-
-      /* Roboto/Smallest regular */
-      font-family: Roboto;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 19.2px */
     }
   }
 

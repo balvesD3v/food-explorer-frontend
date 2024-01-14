@@ -5,7 +5,6 @@ import { FaReceipt } from "react-icons/fa6";
 
 function ButtonOrder({ title }) {
   const { selectedDishes } = useDish();
-  console.log(selectedDishes);
   const selectedAmoutDishes = selectedDishes.reduce((acc, dish) => {
     acc += dish.quantity ?? 0;
     return acc;
