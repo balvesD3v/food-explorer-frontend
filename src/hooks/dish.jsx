@@ -5,6 +5,37 @@ export const DishContext = createContext({});
 
 function DishProvider({ children }) {
   const [selectedDishes, setSelectedDishes] = useState([]);
+  const [favoritedDishes, setFavoritedDishes] = useState([]);
+
+  useEffect(() => {
+    const storedFavoritedDishes =
+      JSON.parse(localStorage.getItem("@foodexplorer:favoritedDishes")) || [];
+    setFavoritedDishes(storedFavoritedDishes);
+  }, []);
+
+  const addToFavorites = (dish) => {
+    setFavoritedDishes((prevFavoritedDishes) => {
+      const updatedFavorites = [...prevFavoritedDishes, dish];
+      localStorage.setItem(
+        "@foodexplorer:favoritedDishes",
+        JSON.stringify(updatedFavorites)
+      );
+      return updatedFavorites;
+    });
+  };
+
+  const removeFromFavorites = (dishId) => {
+    setFavoritedDishes((prevFavoritedDishes) => {
+      const updatedFavorites = prevFavoritedDishes.filter(
+        (dish) => dish.id !== dishId
+      );
+      localStorage.setItem(
+        "@foodexplorer:favoritedDishes",
+        JSON.stringify(updatedFavorites)
+      );
+      return updatedFavorites;
+    });
+  };
 
   useEffect(() => {
     const existingDish = localStorage.getItem("@foodexplorer:selectedDishes");
@@ -58,7 +89,14 @@ function DishProvider({ children }) {
 
   return (
     <DishContext.Provider
-      value={{ selectedDishes, addToSelectedDishes, removeDish }}
+      value={{
+        selectedDishes,
+        favoritedDishes,
+        addToSelectedDishes,
+        removeDish,
+        addToFavorites,
+        removeFromFavorites,
+      }}
     >
       {children}
     </DishContext.Provider>

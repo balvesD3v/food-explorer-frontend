@@ -16,22 +16,69 @@ import Header from "../../components/Header";
 import Plates from "../../components/Plates";
 import Detailfooter from "../../components/Detailfooter";
 import cookies from "../../assets/pngegg 1.png";
+import { useAuth } from "../../hooks/auth";
 
 function HomeUser() {
   const { addToSelectedDishes } = useDish();
+  const { user } = useAuth();
   const [dishes, setDishes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [filteredDishes, setFilteredDishes] = useState([]);
   const [slidesPerView, setSlidePerView] = useState(4);
+
+  console.log(user.id);
+
+  const handleSearch = (searchTerm) => {
+    const filtered = dishes.filter(
+      (dish) =>
+        (dish.name &&
+          dish.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (dish.ingredients &&
+          dish.ingredients.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+    setFilteredDishes(filtered);
+    setSearch(searchTerm);
+    // setIngredients(searchTerm);
+    console.log(searchTerm);
+  };
 
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get("/dishes");
       setDishes(response.data);
+      setFilteredDishes(response.data);
     }
     fetchDishes();
   }, []);
+
+  async function fetchDishesByName(name) {
+    const response = await api.get(
+      `/dishes?name=${name}&ingredients${ingredients}`
+    );
+    setFilteredDishes(response.data);
+  }
+
+  // async function fetchDishesByIngredients(ingredients) {
+  //   const response = await api.get(`/dishes?ingredients=${ingredients}`);
+  //   setFilteredDishes(response.data);
+  // }
+
+  useEffect(() => {
+    if (search && !ingredients) {
+      fetchDishesByName(search);
+    } else if (!search && ingredients) {
+      fetchDishesByIngredients(ingredients);
+    } else {
+      // Caso ambos estejam preenchidos, você pode decidir o que fazer
+      // Neste exemplo, estou chamando fetchDishesByName
+      fetchDishesByName(search);
+    }
+  }, [search, ingredients]);
+
   return (
     <>
-      <Header />
+      <Header onSearch={handleSearch} />
 
       <DivStyled>
         <BannerStyled>
@@ -55,8 +102,8 @@ function HomeUser() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {dishes &&
-              dishes
+            {filteredDishes &&
+              filteredDishes
                 .filter((dish) => dish.categories === "refeicoes")
                 .map((dish) => (
                   <SwiperSlide key={dish.id}>
@@ -81,8 +128,8 @@ function HomeUser() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {dishes &&
-              dishes
+            {filteredDishes &&
+              filteredDishes
                 .filter((dish) => dish.categories === "sobremesas")
                 .map((dish) => (
                   <SwiperSlide key={dish.id}>
@@ -107,8 +154,8 @@ function HomeUser() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {dishes &&
-              dishes
+            {filteredDishes &&
+              filteredDishes
                 .filter((dish) => dish.categories === "bebidas")
                 .map((dish) => (
                   <SwiperSlide key={dish.id}>

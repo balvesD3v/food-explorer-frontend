@@ -10,10 +10,12 @@ import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useDish } from "../../hooks/dish";
 
 function Plates({ id, name, description, price, image, onAddToOrder }) {
   const [value, setValue] = useState(1);
-  const [isFavorited, setIsFavorited] = useState(false);
+  const { addToFavorites, removeFromFavorites, favoritedDishes } = useDish();
+  const isFavorited = favoritedDishes.some((dish) => dish.id === id);
 
   const navigate = useNavigate();
 
@@ -34,19 +36,12 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
   }
 
   function handleFavorited() {
-    setIsFavorited(!isFavorited);
-
-    const storedFavoritedDishes =
-      JSON.parse(localStorage.getItem("favoritedDishes")) || [];
-
-    const updatedFavoritedDishes = isFavorited
-      ? storedFavoritedDishes.filter((dish) => dish.id !== id)
-      : [...storedFavoritedDishes, { id, name, description, price, image }];
-
-    localStorage.setItem(
-      "favoritedDishes",
-      JSON.stringify(updatedFavoritedDishes)
-    );
+    if (isFavorited) {
+      removeFromFavorites(id);
+    } else {
+      addToFavorites({ id, name, description, price, image });
+      toast.success("Esse prato é favorito!");
+    }
   }
 
   function handleAddToOrder(event) {

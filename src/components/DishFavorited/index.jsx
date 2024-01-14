@@ -1,33 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDish } from "../../hooks/dish";
 import { Container, ButtonStyled } from "./styles";
+import { toast } from "react-toastify";
 
 const DishFavorited = ({ id, image, name }) => {
-  const { removeDish } = useDish();
-  const [favoritedDishes, setFavoritedDishes] = useState([]);
-
-  useEffect(() => {
-    const storedFavoritedDishes =
-      JSON.parse(localStorage.getItem("favoritedDishes")) || [];
-    setFavoritedDishes(storedFavoritedDishes);
-  }, []);
-
+  const { removeFromFavorites } = useDish();
   const handleRemoveFromFavorites = () => {
-    removeDish(id);
-
-    // Atualiza o estado local após remover dos favoritos
-    const updatedFavoritedDishes = favoritedDishes.filter(
-      (dish) => dish.id !== id
-    );
-    setFavoritedDishes(updatedFavoritedDishes);
-
-    // Atualiza o localStorage após remover dos favoritos
-    localStorage.setItem(
-      "favoritedDishes",
-      JSON.stringify(updatedFavoritedDishes)
-    );
+    removeFromFavorites(id);
+    toast.error("Prato não é mais favorito!");
   };
-
   return (
     <Container>
       <img src={image} alt="" />

@@ -8,19 +8,20 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { HeaderStyled, Brand, Inputs } from "./styles";
 import { useAuth } from "../../hooks/auth";
 
-function Header() {
+function Header({ onSearch }) {
   const { signOut } = useAuth();
 
   return (
     <HeaderStyled>
       <BurgerBar />
       <Brand to={"/"}>
-        <img src={polygon} alt="polygon" />{" "}
+        <img src={polygon} alt="polygon" />
         <a href="" className="foodexplorer">
           <span>Food explorer</span>
         </a>
       </Brand>
-      <SeachBar />
+
+      <SeachBar onSearch={onSearch} />
 
       <Inputs>
         <Input title={"Meus favoritos"} link={"/favorites"} />

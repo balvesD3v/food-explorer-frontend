@@ -4,16 +4,10 @@ import DishFavorited from "../../components/DishFavorited/index.jsx";
 import Detailfooter from "../../components/Detailfooter/index.jsx";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api.js";
+import { useDish } from "../../hooks/dish.jsx";
 
 function Favorites() {
-  const [favoritedDishes, setFavoritedDishes] = useState([]);
-
-  useEffect(() => {
-    const storedFavoritedDishes =
-      JSON.parse(localStorage.getItem("favoritedDishes")) || [];
-
-    setFavoritedDishes(storedFavoritedDishes);
-  }, []);
+  const { favoritedDishes } = useDish();
 
   return (
     <Container>
