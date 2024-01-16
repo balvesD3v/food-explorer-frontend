@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import SeachBar from "../SeachBar";
+import Search from "../SeachBar";
 import ButtonOrder from "../ButtonOrder";
 import BurgerBar from "../BurgerBar";
 import polygon from "../../assets/Polygons/polygonColorful.png";
@@ -21,7 +20,7 @@ function Header({ onSearch }) {
         </a>
       </Brand>
 
-      <SeachBar onSearch={onSearch} />
+      <Search onInputChange={onSearch} />
 
       <Inputs>
         <Input title={"Meus favoritos"} link={"/favorites"} />

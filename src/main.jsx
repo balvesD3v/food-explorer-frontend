@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import theme from "./styles/theme";
 import { Routes } from "./routes/index";
+import { SearchProvider } from "./hooks/search";
 import { AuthProvider } from "./hooks/auth";
 import { DishProvider } from "./hooks/dish";
 import { register } from "swiper/element/bundle";
@@ -17,15 +18,17 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <React.Fragment>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <DishProvider>
-        <AuthProvider>
-          <Routes />
-          <ToastContainer theme="colored" />
-        </AuthProvider>
-      </DishProvider>
+      <SearchProvider>
+        <DishProvider>
+          <AuthProvider>
+            <Routes />
+            <ToastContainer theme="colored" />
+          </AuthProvider>
+        </DishProvider>
+      </SearchProvider>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.Fragment>
 );

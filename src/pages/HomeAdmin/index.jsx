@@ -13,18 +13,25 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { useAuth } from "../../hooks/auth";
 
 function HomeAdmin() {
+  const { user } = useAuth();
   const [slidesPerView, setSlidePerView] = useState(4);
   const [dishes, setDishes] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function fetchDishes() {
-      const response = await api.get("/dishes");
-      setDishes(response.data);
+      try {
+        const response = await api.get(`/dishes?user_id=${user.id}`);
+        setDishes(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar pratos:", error);
+      }
     }
     fetchDishes();
-  }, []);
+  }, [user.id]);
 
   return (
     <>

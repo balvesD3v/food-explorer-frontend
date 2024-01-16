@@ -1,24 +1,44 @@
 import React, { useState } from "react";
 import { SearchBar } from "./styles";
+import { useSearch } from "../../hooks/search";
 
-function SeachBar({ onSearch, ...rest }) {
-  const [searchTerm, setSearchTerm] = useState("");
+function Search({ onInputChange }) {
+  const { searchTerm, setSearch } = useSearch();
 
   const handleInputChange = (e) => {
     const term = e.target.value;
-    setSearchTerm(term);
-    onSearch(term);
+    console.log("Search Term:", term);
+    setSearch(term);
+    onInputChange(term);
   };
+
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
+  const delayedSearch = debounce((term) => {
+    onInputChange(term);
+  }, 300); // Ajuste o valor do delay conforme necessário
+
   return (
     <SearchBar>
       <input
         type="text"
         placeholder="Busque por pratos ou ingredientes"
         value={searchTerm}
-        onChange={handleInputChange}
+        onChange={(e) => {
+          handleInputChange(e);
+          delayedSearch(e.target.value);
+        }}
       />
     </SearchBar>
   );
 }
 
-export default SeachBar;
+export default Search;
