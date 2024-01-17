@@ -81,7 +81,7 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
           </svg>{" "}
         </LikeButton>
         <img
-          src={`http://localhost:3000/files/${image}`}
+          src={`https://food-explorer-api-inyq.onrender.com/files/${image}`}
           alt="Plate"
           onClick={handleNavigation}
         />

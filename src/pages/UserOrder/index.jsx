@@ -68,7 +68,10 @@ function UserOrder() {
         </Link>
         <ContentStyled>
           <div className="imagePhoto">
-            <img src={`http://localhost:3000/files/${dishes.image}`} alt="" />
+            <img
+              src={`https://food-explorer-api-inyq.onrender.com/files/${dishes.image}`}
+              alt=""
+            />
           </div>
 
           <div className="InfoContent">

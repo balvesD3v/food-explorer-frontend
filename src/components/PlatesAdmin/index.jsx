@@ -30,7 +30,7 @@ function PlatesAdmin({ id, name, description, price, image, isFav }) {
           </svg>
         </EditButton>
         <img
-          src={`http://localhost:3000/files/${image}`}
+          src={`https://food-explorer-api-inyq.onrender.com/files/${image}`}
           alt="Plate"
           onClick={handleNavigate}
         />

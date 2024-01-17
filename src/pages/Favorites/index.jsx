@@ -21,7 +21,7 @@ function Favorites() {
               <DishFavorited
                 key={dish.id}
                 id={dish.id}
-                image={`http://localhost:3000/files/${dish.image}`}
+                image={`https://food-explorer-api-inyq.onrender.com/files/${dish.image}`}
                 name={dish.name}
               />
             ))}

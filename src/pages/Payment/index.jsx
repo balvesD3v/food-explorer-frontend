@@ -60,7 +60,7 @@ function Payment() {
               <OrderedDish
                 key={dish.id}
                 dishId={dish.id}
-                image={`http://localhost:3000/files/${dish.image}`}
+                image={`https://food-explorer-api-inyq.onrender.com/files/${dish.image}`}
                 name={dish.name}
                 price={dish.price}
                 quantity={dish.quantity}
