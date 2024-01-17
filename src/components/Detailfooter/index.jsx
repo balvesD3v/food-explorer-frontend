@@ -20,7 +20,7 @@ function DetailFooter() {
         <span>food explorer</span>
       </LeftContainer>
       <RightContainer>
-        <span>© 2023 - Todos os direitos reservados.</span>
+        <span>© 2024 - Todos os direitos reservados.</span>
       </RightContainer>
     </DivStyled>
   );
