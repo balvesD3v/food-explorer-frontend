@@ -8,7 +8,7 @@ import {
 import HeaderAdmin from "../../components/HeaderAdmin";
 import PlatesAdmin from "../../components/PlatesAdmin";
 import cookies from "../../assets/pngegg 1.png";
-import Detailfooter from "../../components/Detailfooter";
+import DetailFooter from "../../components/DetailFooter";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -170,7 +170,7 @@ function HomeAdmin() {
           </Swiper>
         </DishesSection>
       </DivStyled>
-      <Detailfooter />
+      <DetailFooter />
     </>
   );
 }
