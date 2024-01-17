@@ -13,7 +13,7 @@ function HeaderAdmin({ onSearch }) {
 
   return (
     <HeaderStyled>
-      <BurgerBarAdmin />
+      <BurgerBarAdmin onInputChange={onSearch} />
       <Brand to={"/"}>
         <img src={polygon} alt="polygon" />{" "}
         <div className="foodexplorer">

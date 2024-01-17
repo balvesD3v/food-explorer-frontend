@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
   display: grid;
@@ -15,6 +16,10 @@ export const MainContainer = styled.div`
   padding: 3em 10em;
   display: flex;
   gap: 30%;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    padding: 0;
+  }
 `;
 
 export const MyFavorited = styled.div`
@@ -32,5 +37,12 @@ export const MyFavorited = styled.div`
     display: flex;
     gap: 5em;
     flex-wrap: wrap;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    padding: 1em 1em;
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 `;

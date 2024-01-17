@@ -1,12 +1,20 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa6";
-import SeachBarMobile from "../SeachBarMobile";
-import { StyledBurgerBar } from "./styles";
+import { StyledBurgerBar, SearchBar } from "./styles";
 import { useAuth } from "../../hooks/auth";
+import { useSearch } from "../../hooks/search";
 
-const BurgerBar = () => {
+const BurgerBar = ({ onInputChange }) => {
   const { signOut } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
+  const { searchTerm, setSearch } = useSearch();
+
+  const handleInputChange = (e) => {
+    const term = e.target.value;
+    console.log("Search Term:", term);
+    setSearch(term);
+    onInputChange(term);
+  };
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -36,7 +44,16 @@ const BurgerBar = () => {
           <span>Menu</span>
         </div>
         <div className="menu-inside-content">
-          <SeachBarMobile />
+          <SearchBar>
+            <input
+              type="text"
+              placeholder="Busque por pratos ou ingredientes"
+              value={searchTerm}
+              onChange={(e) => {
+                handleInputChange(e);
+              }}
+            />
+          </SearchBar>{" "}
           <div className="menu-link">
             <a href="/new">Novo prato</a>
             <a href="/" onClick={signOut}>

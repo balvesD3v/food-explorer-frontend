@@ -63,9 +63,10 @@ export const ButtonStyled = styled(Link)`
       position: absolute;
       background-color: #750310;
       border-radius: 100%;
-      left: 80%;
-      top: 1%;
-      padding: 1px 6px;
+      right: 14%;
+      top: 1.5%;
+      padding: 0 8px;
+      font-size: 1rem;
     }
 
     .receipt {

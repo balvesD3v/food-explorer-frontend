@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const ButtonStyled = styled.button`
   color: var(--Tints-Tomato-400, #ab4d55);
@@ -14,6 +15,10 @@ export const ButtonStyled = styled.button`
   text-align: left;
   cursor: pointer;
   background-color: transparent;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Container = styled.div`
@@ -52,5 +57,18 @@ export const Container = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 19.2px */
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .dish-info {
+      h3 {
+        font-size: 1rem;
+      }
+    }
   }
 `;

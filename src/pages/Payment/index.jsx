@@ -20,6 +20,7 @@ import { useDish } from "../../hooks/dish.jsx";
 function Payment() {
   const { selectedDishes } = useDish();
   const [dishes, setDishes] = useState([]);
+  const [isPaymentVisible, setIsPaymentVisible] = useState(false);
 
   const [paymentOption, setPaymentOption] = useState("pix");
 
@@ -43,11 +44,15 @@ function Payment() {
     fetchDishes();
   }, []);
 
+  const handleGoToPayment = () => {
+    setIsPaymentVisible(true);
+  };
+
   return (
     <Container>
       <Header />
       <MainContainer>
-        <MyOrder>
+        <MyOrder className={!isPaymentVisible ? "" : "hidden"}>
           <h2>Meu Pedido</h2>
 
           <div className="ordered">
@@ -64,8 +69,13 @@ function Payment() {
           </div>
 
           <span className="total">Total: R$ {valorPedido()}</span>
+
+          <button className="GoToPayment" onClick={handleGoToPayment}>
+            Pagamento
+          </button>
         </MyOrder>
-        <MyPayment>
+
+        <MyPayment className={isPaymentVisible ? "" : "hidden"}>
           <h2>Pagamento</h2>
 
           <CheckPayment>

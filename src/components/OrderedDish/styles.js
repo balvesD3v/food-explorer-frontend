@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
   margin: 2em 0 3em 0;
@@ -48,6 +49,25 @@ export const Container = styled.div`
 
     p {
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .dish-info {
+      width: 15em;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.7rem;
+      }
     }
   }
 `;

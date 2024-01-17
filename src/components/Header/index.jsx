@@ -12,7 +12,7 @@ function Header({ onSearch }) {
 
   return (
     <HeaderStyled>
-      <BurgerBar />
+      <BurgerBar onInputChange={onSearch} />
 
       <Brand to={"/"}>
         <img src={polygon} alt="polygon" />

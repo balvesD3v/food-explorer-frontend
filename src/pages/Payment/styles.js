@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
   display: grid;
   width: 100%;
   height: 100vh;
-  grid-template-rows: 100px auto 80px;
+  grid-template-rows: 60px auto 80px;
   grid-template-areas:
     "header"
     "content"
@@ -14,6 +15,15 @@ export const Container = styled.div`
 export const MainContainer = styled.div`
   padding: 3em 10em;
   display: flex;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    height: 100vh;
+    padding: 2em 2em;
+    .GoToPayment {
+      display: block;
+    }
+  }
 `;
 
 export const MyOrder = styled.div`
@@ -38,6 +48,29 @@ export const MyOrder = styled.div`
     font-weight: 500;
     line-height: 160%; /* 32px */
   }
+
+  .GoToPayment {
+    display: none;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    h2 {
+      margin-top: 1em;
+      font-size: 1.5rem;
+    }
+
+    .total {
+      font-size: 1rem;
+    }
+
+    .GoToPayment {
+      display: block;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
 `;
 
 export const MyPayment = styled.div`
@@ -50,6 +83,18 @@ export const MyPayment = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: 140%; /* 44.8px */
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+
+    h2 {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -136,6 +181,35 @@ export const CheckPayment = styled.div`
     padding: 4em 10em;
     border-radius: 0px 0px 8px 8px;
     border: 1px solid var(--Light-Light-600, #76797b);
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      width: 23em;
+      padding: 2em;
+      img {
+        height: 15em;
+      }
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    .pix,
+    .credit {
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex: 1 0 0;
+      cursor: pointer;
+
+      img {
+        height: 50%;
+      }
+    }
+
+    .pix.selected .credit.selected {
+      height: 20px;
+    }
   }
 `;
 
