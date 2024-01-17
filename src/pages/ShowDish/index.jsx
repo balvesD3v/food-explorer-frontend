@@ -1,4 +1,4 @@
-import Detailfooter from "../../components/Detailfooter";
+import DetailFooter from "../../components/DetailFooter";
 import Button from "../../components/Button";
 import Tags from "../../components/Tags";
 import HeaderAdmin from "../../components/HeaderAdmin";
@@ -52,7 +52,7 @@ function ShowDish() {
           </div>
         </ContentStyled>
       </main>
-      <Detailfooter />
+      <DetailFooter />
     </DivContent>
   );
 }

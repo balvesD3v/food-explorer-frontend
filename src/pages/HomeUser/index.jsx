@@ -14,7 +14,7 @@ import {
 
 import Header from "../../components/Header";
 import Plates from "../../components/Plates";
-import Detailfooter from "../../components/Detailfooter";
+import DetailFooter from "../../components/DetailFooter";
 import cookies from "../../assets/pngegg 1.png";
 import { useAuth } from "../../hooks/auth";
 import { useSearch } from "../../hooks/search";
@@ -175,7 +175,7 @@ function HomeUser() {
           </Swiper>
         </DishesSection>
       </DivStyled>
-      <Detailfooter />
+      <DetailFooter />
     </>
   );
 }

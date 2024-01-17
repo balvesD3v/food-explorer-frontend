@@ -1,7 +1,7 @@
 import { Container, MainContainer, MyFavorited } from "./styles.js";
 import HeaderAdmin from "../../components/HeaderAdmin";
 import DishFavorited from "../../components/DishFavorited/index.jsx";
-import Detailfooter from "../../components/Detailfooter/index.jsx";
+import DetailFooter from "../../components/DetailFooter";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api.js";
 
@@ -15,12 +15,10 @@ function FavoritesAdmin() {
 
           <div className="my-dishes-favorited">
             <DishFavorited />
-            <DishFavorited />
-            <DishFavorited />
           </div>
         </MyFavorited>
       </MainContainer>
-      <Detailfooter />
+      <DetailFooter />
     </Container>
   );
 }

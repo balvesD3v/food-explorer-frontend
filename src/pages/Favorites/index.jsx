@@ -1,7 +1,7 @@
 import { Container, MainContainer, MyFavorited } from "./styles.js";
 import Header from "../../components/Header";
 import DishFavorited from "../../components/DishFavorited/index.jsx";
-import Detailfooter from "../../components/Detailfooter/index.jsx";
+import DetailFooter from "../../components/DetailFooter";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api.js";
 import { useDish } from "../../hooks/dish.jsx";
@@ -28,7 +28,7 @@ function Favorites() {
           </div>
         </MyFavorited>
       </MainContainer>
-      <Detailfooter />
+      <DetailFooter />
     </Container>
   );
 }

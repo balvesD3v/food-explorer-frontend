@@ -8,8 +8,8 @@ import {
 } from "./styles.js";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
-import OrderedDish from "../../components/OrderedDish/index.jsx";
-import Detailfooter from "../../components/Detailfooter/index.jsx";
+import OrderedDish from "../../components/OrderedDish/";
+import DetailFooter from "../../components/DetailFooter";
 import creditCard from "../../assets/others/CreditCard.svg";
 import pixCard from "../../assets/others/layer1.svg";
 import actions from "../../assets/others/elements.svg";
@@ -150,7 +150,7 @@ function Payment() {
           </CheckPayment>
         </MyPayment>
       </MainContainer>
-      <Detailfooter />
+      <DetailFooter />
     </Container>
   );
 }

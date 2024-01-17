@@ -7,7 +7,7 @@ import Select from "../../components/Select";
 import InputPrice from "../../components/InputPrice";
 import IngredientTag from "../../components/IngredientTag";
 import Button from "../../components/Button";
-import Detailfooter from "../../components/Detailfooter";
+import DetailFooter from "../../components/DetailFooter";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import { useState } from "react";
@@ -151,7 +151,7 @@ function NewDish() {
           <Button title={"Salvar Alterações"} onClick={handleNewDish} />
         </div>
       </main>
-      <Detailfooter />
+      <DetailFooter />
     </DivStyled>
   );
 }

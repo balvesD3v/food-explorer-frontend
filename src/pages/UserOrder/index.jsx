@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import Detailfooter from "../../components/Detailfooter";
+import DetailFooter from "../../components/DetailFooter";
 import Tags from "../../components/Tags";
 import {
   DivContent,
@@ -98,7 +98,7 @@ function UserOrder() {
           </div>
         </ContentStyled>
       </main>
-      <Detailfooter />
+      <DetailFooter />
     </DivContent>
   );
 }

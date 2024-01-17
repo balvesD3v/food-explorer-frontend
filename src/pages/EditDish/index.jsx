@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import { DivStyled, InputField, IngredientsField, TextArea } from "./styles";
 import HeaderAdmin from "../../components/HeaderAdmin";
-import Detailfooter from "../../components/Detailfooter";
+import DetailFooter from "../../components/DetailFooter";
 import SendImage from "../../components/SendImage";
 import InputName from "../../components/InputName";
 import Select from "../../components/Select";
@@ -253,7 +253,7 @@ function EditDish() {
           <Button title={"Salvar Alterações"} onClick={handleUpdateDish} />
         </div>
       </main>
-      <Detailfooter />
+      <DetailFooter />
     </DivStyled>
   );
 }
