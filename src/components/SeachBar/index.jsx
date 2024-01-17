@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SearchBar } from "./styles";
 import { useSearch } from "../../hooks/search";
 
@@ -12,20 +12,6 @@ function Search({ onInputChange }) {
     onInputChange(term);
   };
 
-  const debounce = (func, delay) => {
-    let timeoutId;
-    return (...args) => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        func(...args);
-      }, delay);
-    };
-  };
-
-  const delayedSearch = debounce((term) => {
-    onInputChange(term);
-  }, 300); // Ajuste o valor do delay conforme necessário
-
   return (
     <SearchBar>
       <input
@@ -34,7 +20,6 @@ function Search({ onInputChange }) {
         value={searchTerm}
         onChange={(e) => {
           handleInputChange(e);
-          delayedSearch(e.target.value);
         }}
       />
     </SearchBar>

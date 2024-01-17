@@ -27,6 +27,14 @@ export const DivStyled = styled.div`
       transform: scale(1.2);
     }
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    height: 25em;
+    width: 15em;
+    img {
+      width: 7em;
+    }
+  }
 `;
 
 export const DivInfo = styled.div`
@@ -74,6 +82,20 @@ export const DivInfo = styled.div`
     font-weight: 400;
     line-height: 160%; /* 51.2px */
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      display: none;
+    }
+
+    span {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const EditButton = styled(Link)`
@@ -87,5 +109,13 @@ export const EditButton = styled(Link)`
   svg {
     width: 30px;
     height: 30px;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    top: 20px;
+    right: 20px;
+    svg {
+      width: 20px;
+    }
   }
 `;

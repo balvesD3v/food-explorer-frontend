@@ -12,4 +12,15 @@ export const BrandDiv = styled.div`
     font-size: 42px;
     color: #fff;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    margin-bottom: 2em;
+
+    img {
+      width: 12%;
+    }
+    h1 {
+      font-size: 34px;
+    }
+  }
 `;

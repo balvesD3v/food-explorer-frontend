@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import SeachBar from "../SeachBar";
+import Search from "../SeachBar";
 import Button from "../Button";
 import Input from "../Input";
 import BurgerBarAdmin from "../BurgerBarAdmin";
@@ -8,7 +8,7 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { HeaderStyled, Brand, MobileStyled, Inputs } from "./styles";
 import { useAuth } from "../../hooks/auth";
 
-function HeaderAdmin() {
+function HeaderAdmin({ onSearch }) {
   const { signOut } = useAuth();
 
   return (
@@ -16,13 +16,15 @@ function HeaderAdmin() {
       <BurgerBarAdmin />
       <Brand to={"/"}>
         <img src={polygon} alt="polygon" />{" "}
-        <a href="" className="foodexplorer">
-          <span className="food-explorer-title">Food explorer</span>
+        <div className="foodexplorer">
+          <a href="">
+            <span className="food-explorer-title">Food explorer</span>
+          </a>
           <span className="admin">admin</span>
-        </a>
+        </div>
       </Brand>
 
-      <SeachBar />
+      <Search onInputChange={onSearch} />
 
       <Inputs>
         <Input title={"Meus favoritos"} link={"/favorites"} />

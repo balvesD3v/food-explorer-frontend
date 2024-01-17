@@ -157,7 +157,7 @@ function EditDish() {
           <FaAngleLeft /> voltar
         </a>
 
-        <h1>Editar prato</h1>
+        <h1 className="edit">Editar prato</h1>
 
         <section>
           <InputField>

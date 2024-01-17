@@ -32,4 +32,8 @@ export const SearchBar = styled.div`
     line-height: 100%;
     color: ${({ theme }) => theme.COLORS.white.light_500};
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: none;
+  }
 `;

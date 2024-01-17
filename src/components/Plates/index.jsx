@@ -94,6 +94,7 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
 
           <span>R${price}</span>
         </DivInfo>
+
         <DivButton>
           <ButtonStyled>
             <button>
@@ -104,7 +105,11 @@ function Plates({ id, name, description, price, image, onAddToOrder }) {
               <FaPlus onClick={handleAddProduct} />
             </button>
           </ButtonStyled>
-          <Button title={"Incluir"} onClick={handleAddToOrder} />
+          <Button
+            title={"Incluir"}
+            onClick={handleAddToOrder}
+            className={"include"}
+          />
         </DivButton>
       </DivStyled>
     </>

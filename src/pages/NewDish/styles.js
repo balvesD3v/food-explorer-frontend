@@ -14,16 +14,30 @@ export const DivStyled = styled.div`
   main {
     padding: 3em 10em;
 
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      padding: 2em 1em;
+      width: 100vw;
+
+      .new {
+        font-size: 2rem;
+      }
     }
 
     .button-save {
       display: flex;
       justify-content: end;
       margin-top: 1em;
+      gap: 1em;
+
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          width: 100%;
+          font-size: 0.88rem;
+        }
+      }
     }
 
     .linkto {
@@ -36,6 +50,12 @@ export const DivStyled = styled.div`
       font-weight: 500;
       line-height: 140%; /* 33.6px */
       z-index: 99;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
     }
 
     a {
@@ -76,6 +96,11 @@ export const InputField = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 100%; /* 16px */
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 

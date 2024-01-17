@@ -11,6 +11,11 @@ export const HeaderStyled = styled.header`
   padding: 1.4rem 10rem;
   gap: 1em;
 
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    padding: 1rem 3rem;
+    display: flex;
+  }
+
   span {
     font-family: "Roboto";
     font-size: 24px;
@@ -24,15 +29,16 @@ export const HeaderStyled = styled.header`
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      display: none;
+    }
+
     .arrowRight {
       color: #fff;
       width: 25px;
       height: 25px;
     }
-  }
-
-  .menu-toggle {
-    display: none;
   }
 `;
 
@@ -65,6 +71,15 @@ export const Brand = styled(Link)`
   img {
     width: 30px;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    img {
+      width: 1.5rem;
+    }
+    a > span {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export const Inputs = styled.div`
@@ -80,5 +95,9 @@ export const Inputs = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 100%; /* 16px */
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: none;
   }
 `;

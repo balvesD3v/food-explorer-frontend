@@ -55,4 +55,8 @@ export const InputWrapper = styled.div`
     position: absolute;
     left: 1rem;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 258px;
+  }
 `;

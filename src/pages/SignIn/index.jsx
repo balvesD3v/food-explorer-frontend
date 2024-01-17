@@ -22,7 +22,7 @@ function SignIn() {
   return (
     <div>
       <MainDiv className="main-div">
-        <Brand logo={polygon} title={"Food Explorer"} />
+        <Brand logo={polygon} title={"food explorer"} />
 
         <StyledForm>
           <h2>Faça login</h2>

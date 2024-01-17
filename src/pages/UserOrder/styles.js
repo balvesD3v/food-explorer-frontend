@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const DivContent = styled.div`
   display: grid;
@@ -15,6 +16,7 @@ export const DivContent = styled.div`
 
     .linkto {
       margin-bottom: 2em;
+      margin-left: 1em;
     }
 
     a {
@@ -30,6 +32,23 @@ export const DivContent = styled.div`
       line-height: 140%; /* 33.6px */
       text-decoration: none;
     }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      padding: 0;
+
+      .linkto {
+        margin-top: 2em;
+        margin-left: 1em;
+        font-size: 1.5rem;
+        font-family: "Poppins";
+        font-weight: lighter;
+      }
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -37,15 +56,40 @@ export const ContentStyled = styled.div`
   display: flex;
   gap: 5em;
 
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .InfoContent {
+      h1 {
+      }
+    }
+  }
+
   .imagePhoto {
     img {
       width: 25em;
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      img {
+        width: 15em;
+      }
     }
   }
   .InfoContent {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     h1 {
       color: ${({ theme }) => theme.COLORS.white.light_300};
@@ -56,6 +100,10 @@ export const ContentStyled = styled.div`
       font-style: normal;
       font-weight: 500;
       line-height: 140%; /* 56px */
+
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        font-size: 1.5rem;
+      }
     }
 
     p {
@@ -67,11 +115,10 @@ export const ContentStyled = styled.div`
       font-style: normal;
       font-weight: 400;
       line-height: 140%; /* 33.6px */
-    }
 
-    .buyDish {
-      margin-top: 2em;
-      gap: 1em;
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        font-size: 1rem;
+      }
     }
   }
 `;
@@ -87,6 +134,10 @@ export const ButtonStyled = styled.div`
   gap: 0.875em;
   align-items: center;
   color: #fff;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    margin-bottom: 2em;
+  }
 
   button {
     background-color: transparent;

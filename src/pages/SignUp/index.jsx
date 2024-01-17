@@ -36,43 +36,41 @@ function SignUp() {
   };
 
   return (
-    <div>
-      <MainDiv>
-        <Brand logo={polygon} title={"Food Explorer"} />
+    <MainDiv>
+      <Brand logo={polygon} title={"food explorer"} />
 
-        <StyledForm>
-          <h2>Crie sua conta</h2>
-          <StyledInputField>
-            <InputLabel
-              label={"Seu nome"}
-              placeholder={"Exemplo: Maria da Silva"}
-              icon={FaUser}
-              type={"text"}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <InputLabel
-              label={"Seu email"}
-              placeholder={"Exemplo: exemplo@exemplo.com.br"}
-              icon={FaRegEnvelope}
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+      <StyledForm>
+        <h2>Crie sua conta</h2>
+        <StyledInputField>
+          <InputLabel
+            label={"Seu nome"}
+            placeholder={"Exemplo: Maria da Silva"}
+            icon={FaUser}
+            type={"text"}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <InputLabel
+            label={"Seu email"}
+            placeholder={"Exemplo: exemplo@exemplo.com.br"}
+            icon={FaRegEnvelope}
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            <InputLabel
-              label={"Sua senha"}
-              placeholder={"No mínimo 6 caracteres"}
-              icon={FaLock}
-              type={"password"}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          <InputLabel
+            label={"Sua senha"}
+            placeholder={"No mínimo 6 caracteres"}
+            icon={FaLock}
+            type={"password"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-            <Button title={"Criar conta"} onClick={handleSignUp} />
+          <Button title={"Criar conta"} onClick={handleSignUp} />
 
-            <Input title={"Já tenho uma conta"} link={"/"} />
-          </StyledInputField>
-        </StyledForm>
-      </MainDiv>
-    </div>
+          <Input title={"Já tenho uma conta"} link={"/"} />
+        </StyledInputField>
+      </StyledForm>
+    </MainDiv>
   );
 }
 

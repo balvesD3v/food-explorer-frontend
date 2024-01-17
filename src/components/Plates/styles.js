@@ -19,7 +19,7 @@ const heartBeat = keyframes`
 export const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_300};
   border-radius: 8px;
-  height: 29em;
+  height: 32em;
   width: 21em;
   margin-top: 1em;
   margin-bottom: 2em;
@@ -32,12 +32,21 @@ export const DivStyled = styled.div`
 
   img {
     width: 10em;
+    margin-top: 3em;
     cursor: pointer;
     transition: all 0.1s;
 
     &:hover {
       transition: all 0.1s;
       transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    height: 30em;
+    width: 15em;
+    img {
+      width: 7em;
     }
   }
 `;
@@ -87,11 +96,36 @@ export const DivInfo = styled.div`
     font-weight: 400;
     line-height: 160%; /* 51.2px */
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      display: none;
+    }
+
+    span {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const DivButton = styled.div`
   display: flex;
   gap: 1em;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .include {
+      width: 100%;
+    }
+  }
 `;
 
 export const LikeButton = styled.button`
@@ -100,11 +134,19 @@ export const LikeButton = styled.button`
   right: 30px;
   background-color: transparent;
   border: none;
-  color: #fff;
   cursor: pointer;
 
   svg {
-    margin-right: 1em;
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    top: 20px;
+    right: 20px;
+    svg {
+      width: 20px;
+    }
   }
 
   .isFav {
@@ -134,5 +176,12 @@ export const ButtonStyled = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: 160%;
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    svg {
+      width: 35px;
+      height: 20px;
+    }
   }
 `;

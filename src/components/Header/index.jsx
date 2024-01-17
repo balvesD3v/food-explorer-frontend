@@ -13,6 +13,7 @@ function Header({ onSearch }) {
   return (
     <HeaderStyled>
       <BurgerBar />
+
       <Brand to={"/"}>
         <img src={polygon} alt="polygon" />
         <a href="" className="foodexplorer">
@@ -28,6 +29,7 @@ function Header({ onSearch }) {
       </Inputs>
 
       <ButtonOrder title={"Pedidos"} />
+
       <a href="/" className="signOut" onClick={signOut}>
         <FaArrowRightFromBracket className="arrowRight" />
       </a>

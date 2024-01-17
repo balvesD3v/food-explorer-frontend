@@ -7,6 +7,10 @@ export const DivStyled = styled.div`
   gap: 0.5em;
   width: 50%;
 
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    width: 100%;
+  }
+
   span {
     color: ${({ theme }) => theme.COLORS.white.light_400};
     margin-bottom: 0.5em;

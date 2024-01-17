@@ -41,9 +41,36 @@ export const ButtonStyled = styled(Link)`
   .order {
     &:before {
       content: "(";
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        display: none;
+      }
     }
     &:after {
       content: ")";
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    padding: 0;
+    background-color: transparent;
+    .text {
+      display: none;
+    }
+    .order {
+      position: absolute;
+      background-color: #750310;
+      border-radius: 100%;
+      left: 80%;
+      top: 1%;
+      padding: 1px 6px;
+    }
+
+    .receipt {
+      width: 1.9rem;
+      position: relative;
     }
   }
 `;

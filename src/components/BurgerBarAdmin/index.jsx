@@ -39,7 +39,9 @@ const BurgerBar = () => {
           <SeachBarMobile />
           <div className="menu-link">
             <a href="/new">Novo prato</a>
-            <a onClick={signOut}>Sair</a>
+            <a href="/" onClick={signOut}>
+              Sair
+            </a>
           </div>
         </div>
       </div>

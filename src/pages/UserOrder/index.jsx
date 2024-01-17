@@ -15,7 +15,7 @@ import { useDish } from "../../hooks/dish";
 import Button from "../../components/Button";
 import { toast } from "react-toastify";
 
-function UserOrder({ name, description, image, onAddToOrder, price }) {
+function UserOrder() {
   const { addToSelectedDishes } = useDish();
   const { id } = useParams();
   const [dishes, setDishes] = useState([]);

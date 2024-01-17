@@ -8,6 +8,9 @@ export const DivStyled = styled.footer`
   align-items: center;
   background-color: ${({ theme }) => theme.COLORS.dark.dark_600};
   height: 5em;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -25,7 +28,19 @@ export const LeftContainer = styled.div`
     font-weight: 700;
     line-height: normal;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    .image {
+      width: 1em;
+      height: 1em;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+  }
 `;
+
 export const RightContainer = styled.div`
   span {
     color: #fff;
@@ -34,5 +49,10 @@ export const RightContainer = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 22.4px */
+  }
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    span {
+      font-size: 0.7rem;
+    }
   }
 `;

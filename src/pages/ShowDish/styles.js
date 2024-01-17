@@ -28,6 +28,23 @@ export const DivContent = styled.div`
       line-height: 140%; /* 33.6px */
       text-decoration: none;
     }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      padding: 0;
+
+      .linkto {
+        margin-top: 2em;
+        margin-left: 1em;
+        font-size: 1.5rem;
+        font-family: "Poppins";
+        font-weight: lighter;
+      }
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -35,9 +52,27 @@ export const ContentStyled = styled.div`
   display: flex;
   gap: 5em;
 
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .InfoContent {
+      h1 {
+      }
+    }
+  }
+
   .imagePhoto {
     img {
       width: 25em;
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      img {
+        width: 15em;
+      }
     }
   }
 
@@ -45,6 +80,13 @@ export const ContentStyled = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     h1 {
       color: ${({ theme }) => theme.COLORS.white.light_300};
@@ -55,6 +97,10 @@ export const ContentStyled = styled.div`
       font-style: normal;
       font-weight: 500;
       line-height: 140%; /* 56px */
+
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        font-size: 1.5rem;
+      }
     }
 
     p {
@@ -66,13 +112,16 @@ export const ContentStyled = styled.div`
       font-style: normal;
       font-weight: 400;
       line-height: 140%; /* 33.6px */
+
+      @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+        font-size: 1rem;
+      }
     }
 
     .buyDish {
       display: flex;
       gap: 1em;
       align-items: center;
-      width: 18em;
 
       .minusOrPlus {
         background-color: transparent;

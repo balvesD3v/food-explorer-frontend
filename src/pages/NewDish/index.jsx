@@ -97,13 +97,16 @@ function NewDish() {
         <a href="/" className="linkto">
           <FaAngleLeft /> voltar
         </a>
-        <h1>Adicionar prato</h1>
+
+        <h1 className="new">Adicionar prato</h1>
+
         <section>
           <InputField>
             <SendImage onChange={handleChangeImage} />
             <InputName onChange={(e) => setName(e.target.value)} />
             <Select onChange={(e) => setCategories(e.target.value)} />
           </InputField>
+
           <InputField>
             <IngredientsField>
               <span>Ingredientes</span>
@@ -130,6 +133,7 @@ function NewDish() {
               <InputPrice onChange={(e) => setPrice(e.target.value)} />
             </div>
           </InputField>
+
           <TextArea>
             <label htmlFor="">Descrição</label>
             <textarea
@@ -142,6 +146,7 @@ function NewDish() {
             ></textarea>
           </TextArea>
         </section>
+
         <div className="button-save">
           <Button title={"Salvar Alterações"} onClick={handleNewDish} />
         </div>

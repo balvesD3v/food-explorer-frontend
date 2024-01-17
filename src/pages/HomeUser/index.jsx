@@ -25,7 +25,6 @@ function HomeUser() {
   const { searchTerm } = useSearch();
   const [dishes, setDishes] = useState([]);
   const [slidesPerView, setSlidePerView] = useState(4);
-
   const [originalDishes, setOriginalDishes] = useState([]);
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function HomeUser() {
 
   async function fetchDishes() {
     try {
-      const response = await api.get(`/dishes?user_id=${user.id}`);
+      const response = await api.get(`/dishes`);
       setOriginalDishes(response.data);
       setDishes(response.data);
     } catch (error) {
@@ -42,16 +41,16 @@ function HomeUser() {
     }
   }
 
-  const searchDishes = async () => {
+  const searchDishes = async (searchTerm) => {
     try {
-      const response = await api.get(
-        `/dishes?user_id=${user.id}&name=${searchTerm}`
-      );
-      const filteredDishes = originalDishes.filter((dish) =>
-        dish.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setDishes(filteredDishes);
-      console.log("Search results:", filteredDishes);
+      // Se searchTerm for uma string vazia, retorne todos os pratos
+      if (!searchTerm.trim()) {
+        setDishes(originalDishes);
+        return;
+      }
+      const response = await api.get(`/dishes?&name=${searchTerm}`);
+      setDishes(response.data);
+      console.log("Search results:", response.data);
     } catch (error) {
       console.error("Error searching dishes:", error);
     }
@@ -60,7 +59,6 @@ function HomeUser() {
   return (
     <>
       <Header onSearch={searchDishes} />
-
       <DivStyled>
         <BannerStyled>
           <Cookies>
@@ -77,10 +75,18 @@ function HomeUser() {
         <DishesSection>
           <h2>Refeições</h2>
           <Swiper
-            slidesPerView={slidesPerView}
-            spaceBetween={30}
             loop={true}
             modules={[Pagination]}
+            breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 100,
+              },
+              1440: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
             className="mySwiper"
           >
             {dishes &&
@@ -103,10 +109,18 @@ function HomeUser() {
           <h2>Sobremesas</h2>
 
           <Swiper
-            slidesPerView={slidesPerView}
-            spaceBetween={30}
             loop={true}
             modules={[Pagination]}
+            breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 100,
+              },
+              1440: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
             className="mySwiper"
           >
             {dishes &&
@@ -129,10 +143,18 @@ function HomeUser() {
           <h2>Bebidas</h2>
 
           <Swiper
-            slidesPerView={slidesPerView}
-            spaceBetween={30}
             loop={true}
             modules={[Pagination]}
+            breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 100,
+              },
+              1440: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
             className="mySwiper"
           >
             {dishes &&

@@ -11,9 +11,15 @@ export const MainDiv = styled.div`
   align-items: center;
 
   gap: 28em;
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
-export const StyledForm = styled.form`
+export const StyledForm = styled.div`
   background-color: ${({ theme }) => theme.COLORS.dark.dark_700};
   padding: 64px;
   display: flex;
@@ -30,9 +36,19 @@ export const StyledForm = styled.form`
     line-height: 140%;
     margin-bottom: 32px;
   }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    display: flex;
+    background-color: transparent;
+    padding: 0;
+
+    h2 {
+      display: none;
+    }
+  }
 `;
 
-export const StyledInputField = styled.div`
+export const StyledInputField = styled.form`
   display: flex;
   flex-direction: column;
   gap: 32px;

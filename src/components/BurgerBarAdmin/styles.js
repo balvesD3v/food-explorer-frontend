@@ -6,11 +6,15 @@ export const StyledBurgerBar = styled.div`
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     display: block;
     position: relative;
-    margin-left: 2em;
 
     .menu-toggle {
       color: #fff;
       cursor: pointer;
+      margin-right: 2em;
+      svg {
+        width: 1em;
+        height: 3em;
+      }
     }
 
     .menu-overlay {
@@ -28,7 +32,7 @@ export const StyledBurgerBar = styled.div`
       position: fixed;
       top: 0;
       left: 0;
-      width: 250px; /* Ajuste conforme necessário */
+      width: 250px;
       height: 100%;
       color: #fff;
       background-color: ${({ theme }) => theme.COLORS.dark.dark_400};
