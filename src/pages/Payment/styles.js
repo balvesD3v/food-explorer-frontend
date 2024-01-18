@@ -183,7 +183,7 @@ export const CheckPayment = styled.div`
     border: 1px solid var(--Light-Light-600, #76797b);
 
     @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
-      width: 23em;
+      width: 28em;
       padding: 2em;
       img {
         height: 15em;
