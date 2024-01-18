@@ -84,7 +84,7 @@ function HomeUser() {
               },
               1440: {
                 slidesPerView: 4,
-                spaceBetween: 30,
+                spaceBetween: 300,
               },
             }}
             className="mySwiper"
@@ -118,7 +118,7 @@ function HomeUser() {
               },
               1440: {
                 slidesPerView: 4,
-                spaceBetween: 30,
+                spaceBetween: 300,
               },
             }}
             className="mySwiper"
@@ -152,7 +152,7 @@ function HomeUser() {
               },
               1440: {
                 slidesPerView: 4,
-                spaceBetween: 30,
+                spaceBetween: 300,
               },
             }}
             className="mySwiper"

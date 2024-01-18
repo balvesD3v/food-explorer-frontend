@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: grid;
   height: 100vh;
   width: 100%;
-  grid-template-rows: 105px auto 80px;
+  grid-template-rows: 70px auto 80px;
   grid-template-areas:
     "header"
     "content"
@@ -19,6 +19,7 @@ export const MainContainer = styled.div`
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
     padding: 0;
+    height: 100vh;
   }
 `;
 
@@ -37,6 +38,9 @@ export const MyFavorited = styled.div`
     display: flex;
     gap: 5em;
     flex-wrap: wrap;
+    @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      gap: 0;
+    }
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.XS}) {
